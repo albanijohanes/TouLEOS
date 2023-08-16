@@ -42,7 +42,7 @@ body {
             <span class="fas fa-key"></span>
             <input type="password" name="password" id="password" placeholder="Password">
         </div>
-        <input type="submit" name="submit" class="btn mt-3" value="Login">
+        <input type="submit" name="submit" class="btn mt-3" value="Masuk">
     </form>
     <br>
     <div class="text-center fs-6">

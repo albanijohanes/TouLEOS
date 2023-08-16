@@ -37,6 +37,7 @@
                         <option value="Wanita">Wanita</option>
                      </select>
                   </div>
+                  
                </div>
                <div class="bb">
                   <div class="field">
@@ -49,7 +50,7 @@
                   </div>
                   <div class="field">
                      <input type="password" name="password" id="password" required>
-                     <label>Kata Sandi</label>
+                     <label>Password</label>
                   </div>
                </div>
             </div>
