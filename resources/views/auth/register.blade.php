@@ -28,6 +28,7 @@
                         <select id="role" name="role">
                            <option value="Customer">Customer</option>
                            <option value="Porter">Porter</option>
+                           <option value="Porter">Merchant</option>
                         </select>
                      </div>
                   <div class="field" placeholder="Jenis Kelamin">
@@ -35,10 +36,6 @@
                         <option value="Pria">Pria</option>
                         <option value="Wanita">Wanita</option>
                      </select>
-                  </div>
-                  <div class="field">
-                     <input type="text" name="alamat" id="alamat" required>
-                     <label>Alamat</label>
                   </div>
                </div>
                <div class="bb">
@@ -52,7 +49,7 @@
                   </div>
                   <div class="field">
                      <input type="password" name="password" id="password" required>
-                     <label>Password</label>
+                     <label>Kata Sandi</label>
                   </div>
                </div>
             </div>
