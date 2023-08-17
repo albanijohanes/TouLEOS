@@ -110,7 +110,7 @@
                             <th class="text-dark text">Waktu Mulai</th>
                             <th class="text-dark text">Waktu Selesai</th>
                             <th class="text-dark text">Harga/Menit</th>
-                            <th class="text-dark text">Harga</th>
+                            <th class="text-dark text">Total</th>
                             <th class="text-dark text">Status</th>
                         </tr>
                     </thead>
