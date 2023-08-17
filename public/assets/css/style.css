@@ -688,17 +688,6 @@ section {
   position: relative;
 }
 
-.services .icon-box .icon svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.services .icon-box .icon svg path {
-  transition: 0.5s;
-  fill: #f5f5f5;
-}
-
 .services .icon-box h4 {
   font-weight: 600;
   margin: 10px 0 15px 0;
