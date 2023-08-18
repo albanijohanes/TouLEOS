@@ -122,6 +122,7 @@
                             <th class="text-dark text">Harga/Menit</th>
                             <th class="text-dark text">Total</th>
                             <th class="text-dark text">Status</th>
+                            <th class="text-dark text">Pembatalan</th>
                         </tr>
                     </thead>
                 </table>
