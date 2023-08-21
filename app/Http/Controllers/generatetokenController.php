@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Porter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class generatetokenController extends Controller
 {
