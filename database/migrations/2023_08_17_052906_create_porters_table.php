@@ -15,9 +15,14 @@ class CreatePortersTable extends Migration
     {
         Schema::create('porters', function (Blueprint $table) {
             $table->id();
-            $table->foreign('role_id')->references('role')->on('users');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('permanent_token', 64)->unique()->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->string('skkb');
+            $table->string('ktp');
+
+            $table->string('status')->default('pending');
+
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
