@@ -15,6 +15,14 @@ class CreateMerchantsTable extends Migration
     {
         Schema::create('merchants', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->string('ktp');
+            $table->string('');
+
+            $table->string('status')->default('pending');
+
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->timestamps();
         });
     }
