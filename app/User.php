@@ -42,4 +42,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function Porter(){
+        return $this->hasOne(Porter::class);
+    }
+
+    public function Merchant(){
+        return $this->hasOne(Merchant::class);
+    }
 }
