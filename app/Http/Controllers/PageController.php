@@ -18,4 +18,13 @@ class PageController extends Controller
     public function userporter(){
         return view('porter/users-profile');
     }
+    public function loginPorter(){
+        return view('auth/login_porter');
+    }
+    public function loginUser(){
+        return view('auth/login_user');
+    }
+    public function loginMerchant(){
+        return view('auth/login_merchant');
+    }
 }
