@@ -22,13 +22,15 @@ Route::get('/', function () {
 });
 
 Route::group([], function () {
-    Route::get('loginmerchant', [LoginController::class, 'loginmerchant'])->name('loginmerchant');
-    Route::get('loginporter', [LoginController::class, 'loginporter'])->name('loginporter');
-    Route::get('logincustomer', [LoginController::class, 'loginuser'])->name('logincustomer');
+    Route::get('login/merchant', [LoginController::class, 'loginmerchant'])->name('loginmerchant');
+    Route::get('login/porter', [LoginController::class, 'loginporter'])->name('loginporter');
+    Route::get('login/user', [LoginController::class, 'loginuser'])->name('logincustomer');
     Route::post('login', [LoginController::class, 'loginPost'])->name('login.post');
 });
 Route::group([], function () {
-    Route::get('register', [RegisterController::class, 'register'])->name('register');
+    Route::get('register/merchant', [RegisterController::class, 'registermerchant'])->name('registermerchant');
+    Route::get('register/porter', [RegisterController::class, 'registerporter'])->name('registerporter');
+    Route::get('register/user', [RegisterController::class, 'registeruser'])->name('registeruser');
     Route::post('register', [RegisterController::class, 'registerPost'])->name('register.post');
 });
 
