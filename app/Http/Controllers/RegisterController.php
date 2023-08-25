@@ -11,9 +11,19 @@ use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class RegisterController extends Controller
 {
-    public function register(Request $request){
+    public function registeruser(Request $request){
         $role = $request->query('role');
-        return view('auth/register', compact('role'));
+        return view('auth/regis_u', compact('role'));
+    }
+
+    public function registerporter(Request $request){
+        $role = $request->query('role');
+        return view('auth/regis_p', compact('role'));
+    }
+
+    public function registermerchant(Request $request){
+        $role = $request->query('role');
+        return view('auth/regis_m', compact('role'));
     }
 
     public function registerPost(Request $request){
