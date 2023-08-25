@@ -23,7 +23,7 @@ body {
     </style>
 </head>
 <body>
-    
+
 </body>
 </html>
 <div class="wrapper">
@@ -46,6 +46,6 @@ body {
     </form>
     <br>
     <div class="text-center fs-6">
-        Belum punya akun? <a href="{{ route('register') }}">Daftar sekarang</a>
+        Belum punya akun? <a href="{{ route('registerporter') }}">Daftar sekarang</a>
     </div>
 </div>
