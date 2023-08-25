@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Ludens - Register (copy) (copy)</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('regisassets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/Ludens-Users---2-Register.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/Ludens-Users---2-Register.css') }}">
 </head>
 
 <body style="background: linear-gradient(rgba(105,72,45,0.9) 0%, rgba(109,205,61,0.9) 100%), url(&quot;assets/img/20230712_124645.jpg&quot;) top / cover no-repeat;">
@@ -43,7 +43,7 @@
             </div>
         </div>
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ asset('regisassets/bootstrap/js/bootstrap.min.js') }}"></script>
 </body>
 
 </html>
