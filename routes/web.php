@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RegisterController;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,9 @@ Route::get('/', function () {
 });
 
 Route::group([], function () {
+    Route::get('loginmerchant', [LoginController::class, 'loginmerchant'])->name('loginmerchant');
+    Route::get('loginporter', [LoginController::class, 'loginporter'])->name('loginporter');
+    Route::get('logincustomer', [LoginController::class, 'loginuser'])->name('logincustomer');
     Route::post('login', [LoginController::class, 'loginPost'])->name('login.post');
 });
 Route::group([], function () {
