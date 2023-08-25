@@ -15,14 +15,12 @@ class CreateMerchantsTable extends Migration
     {
         Schema::create('merchants', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained('users');
+            $table->string('name', 255);
+            $table->string('no_hp', 15);
+            $table->string('jk', 50);
             $table->string('ktp');
-            $table->string('');
-
-            $table->string('status')->default('pending');
-
-            $table->foreign('user_id')->references('id')->on('users');
-
+            $table->string('siup');
             $table->timestamps();
         });
     }

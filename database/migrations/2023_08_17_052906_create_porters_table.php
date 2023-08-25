@@ -15,14 +15,12 @@ class CreatePortersTable extends Migration
     {
         Schema::create('porters', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->foreignId('user_id')->constrained('users');
+            $table->string('nama', 255);
+            $table->string('no_hp', 15);
+            $table->string('jk', 50);
             $table->string('skkb');
             $table->string('ktp');
-
-            $table->string('status')->default('pending');
-
-            $table->foreign('user_id')->references('id')->on('users');
-
             $table->timestamps();
         });
     }
