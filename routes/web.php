@@ -16,12 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('landingpage');
+});
 
 Route::group([], function () {
-    Route::get('', [LoginController::class, 'login'])->name('login');
     Route::post('login', [LoginController::class, 'loginPost'])->name('login.post');
 });
 Route::group([], function () {
