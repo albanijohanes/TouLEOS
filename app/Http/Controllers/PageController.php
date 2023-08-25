@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    public function start(){
+        return view('landingpage');
+    }
     public function index(){
         return view('user/index');
     }

@@ -52,18 +52,21 @@ class LoginController extends Controller
             'username'  => 'required',
             'password'  => 'required'
         ]);
+
+        if($validator->fails()){
+            return redirect()->route('start')->withErrors($validator)->withInput();
+        }
+
         if(Auth::attempt(['username' => $request->username, 'password' => $request->password])){
             $request->session()->regenerate();
-
             return redirect()->route('login');
         }
-        return redirect()->route('login')->with('error', 'password salah!');
+
+        return redirect()->route('login')->with('error', 'Username dan Password salah!');
     }
     public function logout(Request $request){
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
-
         return redirect()->route('login');
     }
 }
