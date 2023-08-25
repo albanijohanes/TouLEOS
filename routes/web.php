@@ -17,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landingpage');
-});
+Route::get('/', 'PageController@start')->name('start');
 
 Route::group([], function () {
     Route::get('login/merchant', [LoginController::class, 'loginmerchant'])->name('loginmerchant');
