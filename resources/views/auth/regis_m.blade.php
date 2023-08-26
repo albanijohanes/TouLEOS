@@ -36,7 +36,7 @@
                         <p id="passwordErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
                         <div class="mb-3"><label class="form-label">KTP (Kartu Tanda Penduduk)</label><input class="form-control" type="file"></div>
                         <div class="mb-3"><label class="form-label">SIUP (Surat Ijin Usaha Perdagangan) atau sejenis</label><input class="form-control" type="file"></div><button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit" style="background: rgba(109,205,61,0.9);margin-bottom: 16px;">DAFTAR</button>
-                        <div class="text-center"><a class="small" href="login.html">Sudah punya akun? Masuk</a></div>
+                        <div class="text-center"><a class="small" href="">Sudah punya akun? Masuk</a></div>
                         <hr>
                     </form>
                 </div>

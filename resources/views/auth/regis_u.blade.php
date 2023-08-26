@@ -22,10 +22,9 @@
                         <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Nama Lengkap" required=""></div>
                         <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Nomor HP" required=""></div>
                         <div class="mb-3"><select class="form-select">
-                                <optgroup label="This is a group">
-                                    <option value="12" selected="">This is item 1</option>
-                                    <option value="13">This is item 2</option>
-                                    <option value="14">This is item 3</option>
+                                <optgroup label="Jenis Kelamin">
+                                    <option value="12" selected="">Laki-laki</option>
+                                    <option value="13">Perempuan</option>
                                 </optgroup>
                             </select></div>
                         <div class="mb-3"></div>
@@ -38,7 +37,7 @@
                             <p id="emailErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
                             <p id="passwordErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
                         </div><button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit" style="background: rgba(109,205,61,0.9);margin-bottom: 16px;">DAFTAR</button>
-                        <div class="text-center"><a class="small" href="login.html">Sudah punya akun? Masuk</a></div>
+                        <div class="text-center"><a class="small" href="">Sudah punya akun? Masuk</a></div>
                         <hr>
                     </form>
                 </div>
