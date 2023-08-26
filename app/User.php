@@ -50,4 +50,7 @@ class User extends Authenticatable
     public function Merchant(){
         return $this->hasOne(Merchant::class);
     }
+    public function role(){
+        return $this->belongsTo(role::class);
+    }
 }
