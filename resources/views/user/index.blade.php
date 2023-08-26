@@ -41,7 +41,7 @@
                     <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
                     <li><a class="nav-link scrollto" href="#histori">Riwayat</a></li>
                     <li><a class="nav-link scrollto" href="#about">Promosi</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Profil</a></li>
+                    <li><a class="nav-link scrollto" href="">Profil</a></li>
                     <li><a class="nav-link scrollto" href="{{ route('logout') }}">KELUAR</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
