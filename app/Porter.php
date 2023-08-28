@@ -8,6 +8,9 @@ class Porter extends Model
 {
     protected $fillable = [
         'user_id',
+        'nama',
+        'no_hp',
+        'jk',
         'skkb',
         'ktp'
     ];
