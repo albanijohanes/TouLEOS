@@ -8,6 +8,9 @@ class Merchant extends Model
 {
     protected $fillable = [
         'user_id',
+        'nama',
+        'no_hp',
+        'jk',
         'ktp',
         'siup'
     ];
