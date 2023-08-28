@@ -21,6 +21,8 @@
                     <form class="user">
                         <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Nama Lengkap" required=""></div>
                         <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Nomor HP" required=""></div>
+                        <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Email" required=""></div>
+                        <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Alamat" required=""></div>
                         <div class="mb-3"><select class="form-select">
                                 <optgroup label="Jenis Kelamin">
                                     <option value="12" selected="">Laki-laki</option>
