@@ -43,7 +43,7 @@
                         <th style="font-family: Poppins, sans-serif;font-size: 14px;padding-right: 50px;padding-left: 42px;">Email</th>
                         <th style="font-family: Poppins, sans-serif;text-align: center;font-size: 14px;padding-right: 25px;padding-left: 22px;">No Handphone</th>
                         <th style="font-family: Poppins, sans-serif;text-align: center;padding-left: 30px;padding-right: 26px;font-size: 14px;">Jenis Kelamin</th>
-                        <th style="font-family: Poppins, sans-serif;text-align: center;font-size: 14px;padding-left: 20px;padding-right: 18px;">Token</th>
+                        <th style="font-family: Poppins, sans-serif;text-align: center;font-size: 14px;padding-left: 20px;padding-right: 18px;">Alamat</th>
                         <th style="font-family: Poppins, sans-serif;text-align: center;padding-right: 32px;padding-left: 34px;font-size: 14px;">KTP</th>
                         <th style="font-family: Poppins, sans-serif;text-align: center;padding-right: 32px;padding-left: 34px;font-size: 14px;">SIUP</th>
                         <th style="font-family: Poppins, sans-serif;text-align: center;padding-right: 32px;padding-left: 34px;font-size: 14px;">Status</th>
