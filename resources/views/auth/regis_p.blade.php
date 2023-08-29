@@ -36,6 +36,7 @@
                                 </div>
                             @enderror
                         </div>
+                        <br>
                         <div class="mb-3">
                             <input id="email" name="email" class="form-control form-control-user @error('email') is-invalid @enderror" type="text" placeholder="Email" required>
                             @error('email')

@@ -19,6 +19,7 @@ class CreatePortersTable extends Migration
             $table->string('nama', 255);
             $table->string('no_hp', 15);
             $table->string('jk', 50);
+            $table->string('alamat', 255);
             $table->string('skkb');
             $table->string('ktp');
             $table->timestamps();

@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>EDIT-PROFIL</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/Black-Navbar.css">
-    <link rel="stylesheet" href="assets/css/gradient-navbar-styles.css">
-    <link rel="stylesheet" href="assets/css/gradient-navbar.css">
-    <link rel="stylesheet" href="assets/css/Navbar---Apple-navbar---apple.css">
-    <link rel="stylesheet" href="assets/css/Navbar---Apple.css">
-    <link rel="stylesheet" href="assets/css/Navbar-by-Aaron.css">
-    <link rel="stylesheet" href="assets/css/Profile-Edit-Form-styles.css">
-    <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Black-Navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/gradient-navbar-styles.css') }}">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/gradient-navbar.css') }}>
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Navbar---Apple-navbar---apple.css') }}">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Navbar---Apple.css') }}">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Navbar-by-Aaron.css') }}">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Profile-Edit-Form-styles.css') }}">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Profile-Edit-Form.css') }}">
 </head>
 
 <body>
