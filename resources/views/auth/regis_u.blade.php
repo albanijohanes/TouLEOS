@@ -16,10 +16,11 @@
             <div class="col-sm-12 col-lg-10 col-xl-9 col-xxl-7 bg-white shadow-lg" style="border-radius: 36px;font-family: Poppins, sans-serif;">
                 <div class="p-5">
                     <div class="text-center">
-                        <h4 class="text-dark mb-4">PENDAFTARAN AKUN !</h4>
+                        <h4 class="text-dark mb-4">PENDAFTARAN AKUN {{ $role }}!</h4>
                     </div>
                     <form class="user" method="POST" action="{{ route('register.post') }}">
                         @csrf
+                        <input type="hidden" name="role" value="{{ $role }}">
                         <div class="mb-3">
                             <input name="nama" class="form-control form-control-user" type="text" placeholder="Nama Lengkap" required>
                             @error('nama')
