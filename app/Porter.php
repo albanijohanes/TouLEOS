@@ -11,6 +11,7 @@ class Porter extends Model
         'nama',
         'no_hp',
         'alamat',
+        'email',
         'role',
         'jk',
         'skkb',

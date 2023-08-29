@@ -11,6 +11,8 @@ class Merchant extends Model
         'nama',
         'no_hp',
         'alamat',
+        'email',
+        'role',
         'jk',
         'ktp',
         'siup'
