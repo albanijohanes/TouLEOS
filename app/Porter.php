@@ -10,6 +10,7 @@ class Porter extends Model
         'user_id',
         'nama',
         'no_hp',
+        'alamat',
         'jk',
         'skkb',
         'ktp'

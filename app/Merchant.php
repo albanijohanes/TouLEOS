@@ -10,6 +10,7 @@ class Merchant extends Model
         'user_id',
         'nama',
         'no_hp',
+        'alamat',
         'jk',
         'ktp',
         'siup'
