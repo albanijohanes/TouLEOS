@@ -28,37 +28,81 @@ class RegisterController extends Controller
 
     public function registerPost(Request $request){
 
-        $user = User::create([
-            'nama' => $request->nama,
-            'username' => $request->username,
-            'no_hp' => $request->no_hp,
-            'role' => $request->role,
-            'password' => Hash::make($request->password),
-        ]);
+        // $validator = FacadesValidator::make($request->all(), [
+        //     'nama' => 'required|string|max:255',
+        //     'username' => 'required|string|max:255',
+        //     'no_hp' => 'required|string|max:15',
+        //     'jk' => 'required|string|max:50',
+        //     'role' => 'required|string|max:15',
+        //     'email' => 'required|string|email|max:255|unique:users',
+        //     'alamat' => 'required|string|max:255',
+        //     'password' => 'required|string|min:8',
+        //     'skkb' => 'required_if:role, porter|file|mimes:pdf',
+        //     'ktp' => 'required|file|mimes:pdf',
+        //     'siup' => 'required_if:role, merchant|file|mimes:pdf',
+        // ]);
 
-        if($user){
-            if ($request->role === 'porter' || $request->role === 'merchant'){
-                $skkb = $request->skkb->store('user_pdfs');
-                $ktp = $request->ktp->store('user_pdfs');
-                $siup = $request->siup->store('user_pdfs');
+        // if($validator->fails()){
+        //     return redirect()->back()->withErrors($validator)->withInput();
+        // }
 
-                if($request->role === 'porter'){
-                    Porter::create([
-                        'user_id' => $request->user->id,
-                        'skkb' => $skkb,
-                        'ktp' => $ktp
-                    ]);
-                } elseif ($request->role === 'merchant') {
-                    Merchant::create([
-                        'user_id' => $request->user->id,
-                        'siup' => $siup,
-                        'ktp' => $ktp
-                    ]);
-                }
+        $role = $request->role;
+
+        if ($role === 'porter') {
+            $porter = Porter::create([
+                'nama' => $request->nama,
+                'username' => $request->username,
+                'no_hp' => $request->no_hp,
+                'jk' => $request->jk,
+                'role' => $request->role,
+                'email' => $request->email,
+                'alamat' => $request->alamat,
+                'skkb' => $request->file('skkb')->store('skkb'),
+                'ktp' => $request->file('ktp')->store('ktp'),
+            ]);
+            if ($porter) {
+                session()->flash('success', 'Berhasil membuat akun');
+                return redirect()->route('loginporter');
+            }else{
+                session()->flash('error', 'Gagal membuat akun');
+                return back();
+            }
+        }elseif ($role === 'merchant') {
+            $merchant = Merchant::create([
+                'nama' => $request->nama,
+                'username' => $request->username,
+                'no_hp' => $request->no_hp,
+                'jk' => $request->jk,
+                'role' => $request->role,
+                'email' => $request->email,
+                'alamat' => $request->alamat,
+                'ktp' => $request->file('ktp')->store('ktp'),
+                'siup' => $request->file('siup')->store('siup'),
+            ]);
+            if ($merchant) {
+                session()->flash('success', 'Berhasil membuat akun');
+                return redirect()->route('loginmerchant');
+            }else{
+                session()->flash('error', 'Gagal membuat akun');
+                return back();
+            }
+        }else{
+            $user = User::create([
+                'nama' => $request->nama,
+                'username' => $request->username,
+                'no_hp' => $request->no_hp,
+                'jk' => $request->jk,
+                'role' => $request->role,
+                'password' => Hash::make($request->password),
+            ]);
+            if ($user) {
+                session()->flash('success', 'Berhasil membuat akun');
+                return redirect()->route('loginuser');
+            }else{
+                session()->flash('error', 'Gagal membuat akun');
+                return back();
             }
         }
 
-        session()->flash('success', 'Register Berhasil');
-        return redirect()->route('login');
     }
 }

@@ -61,8 +61,6 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->route('login');
         }
-
-        return redirect()->route('login')->with('error', 'Username dan Password salah!');
     }
     public function logout(Request $request){
         $request->session()->invalidate();
