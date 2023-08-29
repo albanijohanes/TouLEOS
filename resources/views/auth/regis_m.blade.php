@@ -18,27 +18,103 @@
                     <div class="text-center">
                         <h4 class="text-dark mb-4">PENDAFTARAN AKUN !</h4>
                     </div>
-                    <form class="user">
-                        <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Nama Lengkap" required=""></div>
-                        <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Nomor HP" required=""></div>
-                        <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Email" required=""></div>
-                        <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Alamat" required=""></div>
-                        <div class="mb-3"><select class="form-select">
+                    <form class="user" method="POST" action="{{ route('register.post') }}">
+                        <div class="mb-3">
+                            <input name="nama" class="form-control form-control-user" type="text" placeholder="Nama Lengkap" required>
+                            @error('nama')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <input name="no_hp" class="form-control form-control-user" type="text" placeholder="Nomor HP" required>
+                            @error('no_hp')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <input name="email" class="form-control form-control-user" type="text" placeholder="Email" required>
+                            @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <input name="alamat" class="form-control form-control-user" type="text" placeholder="Alamat" required>
+                            @error('alamat')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <select name="jk" class="form-select">
                                 <optgroup label="Jenis Kelamin">
                                     <option value="12" selected="">Laki-laki</option>
                                     <option value="13">Perempuan</option>
                                 </optgroup>
-                            </select></div>
+                            </select>
+                            @error('jk')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
                         <div class="mb-3"></div>
                         <div class="mb-3"></div>
                         <div class="row mb-3">
-                            <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" placeholder="Nama Pengguna (Username)" required=""></div>
-                            <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="password" placeholder="Kata Sandi" required=""></div>
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input name="username" class="form-control form-control-user" type="text" placeholder="Nama Pengguna (Username)" required="">
+                                @error('username')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="col-sm-6">
+                                <input name="password" class="form-control form-control-user" type="password" id="password" placeholder="Kata Sandi" required="">
+                                @error('password')
+                                    <div id="passwordErrorMsg" class="text-danger" style="display:none;">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                         </div>
                         <p id="passwordErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
-                        <div class="mb-3"><label class="form-label">KTP (Kartu Tanda Penduduk)</label><input class="form-control" type="file"></div>
-                        <div class="mb-3"><label class="form-label">SIUP (Surat Ijin Usaha Perdagangan) atau sejenis</label><input class="form-control" type="file"></div><button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit" style="background: rgba(109,205,61,0.9);margin-bottom: 16px;">DAFTAR</button>
-                        <div class="text-center"><a class="small" href="">Sudah punya akun? Masuk</a></div>
+                        <div class="mb-3">
+                            <label class="form-label">
+                                KTP (Kartu Tanda Penduduk)
+                            </label>
+                            <input name="ktp" class="form-control" type="file">
+                            @error('pdf1')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">
+                                SIUP (Surat Ijin Usaha Perdagangan) atau sejenis
+                            </label>
+                            <input name="siup" class="form-control" type="file">
+                            @error('siup')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit" style="background: rgba(109,205,61,0.9);margin-bottom: 16px;">
+                            DAFTAR
+                        </button>
+                        <div class="text-center">
+                            <a class="small" href="{{ route('loginmerchant') }}">
+                                Sudah punya akun? Masuk
+                            </a>
+                        </div>
                         <hr>
                     </form>
                 </div>

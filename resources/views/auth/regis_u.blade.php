@@ -18,26 +18,68 @@
                     <div class="text-center">
                         <h4 class="text-dark mb-4">PENDAFTARAN AKUN !</h4>
                     </div>
-                    <form class="user">
-                        <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Nama Lengkap" required=""></div>
-                        <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Nomor HP" required=""></div>
-                        <div class="mb-3"><select class="form-select">
+                    <form class="user" method="POST" action="{{ route('register.post') }}">
+                        @csrf
+                        <div class="mb-3">
+                            <input name="nama" class="form-control form-control-user" type="text" placeholder="Nama Lengkap" required>
+                            @error('nama')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <input name="no_hp" class="form-control form-control-user" type="text" placeholder="Nomor HP" required>
+                            @error('no_hp')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <select name="jk" class="form-select">
                                 <optgroup label="Jenis Kelamin">
-                                    <option value="12" selected="">Laki-laki</option>
-                                    <option value="13">Perempuan</option>
+                                    <option value="Laki-laki" selected="">Laki-laki</option>
+                                    <option value="Perempuan">Perempuan</option>
                                 </optgroup>
-                            </select></div>
+                            </select>
+                            @error('jk')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
                         <div class="mb-3"></div>
                         <div class="mb-3"></div>
                         <div class="row mb-3">
-                            <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" placeholder="Nama Pengguna (Username)" required=""></div>
-                            <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="password" placeholder="Kata Sandi" required=""></div>
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input name="username" class="form-control form-control-user" type="text" placeholder="Nama Pengguna (Username)" required>
+                                @error('username')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="col-sm-6">
+                                <input name="password" class="form-control form-control-user" type="password" id="password" placeholder="Kata Sandi" required>
+                                @error('password')
+                                    <div id="passwordErrorMsg" class="text-danger" style="display:none;">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                         </div>
                         <div class="row mb-3">
-                            <p id="emailErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
                             <p id="passwordErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
-                        </div><button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit" style="background: rgba(109,205,61,0.9);margin-bottom: 16px;">DAFTAR</button>
-                        <div class="text-center"><a class="small" href="">Sudah punya akun? Masuk</a></div>
+                        </div>
+                        <button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit" style="background: rgba(109,205,61,0.9);margin-bottom: 16px;">
+                            DAFTAR
+                        </button>
+                        <div class="text-center">
+                            <a class="small" href="{{ route('logincustomer') }}">
+                                Sudah punya akun? Masuk
+                            </a>
+                        </div>
                         <hr>
                     </form>
                 </div>

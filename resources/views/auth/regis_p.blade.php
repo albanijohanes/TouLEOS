@@ -77,15 +77,15 @@
                                 @enderror
                             </div>
                             <div class="col-sm-6">
-                                <input id="" name="" class="form-control form-control-user @error('password') is-invalid @enderror" type="password" id="password" placeholder="Kata Sandi" required>
+                                <input name="password" class="form-control form-control-user @error('password') is-invalid @enderror" type="password" id="password" placeholder="Kata Sandi" required>
                                 @error('password')
-                                    <div class="invalid-feedback">
+                                    <div id="passwordErrorMsg" class="text-danger" style="display:none;">
                                         {{ $message }}
                                     </div>
                                 @enderror
                             </div>
                         </div>
-                        <p id="passwordErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
+                        <p>Paragraph</p>
                         <div class="mb-3">
                             <label class="form-label">KTP (Kartu Tanda Penduduk)</label>
                             <input id="ktp" name="ktp" class="form-control @error('ktp') is-invalid @enderror" type="file">
