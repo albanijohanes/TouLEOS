@@ -21,6 +21,7 @@ class CreatePortersTable extends Migration
             $table->string('role', 15);
             $table->string('email', 255);
             $table->string('alamat', 255);
+            $table->string('password');
             $table->string('skkb');
             $table->string('ktp');
             $table->timestamps();
