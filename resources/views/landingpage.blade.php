@@ -70,9 +70,13 @@
                         MASUK
                     </button>
                 </a>
-                <a href="{{ route('registerporter', ['role' => 'porter']) }}"><button
+                <a href="{{ route('registerporter', ['role' => 'porter']) }}">
+                    <button
                         class="btn btn-primary" type="button"
-                        style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;margin-bottom: 5px;font-family: Poppins, sans-serif;font-size: 14px;">DAFTAR</button></a>
+                        style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;margin-bottom: 5px;font-family: Poppins, sans-serif;font-size: 14px;">
+                        DAFTAR
+                    </button>
+                </a>
                 </div>
             </div>
             <div class="col-sm-4 col-md-4">
