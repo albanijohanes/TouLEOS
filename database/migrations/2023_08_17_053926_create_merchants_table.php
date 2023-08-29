@@ -19,6 +19,7 @@ class CreateMerchantsTable extends Migration
             $table->string('name', 255);
             $table->string('no_hp', 15);
             $table->string('jk', 50);
+            $table->string('email', 255);
             $table->string('alamat', 255);
             $table->string('ktp');
             $table->string('siup');

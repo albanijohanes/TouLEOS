@@ -15,10 +15,11 @@ class CreatePortersTable extends Migration
     {
         Schema::create('porters', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
             $table->string('nama', 255);
             $table->string('no_hp', 15);
             $table->string('jk', 50);
+            $table->string('role', 15);
+            $table->string('email', 255);
             $table->string('alamat', 255);
             $table->string('skkb');
             $table->string('ktp');
