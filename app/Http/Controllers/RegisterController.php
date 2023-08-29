@@ -28,21 +28,6 @@ class RegisterController extends Controller
 
     public function registerPost(Request $request){
 
-        $validator = FacadesValidator::make($request->all(), [
-            'nama' => 'required|string|max: 255',
-            'username' => 'required|string|max:255|unique:users',
-            'no_hp' => 'required|string|max:255',
-            'jk' => 'required|string|max:255',
-            'role' => 'required|string|max:255',
-            'password' => 'required|string|min:8|confirmed',
-            'pdf1' => 'required_if:role,porter,merchant|file|mimes:pdf',
-            'pdf2' => 'required_if:role,porter,merchant|file|mimes:pdf',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-
         $user = User::create([
             'nama' => $request->nama,
             'username' => $request->username,
