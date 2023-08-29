@@ -20,6 +20,7 @@
                     </div>
                     <form class="user" method="POST" action="{{ route('register.post') }}">
                         @csrf
+                        <input type="hidden" name="role" value="porter">
                         <div class="mb-3">
                             <input id="nama" name="nama" class="form-control form-control-user @error('nama') is-invalid @enderror" type="text" placeholder="Nama Lengkap" required>
                             @error('nama')
