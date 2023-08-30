@@ -18,9 +18,9 @@
                     <div class="text-center">
                         <h4 class="text-dark mb-4">PENDAFTARAN AKUN {{ $role }}!</h4>
                     </div>
-                    <form class="user" method="POST" action="{{ route('register.post', ['role' => 'porter']) }}">
+                    <form class="user" method="POST" action="{{ route('register.post') }}" enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="role" value="{{ $role }}">
+                        <input type="hidden" name="role" value="porter">
                         <div class="mb-3">
                             <input id="nama" name="nama" class="form-control form-control-user @error('nama') is-invalid @enderror" type="text" placeholder="Nama Lengkap" required>
                             @error('nama')
@@ -89,7 +89,7 @@
                         <p>Paragraph</p>
                         <div class="mb-3">
                             <label class="form-label">KTP (Kartu Tanda Penduduk)</label>
-                            <input id="ktp" name="ktp" class="form-control @error('ktp') is-invalid @enderror" type="file">
+                            <input id="ktp" name="ktp" class="form-control @error('ktp') is-invalid @enderror" type="file" accept=".pdf" required>
                             @error('ktp')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -98,7 +98,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">SKKB (Surat Keterangan Kelakuan Baik) atau sejenis</label>
-                            <input id="skkb" name="skkb" class="form-control @error('skkb') is-invalid @enderror" type="file">
+                            <input id="skkb" name="skkb" class="form-control @error('skkb') is-invalid @enderror" type="file" accept=".pdf" required>
                             @error('skkb')
                                 <div class="invalid-feedback">
                                     {{ $message }}

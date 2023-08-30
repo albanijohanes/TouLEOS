@@ -18,7 +18,8 @@
                     <div class="text-center">
                         <h4 class="text-dark mb-4">PENDAFTARAN AKUN !</h4>
                     </div>
-                    <form class="user" method="POST" action="{{ route('register.post') }}">
+                    <form class="user" method="POST" action="{{ route('register.post') }}" enctype="multipart/form-data">
+                        <input type="hidden" name="role" value="merchant">
                         <div class="mb-3">
                             <input name="nama" class="form-control form-control-user" type="text" placeholder="Nama Lengkap" required>
                             @error('nama')
@@ -89,7 +90,7 @@
                             <label class="form-label">
                                 KTP (Kartu Tanda Penduduk)
                             </label>
-                            <input name="ktp" class="form-control" type="file">
+                            <input name="ktp" class="form-control" type="file" accept=".pdf" required>
                             @error('pdf1')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -100,7 +101,7 @@
                             <label class="form-label">
                                 SIUP (Surat Ijin Usaha Perdagangan) atau sejenis
                             </label>
-                            <input name="siup" class="form-control" type="file">
+                            <input name="siup" class="form-control" type="file" accept=".pdf" required>
                             @error('siup')
                                 <div class="invalid-feedback">
                                     {{ $message }}
