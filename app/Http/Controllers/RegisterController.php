@@ -27,82 +27,60 @@ class RegisterController extends Controller
     }
 
     public function registerPost(Request $request){
+        $user = User::create([
+            'nama' => $request->nama,
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'no_hp' => $request->no_hp,
+            'jk' => $request->jk,
+            'role' => $request->role
+        ]);
 
-        // $validator = FacadesValidator::make($request->all(), [
-        //     'nama' => 'required|string|max:255',
-        //     'username' => 'required|string|max:255',
-        //     'no_hp' => 'required|string|max:15',
-        //     'jk' => 'required|string|max:50',
-        //     'role' => 'required|string|max:15',
-        //     'email' => 'required|string|email|max:255|unique:users',
-        //     'alamat' => 'required|string|max:255',
-        //     'password' => 'required|string|min:8',
-        //     'skkb' => 'required_if:role, porter|file|mimes:pdf',
-        //     'ktp' => 'required|file|mimes:pdf',
-        //     'siup' => 'required_if:role, merchant|file|mimes:pdf',
-        // ]);
-
-        // if($validator->fails()){
-        //     return redirect()->back()->withErrors($validator)->withInput();
-        // }
-
-        $role = $request->role;
-
-        if ($role === 'porter') {
-            $porter = Porter::create([
-                'nama' => $request->nama,
-                'username' => $request->username,
-                'no_hp' => $request->no_hp,
-                'jk' => $request->jk,
-                'role' => $request->role,
-                'email' => $request->email,
-                'alamat' => $request->alamat,
-                'skkb' => $request->file('skkb')->store('skkb'),
-                'ktp' => $request->file('ktp')->store('ktp'),
-            ]);
-            if ($porter) {
-                session()->flash('success', 'Berhasil membuat akun');
-                return redirect()->route('loginporter');
-            }else{
-                session()->flash('error', 'Gagal membuat akun');
-                return back();
-            }
-        }elseif ($role === 'merchant') {
-            $merchant = Merchant::create([
-                'nama' => $request->nama,
-                'username' => $request->username,
-                'no_hp' => $request->no_hp,
-                'jk' => $request->jk,
-                'role' => $request->role,
-                'email' => $request->email,
-                'alamat' => $request->alamat,
-                'ktp' => $request->file('ktp')->store('ktp'),
-                'siup' => $request->file('siup')->store('siup'),
-            ]);
-            if ($merchant) {
-                session()->flash('success', 'Berhasil membuat akun');
-                return redirect()->route('loginmerchant');
-            }else{
-                session()->flash('error', 'Gagal membuat akun');
-                return back();
-            }
-        }else{
-            $user = User::create([
-                'nama' => $request->nama,
-                'username' => $request->username,
-                'no_hp' => $request->no_hp,
-                'jk' => $request->jk,
-                'role' => $request->role,
-                'password' => Hash::make($request->password),
-            ]);
-            if ($user) {
-                session()->flash('success', 'Berhasil membuat akun');
-                return redirect()->route('loginuser');
-            }else{
-                session()->flash('error', 'Gagal membuat akun');
-                return back();
+        if ($user) {
+            if ($request->role === 'porter') {
+                if ($request->hasFile('ktp') && $request->hasFile('skkb')) {
+                    $ktp = $request->file('ktp')->store('user_pdf');
+                    $skkb = $request->file('skkb')->store('user_pdfs');
+                    Porter::create([
+                        'user_id' => $user->id,
+                        'alamat' => $request->alamat,
+                        'email' => $request->email,
+                        'skkb' => $skkb,
+                        'ktp' => $ktp,
+                    ]);
+                } else {
+                    // Handle the case where required files are not present
+                    if (!$request->hasFile('ktp')) {
+                        return redirect()->back()->withErrors(['ktp' => 'KTP file is required'])->withInput();
+                    }
+                    if (!$request->hasFile('skkb')) {
+                        return redirect()->back()->withErrors(['skkb' => 'SKKB file is required'])->withInput();
+                    }
+                }
+            } elseif ($request->role === 'merchant') {
+                if ($request->hasFile('ktp') && $request->hasFile('siup')) {
+                    $ktp = $request->file('ktp')->store('user_pdf');
+                    $siup = $request->file('siup')->store('user_pdfs');
+                    Merchant::create([
+                        'user_id' => $user->id,
+                        'alamat' => $request->alamat,
+                        'email' => $request->email,
+                        'siup' => $siup,
+                        'ktp' => $ktp,
+                    ]);
+                } else {
+                    // Handle the case where required files are not present
+                    if (!$request->hasFile('ktp')) {
+                        return redirect()->back()->withErrors(['ktp' => 'KTP file is required'])->withInput();
+                    }
+                    if (!$request->hasFile('siup')) {
+                        return redirect()->back()->withErrors(['siup' => 'SIUP file is required'])->withInput();
+                    }
+                }
             }
         }
 
+        session()->flash('success', 'Registrasi Berhasil');
+        return redirect()->route('start');
     }
 }
