@@ -10,11 +10,7 @@ class LoginController extends Controller
 {
     public function loginuser(){
         if(Auth::check()){
-            if(Auth::user()->role == 'Porter'){
-                return redirect()->route('porter');
-            }elseif(Auth::user()->role == 'Merchant'){
-                return redirect()->route(('merchant'));
-            }else{
+            if(Auth::user()->role == 'customer'){
                 return redirect()->route('index');
             }
         }
@@ -23,12 +19,8 @@ class LoginController extends Controller
 
     public function loginporter(){
         if(Auth::check()){
-            if(Auth::user()->role == 'Porter'){
+            if(Auth::user()->role == 'porter'){
                 return redirect()->route('porter');
-            }elseif(Auth::user()->role == 'Merchant'){
-                return redirect()->route(('merchant'));
-            }else{
-                return redirect()->route('index');
             }
         }
         return view('auth/login_porter');
@@ -36,12 +28,8 @@ class LoginController extends Controller
 
     public function loginmerchant(){
         if(Auth::check()){
-            if(Auth::user()->role == 'Porter'){
-                return redirect()->route('porter');
-            }elseif(Auth::user()->role == 'Merchant'){
-                return redirect()->route(('merchant'));
-            }else{
-                return redirect()->route('index');
+            if(Auth::user()->role == 'merchant'){
+                return redirect()->route('merchant');
             }
         }
         return view('auth/login_merchant');
@@ -57,14 +45,29 @@ class LoginController extends Controller
             return redirect()->route('start')->withErrors($validator)->withInput();
         }
 
-        if(Auth::attempt(['username' => $request->username, 'password' => $request->password])){
-            $request->session()->regenerate();
-            return redirect()->route('login');
+        if(Auth::attempt([
+            'username' => $request->username,
+            'password' => $request->password
+            ])
+            ){
+            return $this->redirectToRoleDashboard();
+        }
+        return redirect()->route('start')->withErrors(['auth' => 'password atau username salah']);
+    }
+
+    public function redirectToRoleDashboard(){
+        if(Auth::user()->role == 'customer'){
+            return redirect()->route('index');
+        }elseif(Auth::user()->role == 'porter'){
+            return redirect()->route('porter');
+        }elseif(Auth::user()->role == 'merchant'){
+            return redirect()->route('merchant');
         }
     }
+
     public function logout(Request $request){
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('login');
+        return redirect()->route('start');
     }
 }
