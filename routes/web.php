@@ -17,14 +17,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Routing landing page
 Route::get('/', 'PageController@start')->name('start');
 
+// Routing for login
 Route::group([], function () {
     Route::get('login/merchant', [LoginController::class, 'loginmerchant'])->name('loginmerchant');
     Route::get('login/porter', [LoginController::class, 'loginporter'])->name('loginporter');
     Route::get('login/user', [LoginController::class, 'loginuser'])->name('logincustomer');
     Route::post('login', [LoginController::class, 'loginPost'])->name('login.post');
 });
+
+// Routing for register
 Route::group([], function () {
     Route::get('register/merchant', [RegisterController::class, 'registermerchant'])->name('registermerchant');
     Route::get('register/porter', [RegisterController::class, 'registerporter'])->name('registerporter');
@@ -32,17 +36,18 @@ Route::group([], function () {
     Route::post('register', [RegisterController::class, 'registerPost'])->name('register.post');
 });
 
+// Routing Authentication for every role
 Route::middleware('auth')->group(function(){
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
     //Sebagai Customer
-    Route::middleware('role:Customer')->group(function(){
+    Route::middleware('role:customer')->group(function(){
         Route::get('index', [PageController::class, 'index'])->name('index');
         Route::get('services', [PageController::class, 'services'])->name('services');
     });
 
     //Sebagai Porter
-    Route::middleware('role:Porter')->group(function(){
+    Route::middleware('role:porter')->group(function(){
         Route::get('porter', [PageController::class, 'porter'])->name('porter');
         Route::get('user' , [PageController::class, 'userporter'])->name('userporter');
     });
