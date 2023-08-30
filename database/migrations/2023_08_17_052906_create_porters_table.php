@@ -15,16 +15,14 @@ class CreatePortersTable extends Migration
     {
         Schema::create('porters', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 255);
-            $table->string('no_hp', 15);
-            $table->string('jk', 50);
-            $table->string('role', 15);
+            $table->unsignedBigInteger('user_id');
             $table->string('email', 255);
             $table->string('alamat', 255);
-            $table->string('password');
             $table->string('skkb');
             $table->string('ktp');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
