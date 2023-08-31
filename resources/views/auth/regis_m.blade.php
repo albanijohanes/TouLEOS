@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>PENDAFTARAN-MERCHANT</title>
+    <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
+    <link href="{{ asset('assets/img/logo.png') }}" rel="apple-touch-icon">
     <link rel="stylesheet" href="{{ asset('regisassets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="{{ asset('assets/css/Ludens-Users---2-Register.css') }}">
@@ -16,7 +18,7 @@
             <div class="col-sm-12 col-lg-10 col-xl-9 col-xxl-7 bg-white shadow-lg" style="border-radius: 36px;font-family: Poppins, sans-serif;">
                 <div class="p-5">
                     <div class="text-center">
-                        <h4 class="text-dark mb-4">PENDAFTARAN AKUN !</h4>
+                        <h4 class="text-dark mb-4">PENDAFTARAN AKUN MERCHANT !</h4>
                     </div>
                     <form class="user" method="POST" action="{{ route('register.post') }}" enctype="multipart/form-data">
                         <input type="hidden" name="role" value="merchant">
@@ -85,7 +87,6 @@
                                 @enderror
                             </div>
                         </div>
-                        <p id="passwordErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
                         <div class="mb-3">
                             <label class="form-label">
                                 KTP (Kartu Tanda Penduduk)

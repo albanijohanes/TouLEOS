@@ -66,12 +66,6 @@
                                 alt="Profile" class="rounded-circle">
                             <h2>{{ auth()->user()->nama }}</h2>
                             <h3>{{ auth()->user()->role }}</h3>
-                            <div class="social-links mt-2">
-                                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                            </div>
                         </div>
                     </div>
 
@@ -81,7 +75,6 @@
 
                     <div class="card">
                         <div class="card-body pt-3">
-                            <!-- Bordered Tabs -->
                             <ul class="nav nav-tabs nav-tabs-bordered">
 
                                 <li class="nav-item">
@@ -91,7 +84,7 @@
 
                                 <li class="nav-item">
                                     <button id="Judulmu" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#profile-edit">Edit Profile</button>
+                                        data-bs-target="#profile-edit">Edit Profil</button>
                                 </li>
 
                                 <li class="nav-item">
@@ -103,10 +96,6 @@
                             <div class="tab-content pt-2">
 
                                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                                    <h5 class="card-title">About</h5>
-                                    <p class="small fst-italic">Saya adalah seorang pekerja kerja, jujur, dan
-                                        berintegritas. Salah satu softskill saya adalah menggunakan bahasa inggris</p>
-
                                     <h5 class="card-title">Detail Profil</h5>
 
                                     <div class="row">
@@ -228,45 +217,9 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-3">
-                                            <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter
-                                                Profile</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="twitter" type="text" class="form-control" id="Twitter"
-                                                    value="https://twitter.com/#">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook
-                                                Profile</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="facebook" type="text" class="form-control" id="Facebook"
-                                                    value="https://www.facebook.com/owen.kalumata?mibextid=ZbWKwL/#">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram
-                                                Profile</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="instagram" type="text" class="form-control" id="Instagram"
-                                                    value="https://instagram.com/_owenklmt?igshid=MzNlNGNkZWQ4Mg==/#">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin
-                                                Profile</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="linkedin" type="text" class="form-control" id="Linkedin"
-                                                    value="https://www.linkedin.com/in/erick-owen-indri-kalumata-66a452279/#">
-                                            </div>
-                                        </div>
-
                                         <div class="text-center">
                                             <button type="submit"
-                                                style="background-color: #964B00; color: #FFFFFF;">Save Changes</button>
+                                                style="background-color: #964B00; color: #FFFFFF;">Simpan</button>
                                         </div>
                                     </form><!-- End Profile Edit Form -->
 
@@ -310,7 +263,7 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                        
                                         <div class="text-center">
                                             <button type="submit"
                                                 style="background-color: #964B00; color: #FFFFFF;">Save Changes</button>

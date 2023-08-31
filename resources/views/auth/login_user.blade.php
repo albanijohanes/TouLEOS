@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN-PENGUNJUNG PASAR</title>
+    <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
+    <link href="{{ asset('assets/img/logo.png') }}" rel="apple-touch-icon">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <style>
         /* Importing fonts from Google */
@@ -74,7 +76,7 @@ body {
         </div>
         <div class="form-field d-flex align-items-center">
             <span class="fas fa-key"></span>
-            <input type="password" name="password" id="password" placeholder="Password">
+            <input type="password" name="password" id="password" placeholder="Kata Sandi">
         </div>
         <input type="submit" name="submit" class="btn mt-3" value="Masuk">
     </form>

@@ -4,22 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
     <title>TouLEOS</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <!-- Favicons -->
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
     <link href="{{ asset('porterassets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
     <link href="{{ asset('porterassets/vendor/bootstrap/css/bootstrap.min.css') }}"
         rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/bootstrap-icons/bootstrap-icons.css') }}"
@@ -43,42 +39,26 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Beranda</h1>
+            <h1>Dashboard</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('porter') }}">Beranda</a></li>
-                    <li class="breadcrumb-item active">Beranda</li>
+                    <li class="breadcrumb-item"><a href="{{ route('porter') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
             </nav>
-        </div><!-- End Page Title -->
+        </div>
 
         <section class="section dashboard">
             <div class="row">
 
-                <!-- Left side columns -->
                 <div class="col-lg-8">
                     <div class="row">
 
-                        <!-- Sales Card -->
                         <div class="col-xxl-4 col-md-6">
                             <div class="card info-card sales-card">
 
-                                <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="#">Hari ini</a></li>
-                                        <li><a class="dropdown-item" href="#">Bulan ini</a></li>
-                                        <li><a class="dropdown-item" href="#">Tahun ini</a></li>
-                                    </ul>
-                                </div>
-
                                 <div class="card-body">
-                                    <h5 class="card-title">Pesanan <span>| Hari ini</span></h5>
+                                    <h5 class="card-title">Pesanan</h5>
 
                                     <div class="d-flex align-items-center">
                                         <div
@@ -87,36 +67,18 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>145</h6>
-                                            <span class="text-muted small pt-2 ps-1">Peningkatan</span> <span
-                                                id="Judulkita" class="text-success small pt-1 fw-bold">12%</span>
-
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
-                        </div><!-- End Sales Card -->
+                        </div>
 
-                        <!-- Revenue Card -->
                         <div class="col-xxl-4 col-md-6">
                             <div class="card info-card revenue-card">
 
-                                <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="#">Hari ini</a></li>
-                                        <li><a class="dropdown-item" href="#">Bulan ini</a></li>
-                                        <li><a class="dropdown-item" href="#">Tahun ini</a></li>
-                                    </ul>
-                                </div>
-
                                 <div class="card-body">
-                                    <h5 class="card-title">Pendapatan <span>| Bulan ini</span></h5>
+                                    <h5 class="card-title">Pendapatan</h5>
 
                                     <div class="d-flex align-items-center">
                                         <div
@@ -125,37 +87,19 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>Rp.49.260</h6>
-                                            <span class="text-muted small pt-2 ps-1">Peningkatan</span> <span
-                                                id="Judulkita" class="text-success small pt-1 fw-bold">8%</span>
-
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
-                        </div><!-- End Revenue Card -->
+                        </div>
 
-                        <!-- Customers Card -->
                         <div class="col-xxl-4 col-xl-12">
 
                             <div class="card info-card customers-card">
 
-                                <div class="filter">
-                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
-                                            class="bi bi-three-dots"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                        <li class="dropdown-header text-start">
-                                            <h6>Filter</h6>
-                                        </li>
-
-                                        <li><a class="dropdown-item" href="#">Hari ini</a></li>
-                                        <li><a class="dropdown-item" href="#">Bulan ini</a></li>
-                                        <li><a class="dropdown-item" href="#">Tahun ini</a></li>
-                                    </ul>
-                                </div>
-
                                 <div class="card-body">
-                                    <h5 class="card-title">Pelanggan <span>| Tahun ini</span></h5>
+                                    <h5 class="card-title">Pelanggan</h5>
 
                                     <div class="d-flex align-items-center">
                                         <div
@@ -164,9 +108,6 @@
                                         </div>
                                         <div class="ps-3">
                                             <h6>1244</h6>
-                                            <span class="text-muted small pt-2 ps-1">Penurunan</span> <span
-                                                class="text-danger small pt-1 fw-bold">12%</span>
-
                                         </div>
                                     </div>
 
@@ -193,13 +134,12 @@
                                     </ul>
                                 </div>
 
-                                <div class="card-body">
+                                <!-- <div class="card-body">
                                     <h5 class="card-title">Laporan <span>/Hari ini</span></h5>
 
-                                    <!-- Line Chart -->
                                     <div id="reportsChart"></div>
 
-                                    <script>
+                                    <!-- <script>
                                         document.addEventListener("DOMContentLoaded", () => {
                                             new ApexCharts(document.querySelector("#reportsChart"), {
                                                 series: [{
@@ -257,15 +197,13 @@
                                                 }
                                             }).render();
                                         });
-                                    </script>
-                                    <!-- End Line Chart -->
+                                    </script> 
 
-                                </div>
+                                </div> -->
 
                             </div>
-                        </div><!-- End Reports -->
+                        </div>
 
-                        <!-- Recent Sales -->
                         <div class="col-12">
                             <div class="card recent-sales overflow-auto">
 
@@ -289,7 +227,7 @@
                                     <table class="table table-borderless datatable">
                                         <thead>
                                             <tr>
-                                                <th scope="col">#</th>
+                                                <th scope="col">Nomor</th>
                                                 <th scope="col">Pelanggan</th>
                                                 <th scope="col">Waktu</th>
                                                 <th scope="col">Harga</th>
@@ -298,9 +236,9 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row"><a href="#">#2457</a></th>
+                                                <th scope="row"><a>1</a></th>
                                                 <td>Roma</td>
-                                                <td><a href="#" class="text-primary">30 menit</a></td>
+                                                <td><a class="text-primary">30 menit</a></td>
                                                 <td>Rp.15.000</td>
                                                 <td><span class="badge bg-success">Selesai</span></td>
                                             </tr>
@@ -338,23 +276,18 @@
                                 </div>
 
                             </div>
-                        </div><!-- End Recent Sales -->
+                        </div>
 
                     </div>
-                </div><!-- End Left side columns -->
-
-                <!-- Right side columns -->
-                <div class="col-lg-4">
-
                 </div>
-            </div><!-- End News & Updates -->
+            </div>
 
-            </div><!-- End Right side columns -->
+            </div>
 
             </div>
         </section>
 
-    </main><!-- End #main -->
+    </main>
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
