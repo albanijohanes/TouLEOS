@@ -30,4 +30,16 @@ class PageController extends Controller
     public function loginMerchant(){
         return view('auth/login_merchant');
     }
+    public function berandaMerchant(){
+        return view('merchant/beranda_merchant');
+    }
+    public function editMerchant(){
+        return view('merchant/edit_dagang');
+    }
+    public function tambahDagang(){
+        return view('merchant/tambah_dagang');
+    }
+    public function profilMerchant(){
+        return view('merchant/profile');
+    }
 }

@@ -49,6 +49,14 @@ Route::middleware('auth')->group(function(){
     //Sebagai Porter
     Route::middleware('role:porter')->group(function(){
         Route::get('porter', [PageController::class, 'porter'])->name('porter');
-        Route::get('user' , [PageController::class, 'userporter'])->name('userporter');
+        Route::get('porter/profile' , [PageController::class, 'userporter'])->name('userporter');
+    });
+
+    //Sebagai Merchant
+    Route::middleware('role:merchant')->group(function(){
+        Route::get('merchant', 'PageController@berandaMerchant')->name('beranda_merchant');
+        Route::get('merchant/dagangan', 'PageController@editMerchant')->name('dagangan_merchant');
+        Route::get('merchant/profile', 'PageController@profilMerchant')->name('profile_merchant');
+        Route::get('merchant/tambah_dagangan', 'PageController@tambahDagang')->name('tambah_dagang');
     });
 });
