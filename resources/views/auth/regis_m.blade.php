@@ -21,6 +21,7 @@
                         <h4 class="text-dark mb-4">PENDAFTARAN AKUN MERCHANT !</h4>
                     </div>
                     <form class="user" method="POST" action="{{ route('register.post') }}" enctype="multipart/form-data">
+                        @csrf
                         <input type="hidden" name="role" value="merchant">
                         <div class="mb-3">
                             <input name="nama" class="form-control form-control-user" type="text" placeholder="Nama Lengkap" required>
