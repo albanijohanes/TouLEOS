@@ -61,7 +61,7 @@ class LoginController extends Controller
         }elseif(Auth::user()->role == 'porter'){
             return redirect()->route('porter');
         }elseif(Auth::user()->role == 'merchant'){
-            return redirect()->route('merchant');
+            return redirect()->route('beranda_merchant');
         }
     }
 
