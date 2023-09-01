@@ -25,7 +25,10 @@
                                 </div>
                                 <div class="col-md-12 text-start">
                                     <div class="mb-3"><label class="form-label" for="username"><strong>Nomor HP</strong></label><input class="form-control" type="text" style="font-size: 12px;"></div>
-                                    <div class="mb-3"><label class="form-label" for="city"><strong>Jenis Kelamin</strong></label><select class="form-select states order-alpha" id="stateId" name="state" required="" style="font-size: 12px;"></select></div>
+                                    <div class="mb-3"><label class="form-label" for="city"><strong>Jenis Kelamin</strong></label><select class="form-select states order-alpha" id="stateId" name="state" style="font-size: 12px;">
+                                    <option value="12" selected="">Laki-laki</option>
+                                    <option value="13">Perempuan</option>
+                                </select></div>
                                     <div class="mb-3"><label class="form-label" for="username"><strong>Nama Pengguna (<em>Username</em>)</strong></label><input class="form-control" type="text" style="font-size: 12px;"></div>
                                 </div>
                             </div>
@@ -33,7 +36,7 @@
                         <div class="col-md-6 text-start">
                             <div class="mb-3"><label class="form-label" for="username"><strong>Kata Sandi</strong></label><input class="form-control" type="password" id="password" placeholder="Password" style="font-size: 12px;"></div>
                         </div>
-                        <div class="col-md-12" style="text-align: right;margin-top: 5px;"><button class="btn btn-primary btn-sm" id="submitBtn" type="submit" style="margin-right: 10px;font-size: 12px;background: rgba(109,205,61,0.9);">KEMBALI</button><button class="btn btn-primary btn-sm" id="submitBtn-1" type="submit" style="font-size: 12px;background: rgba(109,205,61,0.9);">SIMPAN</button></div>
+                        <div class="col-md-12" style="text-align: right;margin-top: 5px;"><button class="btn btn-primary btn-sm" id="submitBtn" type="submit" style="margin-right: 10px;font-size: 12px;background: rgba(109,205,61,0.9);"><a href="{{ route('profiluser') }}">KEMBALI</button><button class="btn btn-primary btn-sm" id="submitBtn-1" type="submit" style="font-size: 12px;background: rgba(109,205,61,0.9);">SIMPAN</button></div>
                     </div>
                 </form>
             </div>

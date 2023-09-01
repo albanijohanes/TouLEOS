@@ -30,7 +30,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12" style="text-align: right;margin-top: 5px;"><button class="btn btn-primary btn-sm" id="submitBtn" type="submit" style="margin-right: 10px;font-size: 12px;background: rgba(109,205,61,0.9);">KEMBALI</button><button class="btn btn-primary btn-sm" id="submitBtn-1" type="submit" style="font-size: 12px;background: rgba(109,205,61,0.9);">EDIT</button></div>
+                        <div class="col-md-12" style="text-align: right;margin-top: 5px;">
+                        <button class="btn btn-primary btn-sm" id="submitBtn" type="submit" style="margin-right: 10px;font-size: 12px;background: rgba(109,205,61,0.9);"><a href="{{ route('index') }}">KEMBALI</button><button class="btn btn-primary btn-sm" id="submitBtn-1" type="submit" style="font-size: 12px;background: rgba(109,205,61,0.9);"><a href="{{ route('edituser') }}">EDIT</button></div>
                     </div>
                 </form>
             </div>

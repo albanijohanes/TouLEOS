@@ -5,6 +5,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
+use Mockery\Generator\StringManipulation\Pass\Pass;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,13 @@ Route::group([], function () {
     Route::get('register/porter', [RegisterController::class, 'registerporter'])->name('registerporter');
     Route::get('register/user', [RegisterController::class, 'registeruser'])->name('registeruser');
     Route::post('register', [RegisterController::class, 'registerPost'])->name('register.post');
+});
+
+//Routing User
+Route::group([], function(){
+    Route::get('index', [PageController::class, 'index'])->name('index');
+    Route::get('profiluser', [PageController::class, 'profiluser'])->name('profiluser');
+    Route::get('edituser', [PageController::class, 'edituser'])->name('edituser');
 });
 
 // Routing Authentication for every role

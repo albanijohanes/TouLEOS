@@ -12,6 +12,12 @@ class PageController extends Controller
     public function index(){
         return view('user/index');
     }
+    public function edituser(){
+        return view('user/edit_profil_user');
+    }
+    public function profiluser(){
+        return view('user/profil_user');
+    }
     public function services(){
         return view('user/services');
     }

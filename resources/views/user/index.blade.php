@@ -41,7 +41,7 @@
                     <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
                     <li><a class="nav-link scrollto" href="#histori">Riwayat</a></li>
                     <li><a class="nav-link scrollto" href="#about">Promosi</a></li>
-                    <li><a class="nav-link scrollto" href="">Profil</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('profiluser') }}">Profil</a></li>
                     <li><a class="nav-link scrollto" href="{{ route('logout') }}">KELUAR</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
@@ -139,15 +139,15 @@
                         <img src="assets/img/about.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
-                        <h3>Dagangan</h3>
+                        <h3>Porter/Asisten Berbelanja</h3>
                         <p class="fst-italic">
-                            Cabai Asli Manado
+                            Porter atau asisten berbelanja adalah masyarakat yang menawarkan jasa dengan tugas yang bervariasi:
                         </p>
                         <ul>
-                            <li><i class="bi bi-check-circle"></i>Bersih</li>
-                            <li><i class="bi bi-check-circle"></i>Murah</li>
+                            <li><i class="bi bi-check-circle"></i>Mengangkat Barang Belanjaan</li>
+                            <li><i class="bi bi-check-circle"></i>Mengarahkan Pengunjung Pasar atau sebagai Tour Guide</li>
+                            <li><i class="bi bi-check-circle"></i>Menawarkan produk dagangan dari Merchant atau Pedagang Lapak</li>
                         </ul>
-                        <a href="#" class="read-more">Baca Selengkapnya <i class="bi bi-long-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -176,10 +176,11 @@
                         <div class="col-lg-2 col-md-7 footer-links">
                             <h4>Pintasan</h4>
                             <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Beranda</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Layanan</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Riwayat</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Tentang</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#hero">Beranda</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#histori">Riwayat</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#about">Promosi</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="#">Profil</a></li>
                             </ul>
                         </div>
 
@@ -197,7 +198,6 @@
 
                     </div>
                     <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
                     </div>
 
@@ -215,7 +215,7 @@
         <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
         <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
         <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
-
+        <script src="https://cdn.rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>
 
 </body>
