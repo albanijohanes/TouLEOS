@@ -25,7 +25,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md bg-body navbar-dark" id="app-navbar">
-        <div class="container-fluid"><img src="assets/img/Logo%20web%20Tou%20Leos%20(3).png" style="width: 50px;"><a class="navbar-brand" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container-fluid"><img src="{{ asset('merchantassets/img/Logo web Tou Leos (3).png') }}" style="width: 50px;"><a class="navbar-brand" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link active" href="{{ route('beranda_merchant') }}">Beranda</a></li>
@@ -114,10 +114,10 @@
                 <option value="30">30</option>
                 <option value="31">31</option>
             </select><select class="display-inline-block" style="margin-left: 5px;">
-                <option value="2016" selected="">2023</option>
-                <option value="2017">2022</option>
-                <option value="2017">2021</option>
-                <option value="2017">2020</option>
+                <option value="2023" selected="">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
             </select></div>
     </div>
     <div class="container">

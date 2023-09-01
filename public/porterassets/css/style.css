@@ -14,7 +14,7 @@
 }
 
 #Judul {
-  color:#47A992;
+  color:rgba(109, 205, 61, 0.9);
 }
 
 #Judulku {
@@ -31,17 +31,17 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #47A992;
-  color: #47A992;
+  background: rgba(109, 205, 61, 0.9);
+  color: rgba(109, 205, 61, 0.9);
 }
 
 a {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   text-decoration: none;
 }
 
 a:hover {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   text-decoration: none;
 }
 
@@ -94,7 +94,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background: #47A992;
+  background: rgba(109, 205, 61, 0.9);
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -108,7 +108,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #47A992;
+  background: rgba(109, 205, 61, 0.9);
   color: #fff;
 }
 
@@ -299,7 +299,7 @@ h6 {
 }
 
 .accordion-button:not(.collapsed) {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   background-color: #f6f9ff;
 }
 
@@ -311,7 +311,7 @@ h6 {
 
 .accordion-flush .accordion-button:not(.collapsed) {
   box-shadow: none;
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
 }
 
 .accordion-flush .accordion-body {
@@ -359,13 +359,13 @@ h6 {
 
 .nav-tabs-bordered .nav-link:hover,
 .nav-tabs-bordered .nav-link:focus {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
 }
 
 .nav-tabs-bordered .nav-link.active {
   background-color: #fff;
-  color: #47A992;
-  border-bottom: 2px solid #47A992;
+  color: rgba(109, 205, 61, 0.9);
+  border-bottom: 2px solid rgba(109, 205, 61, 0.9);
 }
 
 /*--------------------------------------------------------------
@@ -389,7 +389,7 @@ h6 {
 .logo span {
   font-size: 26px;
   font-weight: 700;
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   font-family: "Nunito", sans-serif;
 }
 
@@ -408,7 +408,7 @@ h6 {
   font-size: 32px;
   padding-left: 10px;
   cursor: pointer;
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
 }
 
 .header .search-bar {
@@ -445,7 +445,7 @@ h6 {
 .header .search-form input {
   border: 0;
   font-size: 14px;
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   border: 1px solid rgba(1, 41, 112, 0.2);
   padding: 7px 38px 7px 8px;
   border-radius: 3px;
@@ -468,7 +468,7 @@ h6 {
 }
 
 .header .search-form button i {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
 }
 
 /*--------------------------------------------------------------
@@ -485,13 +485,13 @@ h6 {
 
 .header-nav .nav-icon {
   font-size: 22px;
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   margin-right: 25px;
   position: relative;
 }
 
 .header-nav .nav-profile {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
 }
 
 .header-nav .nav-profile img {
@@ -625,7 +625,7 @@ h6 {
   padding: 20px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #47A992 transparent;
+  scrollbar-color: rgba(109, 205, 61, 0.9) transparent;
   box-shadow: 0px 0px 20px rgb(74, 38, 0);
   background-color: #fff;
 }
@@ -785,7 +785,7 @@ h6 {
 }
 
 .dashboard .filter .icon {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   padding-right: 20px;
   padding-bottom: 5px;
   transition: 0.3s;
@@ -794,7 +794,7 @@ h6 {
 
 .dashboard .filter .icon:hover,
 .dashboard .filter .icon:focus {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
 }
 
 .dashboard .filter .dropdown-header {
@@ -822,7 +822,7 @@ h6 {
 
 .dashboard .info-card h6 {
   font-size: 28px;
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   font-weight: 700;
   margin: 0;
   padding: 0;
@@ -838,7 +838,7 @@ h6 {
 }
 
 .dashboard .sales-card .card-icon {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   background: #f6f6fe;
 }
 
@@ -848,7 +848,7 @@ h6 {
 }
 
 .dashboard .customers-card .card-icon {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   background: #ffecdf;
 }
 
@@ -918,17 +918,17 @@ h6 {
 }
 
 .dashboard .news h4 a {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   transition: 0.3s;
 }
 
 .dashboard .news h4 a:hover {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
 }
 
 .dashboard .news p {
   font-size: 14px;
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   margin-left: 95px;
 }
 
@@ -984,7 +984,7 @@ h6 {
   background-color: #fff;
   border-radius: 0.25rem;
   text-align: center;
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   padding: 15px 0;
 }
 
@@ -1033,7 +1033,7 @@ h6 {
 }
 
 .profile .profile-card .social-links a:hover {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
 }
 
 .profile .profile-overview .row {
@@ -1069,7 +1069,7 @@ h6 {
 }
 
 .faq .basic p {
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
 }
 
 /*--------------------------------------------------------------
@@ -1101,7 +1101,7 @@ h6 {
 
 .contact .php-email-form .error-message {
   display: none;
-  color: #47A992;
+  color: rgba(109, 205, 61, 0.9);
   background: #622900;
   text-align: left;
   padding: 15px;
