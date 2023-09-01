@@ -62,9 +62,10 @@ Route::middleware('auth')->group(function(){
 
     //Sebagai Merchant
     Route::middleware('role:merchant')->group(function(){
-        Route::get('merchant', 'PageController@berandaMerchant')->name('beranda_merchant');
-        Route::get('merchant/dagangan', 'PageController@editMerchant')->name('dagangan_merchant');
-        Route::get('merchant/profile', 'PageController@profilMerchant')->name('profile_merchant');
-        Route::get('merchant/tambah_dagangan', 'PageController@tambahDagang')->name('tambah_dagang');
+        Route::get('merchant', [PageController::class, 'berandaMerchant'])->name('beranda_merchant');
+        Route::get('merchant/dagangan', [PageController::class, 'editDagang'])->name('dagangan_merchant');
+        Route::get('merchant/profile', [PageController::class, 'profilMerchant'])->name('profile_merchant');
+        Route::get('merchant/tambahdagangan', [PageController::class, 'tambahDagang'])->name('tambah_dagang');
+        Route::get('merchant/editprofile', [PageController::class, 'EditprofileMerchant'])->name('editmerchant');
     });
 });
