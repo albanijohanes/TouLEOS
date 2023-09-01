@@ -43,11 +43,14 @@
                         <h3 style="margin-top: 20px;margin-right: -53px;margin-left: -49px;padding-left: 20px;padding-right: 24px;"
                             class="pengunjung">pengunjung pasar</h3>
                         <hr>
-                    </div><a href="{{ route('logincustomer', ['role' => 'customer']) }}"><button class="btn btn-primary" type="button"
-                        style="padding-left: 20px;padding-right: 20px;margin-right: 20px;margin-left: 20px;margin-bottom: 5px;font-family: Poppins, sans-serif;font-size: 14px;">MASUK</button></a>
-                        <a href="{{ route('registeruser', ['role' => 'customer']) }}"><button
-                        class="btn btn-primary" type="button"
-                        style="padding-left: 20px;padding-right: 20px;margin-right: 20px;margin-bottom: 5px;margin-left: 20px;font-family: Poppins, sans-serif;font-size: 14px;">DAFTAR</button></a>
+                    </div><a
+                        href="{{ route('logincustomer', ['role' => 'customer']) }}"><button
+                            class="btn btn-primary" type="button"
+                            style="padding-left: 20px;padding-right: 20px;margin-right: 20px;margin-left: 20px;margin-bottom: 5px;font-family: Poppins, sans-serif;font-size: 14px;">MASUK</button></a>
+                    <a
+                        href="{{ route('registeruser', ['role' => 'customer']) }}"><button
+                            class="btn btn-primary" type="button"
+                            style="padding-left: 20px;padding-right: 20px;margin-right: 20px;margin-bottom: 5px;margin-left: 20px;font-family: Poppins, sans-serif;font-size: 14px;">DAFTAR</button></a>
                 </div>
             </div>
             <div class="col-sm-4 col-md-4">
@@ -66,19 +69,20 @@
                         <h3 style="margin-top: 20px;font-family: Poppins, sans-serif;" class="porter">porter</h3>
                         <hr>
                     </div>
-                    <a href="{{ route('loginporter', ['role' => 'porter']) }}">
+                    <a
+                        href="{{ route('loginporter', ['role' => 'porter']) }}">
                         <button class="btn btn-primary" type="button"
-                        style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;font-family: Poppins, sans-serif;">
-                        MASUK
-                    </button>
-                </a>
-                <a href="{{ route('registerporter', ['role' => 'porter']) }}">
-                    <button
-                        class="btn btn-primary" type="button"
-                        style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;margin-bottom: 5px;font-family: Poppins, sans-serif;font-size: 14px;">
-                        DAFTAR
-                    </button>
-                </a>
+                            style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;font-family: Poppins, sans-serif;">
+                            MASUK
+                        </button>
+                    </a>
+                    <a
+                        href="{{ route('registerporter', ['role' => 'porter']) }}">
+                        <button class="btn btn-primary" type="button"
+                            style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;margin-bottom: 5px;font-family: Poppins, sans-serif;font-size: 14px;">
+                            DAFTAR
+                        </button>
+                    </a>
                 </div>
             </div>
             <div class="col-sm-4 col-md-4">
@@ -96,10 +100,20 @@
                     <div class="service-content" style="padding-top: 16px;font-family: Poppins, sans-serif;">
                         <h3 style="margin-top: 20px;" class="merchant">merchant</h3>
                         <hr>
-                    </div><a href="{{ route('loginmerchant', ['role' => 'merchant']) }}"><button class="btn btn-primary" type="button"
-                        style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;font-family: Poppins, sans-serif;">MASUK</button></a><a href="{{ route('registermerchant', ['role' => 'merchant']) }}"><button
-                        class="btn btn-primary" type="button"
-                        style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;margin-bottom: 5px;font-family: Poppins, sans-serif;">DAFTAR</button></a>
+                    </div><a
+                        href="{{ route('loginmerchant', ['role' => 'merchant']) }}"><button
+                            class="btn btn-primary" type="button"
+                            style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;font-family: Poppins, sans-serif;">
+                            MASUK
+                        </button>
+                    </a>
+                    <a
+                        href="{{ route('registermerchant', ['role' => 'merchant']) }}">
+                        <button class="btn btn-primary" type="button"
+                            style="padding-left: 20px;padding-right: 20px;margin-left: 20px;margin-right: 20px;margin-bottom: 5px;font-family: Poppins, sans-serif;">
+                            DAFTAR
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
