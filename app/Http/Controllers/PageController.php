@@ -45,7 +45,10 @@ class PageController extends Controller
     public function tambahDagang(){
         return view('merchant/tambah_dagang');
     }
-    public function profilMerchant(){
+    public function EditprofileMerchant(){
+        return view('merchant/edit_profile');
+    }
+    public function ProfileMerchant(){
         return view('merchant/profile');
     }
 }
