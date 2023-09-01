@@ -28,9 +28,9 @@
         <div class="container-fluid"><img src="assets/img/Logo%20web%20Tou%20Leos%20(3).png" style="width: 50px;"><a class="navbar-brand" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">Profil Anda</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#" style="color: rgb(252,0,0);">Keluar</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ route('beranda_merchant') }}">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ route('profile_merchant') }}">Profil Anda</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ route('logout') }}" style="color: rgb(252,0,0);">Keluar</a></li>
                 </ul>
             </div>
         </div>
