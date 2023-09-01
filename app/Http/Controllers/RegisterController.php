@@ -39,8 +39,8 @@ class RegisterController extends Controller
         if ($user) {
             if ($request->role === 'porter') {
                 if ($request->hasFile('ktp') && $request->hasFile('skkb')) {
-                    $ktp = $request->file('ktp')->store('user_pdf');
-                    $skkb = $request->file('skkb')->store('user_pdfs');
+                    $ktp = $request->file('ktp')->store('ktp');
+                    $skkb = $request->file('skkb')->store('skkb');
                     Porter::create([
                         'user_id' => $user->id,
                         'alamat' => $request->alamat,
@@ -59,8 +59,8 @@ class RegisterController extends Controller
                 }
             } elseif ($request->role === 'merchant') {
                 if ($request->hasFile('ktp') && $request->hasFile('siup')) {
-                    $ktp = $request->file('ktp')->store('user_pdf');
-                    $siup = $request->file('siup')->store('user_pdfs');
+                    $ktp = $request->file('ktp')->store('ktp');
+                    $siup = $request->file('siup')->store('siup');
                     Merchant::create([
                         'user_id' => $user->id,
                         'alamat' => $request->alamat,
