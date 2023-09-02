@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>ADMIN-Pengunjung Pasar</title>
+    <title>
+        ADMIN-Pengunjung Pasar
+    </title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
@@ -14,20 +16,60 @@
 <body id="page-top">
     <div id="wrapper">
         <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark" style="background: url(&quot;assets/img/Aldenaire%20&%20Partners.png&quot;) bottom;">
-            <div class="container-fluid d-flex flex-column p-0"><img src="assets/img/Logo%20web%20Tou%20Leos%20(3).png" style="width: 70px;margin-right: 0px;"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon rotate-n-15"></div>
-                    <div class="sidebar-brand-text mx-3"><span>ADMIN</span></div>
+            <div class="container-fluid d-flex flex-column p-0">
+                <img src="assets/img/Logo%20web%20Tou%20Leos%20(3).png" style="width: 70px;margin-right: 0px;">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15">
+                    </div>
+                    <div class="sidebar-brand-text mx-3">
+                        <span>
+                            ADMIN
+                        </span>
+                    </div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar" style="margin-top: -32px;padding-top: 12px;">
-                    <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-user" style="font-size: 13px;"></i><span style="color: rgba(233,234,238);font-size: 16px;">Pengunjung Pasar</span></a></li>
                     <li class="nav-item">
-                        <div class="nav-item dropdown show"><a class="dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" href="#" style="color: rgb(233,234,238);margin-left: 10px;"><i class="far fa-user-circle"></i>Porter</a>
-                            <div class="dropdown-menu show" data-bs-popper="none"><a class="dropdown-item" href="porter_p.html">Permohonan</a><a class="dropdown-item" href="porter_a.html">Aktif</a></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-user" style="font-size: 13px;">
+                            </i>
+                            <span style="color: rgba(233,234,238);font-size: 16px;">
+                                Pengunjung Pasar
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-item dropdown show">
+                            <a class="dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" href="#" style="color: rgb(233,234,238);margin-left: 10px;">
+                                <i class="far fa-user-circle">
+                                    </i>
+                                    Porter
+                                </a>
+                            <div class="dropdown-menu show" data-bs-popper="none">
+                                <a class="dropdown-item" href="porter_p.html">
+                                    Permohonan
+                                </a>
+                                <a class="dropdown-item" href="porter_a.html">
+                                    Aktif
+                                </a>
+                            </div>
                         </div>
-                        <div class="nav-item dropdown show"><a class="dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" href="#" style="color: rgb(233,234,238);margin-left: 15px;"><i class="far fa-star"></i>Merchant</a>
-                            <div class="dropdown-menu show" data-bs-popper="none"><a class="dropdown-item" href="merchant_p.html">Permohonan</a><a class="dropdown-item" href="merchant_a.html">Aktif</a></div>
+                        <div class="nav-item dropdown show">
+                            <a class="dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" href="#" style="color: rgb(233,234,238);margin-left: 15px;">
+                                <i class="far fa-star">
+                                    </i>
+                                    Merchant
+                                </a>
+                            <div class="dropdown-menu show" data-bs-popper="none">
+                                <a class="dropdown-item" href="merchant_p.html">
+                                    Permohonan
+                                </a>
+                                <a class="dropdown-item" href="merchant_a.html">
+                                    Aktif
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -37,11 +79,21 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th style="font-family: Poppins, sans-serif;">No</th>
-                        <th style="padding-right: 99px;padding-left: 100px;font-family: Poppins, sans-serif;">Nama</th>
-                        <th style="padding-left: 100px;padding-right: 100px;font-family: Poppins, sans-serif;">Email</th>
-                        <th style="padding-left: 40px;padding-right: 41px;font-family: Poppins, sans-serif;text-align: center;">No Handphone</th>
-                        <th style="padding-right: 64px;padding-left: 64px;font-family: Poppins, sans-serif;">Jenis Kelamin</th>
+                        <th style="font-family: Poppins, sans-serif;">
+                            No
+                        </th>
+                        <th style="padding-right: 99px;padding-left: 100px;font-family: Poppins, sans-serif;">
+                            Nama
+                        </th>
+                        <th style="padding-left: 100px;padding-right: 100px;font-family: Poppins, sans-serif;">
+                            Email
+                        </th>
+                        <th style="padding-left: 40px;padding-right: 41px;font-family: Poppins, sans-serif;text-align: center;">
+                            No Handphone
+                        </th>
+                        <th style="padding-right: 64px;padding-left: 64px;font-family: Poppins, sans-serif;">
+                            Jenis Kelamin
+                        </th>
                     </tr>
                 </thead>
                 <tbody>

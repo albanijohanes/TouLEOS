@@ -25,9 +25,21 @@
         <div class="container-fluid"><img src="assets/img/Logo%20web%20Tou%20Leos%20(3).png" style="width: 50px;"><a class="navbar-brand" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#" style="font-family: Poppins, sans-serif;">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#" style="font-family: Poppins, sans-serif;">Profil Anda</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#" style="color: rgb(252,0,0);font-family: Poppins, sans-serif;">Keluar</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('beranda_merchant') }}" style="font-family: Poppins, sans-serif;">
+                            Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('profile_merchant') }}" style="font-family: Poppins, sans-serif;">
+                        Profil Anda
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('logout') }}" style="color: rgb(252,0,0);font-family: Poppins, sans-serif;">
+                            Keluar
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -41,30 +53,91 @@
         <form>
             <div class="row profile-row" style="padding-top: 0px;margin-top: 19px;">
                 <div class="col-md-8" style="margin-right: 0px;padding-right: 0px;padding-left: 0px;margin-left: 0px;">
-                    <h1 style="font-family: Poppins, sans-serif;text-align: center;">Profil Anda</h1>
+                    <h1 style="font-family: Poppins, sans-serif;text-align: center;">
+                        Profil Anda
+                    </h1>
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group mb-3"><label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">Nama</label><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;"></div>
+                            <div class="form-group mb-3">
+                                <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                    Nama
+                                </label>
+                                <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                            </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group mb-3"><label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">Nomor HP</label><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;"></div>
+                            <div class="form-group mb-3">
+                                <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                    Nomor HP
+                                </label>
+                                <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group mb-3"><label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">Email </label><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;"></div>
-                    <div style="font-size: 16px;font-family: Poppins, sans-serif;" class="form-group mb-3"><label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 16px;">Jenis Kelamin</label><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;"></div>
-                    <div class="form-group mb-3"><label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">Alamat</label><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;"></div>
+                    <div class="form-group mb-3">
+                        <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
+                            Email
+                        </label>
+                        <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                    </div>
+                    <div style="font-size: 16px;font-family: Poppins, sans-serif;" class="form-group mb-3">
+                        <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 16px;">
+                            Jenis Kelamin
+                        </label>
+                        <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
+                            Alamat
+                        </label>
+                        <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                    </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group mb-3"><label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">KTP (Kartu Tanda Penduduk):&nbsp;<a href="#">LIHAT</a></label></div>
-                            <div class="form-group mb-3"><label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">SIUP (Surat Ijin Usaha Perdagangan):&nbsp;<a href="#">LIHAT</a></label></div>
+                            <div class="form-group mb-3">
+                                <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                    KTP (Kartu Tanda Penduduk):&nbsp;
+                                    <a href="#">
+                                        LIHAT
+                                    </a>
+                                </label>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                    SIUP (Surat Ijin Usaha Perdagangan):&nbsp;
+                                    <a href="#">
+                                        LIHAT
+                                    </a>
+                                </label>
+                            </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
-                            <div class="form-group mb-3"><label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">Nama Pengguna (<em>Username</em>)</label><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;"></div>
-                            <div class="form-group mb-3"><label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">Kata Sandi</label><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;"></div>
+                            <div class="form-group mb-3">
+                                <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                    Nama Pengguna
+                                    (<em>
+                                        Username
+                                    </em>)
+                                </label>
+                                <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                    Kata Sandi
+                                </label>
+                                <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 content-right"><button class="btn btn-danger form-btn" type="reset" style="font-family: Poppins, sans-serif;background: rgba(105,72,45,0.9);">EDIT</button></div>
+                        <div class="col-md-12 content-right">
+
+                            <button class="btn btn-danger form-btn" type="reset" style="font-family: Poppins, sans-serif;background: rgba(105,72,45,0.9);">
+                                <a href="{{ route('editmerchant') }}">
+                                    EDIT
+                                </a>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

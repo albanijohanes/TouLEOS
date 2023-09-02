@@ -127,7 +127,10 @@
                                         <div class="col-lg-3 col-md-4 label">Email</div>
                                         <div class="col-lg-9 col-md-8">owenkalumata46@gmail.com</div>
                                     </div>
-
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Porter Kode</div>
+                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->porter->porter_id }}</div>
+                                    </div>
                                 </div>
 
                                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
@@ -263,7 +266,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="text-center">
                                             <button type="submit"
                                                 style="background-color: #964B00; color: #FFFFFF;">Save Changes</button>

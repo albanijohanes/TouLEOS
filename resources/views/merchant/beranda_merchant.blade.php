@@ -28,9 +28,20 @@
         <div class="container-fluid"><img src="{{ asset('merchantassets/img/Logo web Tou Leos (3).png') }}" style="width: 50px;"><a class="navbar-brand" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active" href="{{ route('beranda_merchant') }}">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{{ route('profile_merchant') }}">Profil Anda</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="{{ route('logout') }}" style="color: rgb(252,0,0);">Keluar</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ route('beranda_merchant') }}">
+                        Beranda
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('profile_merchant') }}">
+                            Profil Anda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('logout') }}" style="color: rgb(252,0,0);">
+                            Keluar
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -39,30 +50,178 @@
         <div class="row gy-4 gy-md-0">
             <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
                 <div style="max-width: 350px;">
-                    <h2 class="text-uppercase fw-bold" style="font-size: 39px;padding-right: 0px;font-family: Poppins, sans-serif;">Selamat datang</h2>
-                    <p class="my-3" style="font-family: Poppins, sans-serif;">Layanang Merchant/Pedagang memungkinkan pedagang melakukan promosi dagangan ke Porter</p><a class="btn btn-primary btn-lg me-2" role="button" href="#" style="background: rgba(109,205,61,0.9);font-family: Poppins, sans-serif;font-size: 15px;border-radius: 15px;">Tambah Promosi</a><a class="btn btn-outline-primary btn-lg" role="button" href="#" style="background: rgba(109,205,61,0.9);color: rgb(255,255,255);font-size: 15px;font-family: Poppins, sans-serif;border-radius: 15px;">Riwayat</a>
+                    <h2 class="text-uppercase fw-bold" style="font-size: 39px;padding-right: 0px;font-family: Poppins, sans-serif;">
+                        Selamat datang
+                    </h2>
+                    <p class="my-3" style="font-family: Poppins, sans-serif;">
+                        Layanang Merchant/Pedagang memungkinkan pedagang melakukan promosi dagangan ke Porter
+                    </p>
+                    <a class="btn btn-primary btn-lg me-2" type="button" data-bs-toggle="modal" data-bs-target="#addPromosi" style="background: rgba(109,205,61,0.9);font-family: Poppins, sans-serif;font-size: 15px;border-radius: 15px;">
+                        Tambah Promosi
+                    </a>
+                    <div class="modal fade" role="dialog" tabindex="-1" id="addPromosi" aria-hidden="true" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;">
+                                        Tambah Promosi Dagangan
+                                    </h4>
+                                    <button class="close" type="button" aria-label="Close" data-dismiss="modal" style="color: rgb(0,0,0);">
+                                        <span aria-hidden="true">
+                                            ×
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <form data-bss-recipient="67b465af92ed4ffdcc0537eaadc6dd61">
+                                                <div class="form-group">
+                                                    <label style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                                    Hari/Tanggal
+                                                </label>
+                                                    <input class="form-control" type="date" style="font-family: Poppins, sans-serif;">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                                    Nama Bahan/Barang
+                                                </label>
+                                                    <input class="form-control" type="text" style="font-family: Poppins, sans-serif;">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                                    Satuan
+                                                </label>
+                                                    <input class="form-control" type="text" style="font-family: Poppins, sans-serif;">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                                    Harga
+                                                </label>
+                                                    <input class="form-control" type="number" style="font-family: Poppins, sans-serif;">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                                    Deskripsi
+                                                </label>
+                                                    <textarea class="form-control" style="font-family: Poppins, sans-serif;">
+                                                </textarea>
+                                                </div>
+                                                <div class="modal-footer"><button class="btn btn-dark" style="width: 100%;background: rgba(105,72,45,0.9);" type="submit">Tambah</button></div>
+                                            </form>
+                                        </div>
+                                        <div class="col-lg-6 hide-ele">
+                                            <img style="width: 100%;margin-top: 38px;" src="assets/img/20230712_124645.jpg">
+                                            <img style="width: 100%;margin-top: 50px;" src="assets/img/20230712_124645.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#riwayat"  role="button" href="#" style="background: rgba(109,205,61,0.9);color: rgb(255,255,255);font-size: 15px;font-family: Poppins, sans-serif;border-radius: 15px;">
+                        Riwayat
+                    </a>
+                    <div class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" id="riwayat">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;text-align: center;padding-right: 0px;">Edit Detail Dagangan</h4><button class="close" type="button" aria-label="Close" data-dismiss="modal" style="color: rgb(0,0,0);"><span aria-hidden="true">×</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <form data-bss-recipient="67b465af92ed4ffdcc0537eaadc6dd61" style="font-family: Poppins, sans-serif;">
+                                                <div class="form-group" style="font-size: 12px;">
+                                                    <label style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 12px;">Status Promosi</label><select class="form-control" style="font-size: 12px;font-family: Poppins, sans-serif;">
+                                                        <optgroup label="This is a group">
+                                                            <option value="12" selected="">
+                                                                Tidak Aktif
+                                                            </option>
+                                                            <option value="13">
+                                                                Aktif
+                                                            </option>
+                                                        </optgroup>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group" style="font-size: 12px;font-family: Poppins, sans-serif;">
+                                                    <label style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 12px;">
+                                                        Nama Bahan/Barang
+                                                    </label>
+                                                    <input class="form-control" type="text" style="font-family: Poppins, sans-serif;font-size: 12px;">
+                                                </div>
+                                                <div class="form-group" style="font-size: 12px;font-family: Poppins, sans-serif;">
+                                                    <label style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                                        Satuan
+                                                    </label>
+                                                    <input class="form-control" type="text" style="font-family: Poppins, sans-serif;font-size: 12px;">
+                                                </div>
+                                                <div class="form-group" style="font-size: 12px;font-family: Poppins, sans-serif;">
+                                                    <label style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                                        Harga
+                                                    </label>
+                                                    <input class="form-control" type="number" style="font-family: Poppins, sans-serif;font-size: 12px;">
+                                                </div>
+                                                <div class="form-group" style="font-size: 12px;font-family: Poppins, sans-serif;">
+                                                    <label style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                                        Deskripsi
+                                                    </label>
+                                                    <textarea class="form-control" style="font-family: Poppins, sans-serif;font-size: 12px;">
+                                                    </textarea>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-dark" style="width: 100%;background: rgba(105,72,45,0.9);font-size: 12px;font-family: Poppins, sans-serif;" type="submit">
+                                                        Simpan
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-lg-6 hide-ele">
+                                            <img style="width: 100%;" src="assets/img/20230712_124645.jpg">
+                                            <img style="width: 100%;" src="assets/img/20230712_124645.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="p-xl-5 m-xl-5"><img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" src="assets/img/20230712_124645.jpg"></div>
+                <div class="p-xl-5 m-xl-5">
+                    <img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" src="assets/img/20230712_124645.jpg">
+                </div>
             </div>
         </div>
     </div>
-    <h1 style="text-align: center;font-size: 16px;font-family: Poppins, sans-serif;font-weight: bold;margin-top: 15px;">Promosi Aktif</h1>
+    <h1 style="text-align: center;font-size: 16px;font-family: Poppins, sans-serif;font-weight: bold;margin-top: 15px;">
+        Promosi Aktif
+    </h1>
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="list-group"><a class="list-group-item list-group-item-action flex-column align-items-start" href="#" style="font-family: Poppins, sans-serif;">
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-action flex-column align-items-start" href="#" style="font-family: Poppins, sans-serif;">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1" style="font-size: 12px;">Nama Bahan:</h5>
+                            <h5 class="mb-1" style="font-size: 12px;">
+                                Nama Bahan
+                                :</h5>
                         </div>
-                        <p class="mb-1" style="font-size: 13px;">Paragraph</p>
-                    </a><a class="list-group-item list-group-item-action flex-column align-items-start" href="#" style="font-family: Poppins, sans-serif;">
+                        <p class="mb-1" style="font-size: 13px;">
+                            Paragraph
+                        </p>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start" href="#" style="font-family: Poppins, sans-serif;">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1" style="font-size: 12px;">Nama Bahan:</h5>
+                            <h5 class="mb-1" style="font-size: 12px;">
+                                Nama Bahan:
+                            </h5>
                         </div>
-                        <p class="mb-1" style="font-size: 12px;">Paragraph</p>
-                    </a></div>
+                        <p class="mb-1" style="font-size: 12px;">
+                            Paragraph
+                        </p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -125,15 +284,31 @@
             <div class="col-md-12">
                 <div class="list-group"><a class="list-group-item list-group-item-action flex-column align-items-start" href="#" style="font-family: Poppins, sans-serif;">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1" style="font-size: 12px;">Nama Bahan</h5><span class="badge rounded-pill bg-primary align-self-center">Aktif</span>
+                            <h5 class="mb-1" style="font-size: 12px;">
+                                Nama Bahan
+                            </h5>
+                            <span class="badge rounded-pill bg-primary align-self-center">
+                                Aktif
+                            </span>
                         </div>
-                        <p class="mb-1" style="font-size: 12px;">Paragraph</p>
-                    </a><a class="list-group-item list-group-item-action flex-column align-items-start" href="#" style="font-family: Poppins, sans-serif;">
+                        <p class="mb-1" style="font-size: 12px;">
+                            Paragraph
+                        </p>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start" href="#" style="font-family: Poppins, sans-serif;">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1" style="font-size: 12px;">Nama Bahan</h5><span class="badge rounded-pill bg-primary align-self-center">Aktif</span>
+                            <h5 class="mb-1" style="font-size: 12px;">
+                                Nama Bahan
+                            </h5>
+                            <span class="badge rounded-pill bg-primary align-self-center">
+                                Aktif
+                            </span>
                         </div>
-                        <p class="mb-1" style="font-size: 12px;">Paragraph</p>
-                    </a></div>
+                        <p class="mb-1" style="font-size: 12px;">
+                            Paragraph
+                        </p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -146,6 +321,9 @@
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="assets/js/Navbar---Apple-navbar---apple.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/smart-forms.min.js"></script>
+    <script src="assets/js/Auto-Modal-Popup-modal.js"></script>
 </body>
 
 </html>
