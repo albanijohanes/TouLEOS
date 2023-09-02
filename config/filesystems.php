@@ -65,6 +65,27 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
+        'ktp' => [
+            'driver' => 'local',
+            'root' => storage_path('app/ktp'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+        'skkb' => [
+            'driver' => 'local',
+            'root' => storage_path('app/skkb'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+        'siup' => [
+            'driver' => 'local',
+            'root' => storage_path('app/siup'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
     ],
 
     /*
