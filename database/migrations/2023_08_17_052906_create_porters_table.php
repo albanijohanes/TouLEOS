@@ -20,6 +20,7 @@ class CreatePortersTable extends Migration
             $table->string('alamat', 255);
             $table->string('skkb');
             $table->string('ktp');
+            $table->string('porter_id', 5)->unique();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
