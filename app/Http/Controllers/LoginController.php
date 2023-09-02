@@ -29,7 +29,7 @@ class LoginController extends Controller
     public function loginmerchant(){
         if(Auth::check()){
             if(Auth::user()->role == 'merchant'){
-                return redirect()->route('merchant');
+                return redirect()->route('beranda_merchant');
             }
         }
         return view('auth/login_merchant');
