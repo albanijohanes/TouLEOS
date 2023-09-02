@@ -11,7 +11,8 @@ class Porter extends Model
         'alamat',
         'email',
         'skkb',
-        'ktp'
+        'ktp',
+        'porter_id'
     ];
 
     public function User(){
