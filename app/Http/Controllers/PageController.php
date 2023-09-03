@@ -51,4 +51,19 @@ class PageController extends Controller
     public function ProfileMerchant(){
         return view('merchant/profile');
     }
+    public function AdminBeranda(){
+        return view('Admin/pengunjung');
+    }
+    public function AdminMerchantAktif(){
+        return view('Admin/merchant_a');
+    }
+    public function AdminMerchantPermohonan(){
+        return view('Admin/merchant_p');
+    }
+    public function AdminPorterAktif(){
+        return view('Admin/porter_a');
+    }
+    public function AdminPorterPermohonan(){
+        return view('Admin/porter_p');
+    }
 }
