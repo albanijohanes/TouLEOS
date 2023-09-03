@@ -36,7 +36,6 @@ class RegisterController extends Controller
             'no_hp' => $request->no_hp,
             'jk' => $request->jk,
             'role' => $request->role,
-            'status' => 'pending',
         ]);
 
         if ($user) {
@@ -66,6 +65,7 @@ class RegisterController extends Controller
                         'skkb' => $skkb,
                         'ktp' => $ktp,
                         'porter_id' => $porter_id,
+                        'status' => 'pending',
                     ]);
                 } else {
                     // Handle the case where required files are not present
@@ -99,6 +99,7 @@ class RegisterController extends Controller
                         'email' => $request->email,
                         'siup' => $siup,
                         'ktp' => $ktp,
+                        'status' => 'pending',
                     ]);
                 } else {
                     // Handle the case where required files are not present
