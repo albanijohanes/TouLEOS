@@ -26,6 +26,7 @@ Route::group([], function () {
     Route::get('login/merchant', [LoginController::class, 'loginmerchant'])->name('loginmerchant');
     Route::get('login/porter', [LoginController::class, 'loginporter'])->name('loginporter');
     Route::get('login/user', [LoginController::class, 'loginuser'])->name('logincustomer');
+    Route::get('admin', [LoginController::class, 'loginadmin'])->name('admin');
     Route::post('login', [LoginController::class, 'loginPost'])->name('login.post');
 });
 
@@ -67,5 +68,14 @@ Route::middleware('auth')->group(function(){
         Route::get('merchant/profile', [PageController::class, 'ProfileMerchant'])->name('profile_merchant');
         Route::get('merchant/tambahdagangan', [PageController::class, 'tambahDagang'])->name('tambah_dagang');
         Route::get('merchant/editprofile', [PageController::class, 'EditprofileMerchant'])->name('editmerchant');
+    });
+
+    //Sebagai Admin
+    Route::middleware('role:admin')->group(function(){
+        Route::get('admin/beranda', [PageController::class, 'AdminBeranda'])->name('berandaAdmin');
+        Route::get('admin/merchant/aktif', [PageController::class, 'AdminMerchantAktif'])->name('merchant_aktif');
+        Route::get('admin/merchant/permohonan', [PageController::class, 'AdminMerchantPermohonan'])->name('merchant_permohonan');
+        Route::get('admin/porter/aktif', [PageController::class, 'AdminPorterAktif'])->name('porter_aktif');
+        Route::get('admin/porter/permohonan', [PageController::class, 'AdminPorterPermohonan'])->name('porter_permohonan');
     });
 });
