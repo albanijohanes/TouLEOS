@@ -59,7 +59,12 @@ class LoginController extends Controller
             'password' => $request->password
             ])
             ){
-            return $this->redirectToRoleDashboard();
+            $user = Auth::user();
+            if($user->status === 'approved'){
+                return $this->redirectToRoleDashboard();
+            }elseif($user->status === 'pending'){
+                return redirect()->route('start')->withErrors(['auth' => 'Your account is pending approval.']);
+            }
         }
         return redirect()->route('start')->withErrors(['auth' => 'password atau username salah']);
     }
