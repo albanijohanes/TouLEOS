@@ -35,7 +35,8 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
             'no_hp' => $request->no_hp,
             'jk' => $request->jk,
-            'role' => $request->role
+            'role' => $request->role,
+            'status' => 'pending',
         ]);
 
         if ($user) {
@@ -57,7 +58,7 @@ class RegisterController extends Controller
                     $skkb = $request->file('skkb')->storeAs('skkb', $uniqueSkkbName);
 
                     $porter_id = $this->generatePorterCode();
-                    
+
                     Porter::create([
                         'user_id' => $user->id,
                         'alamat' => $request->alamat,
