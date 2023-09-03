@@ -35,6 +35,15 @@ class LoginController extends Controller
         return view('auth/login_merchant');
     }
 
+    public function loginadmin(){
+        if(Auth::check()){
+            if(Auth::user()->role == 'admin'){
+                return redirect()->route('berandaAdmin');
+            }
+        }
+        return view('landingpage');
+    }
+
     public function loginPost(Request $request){
         $validator = Validator::make($request->all(), [
             'username'  => 'required',
@@ -62,6 +71,8 @@ class LoginController extends Controller
             return redirect()->route('porter');
         }elseif(Auth::user()->role == 'merchant'){
             return redirect()->route('beranda_merchant');
+        }elseif(Auth::user()->role == 'admin'){
+            return redirect()->route('berandaAdmin');
         }
     }
 
