@@ -22,6 +22,7 @@ class CreateMerchantsTable extends Migration
             $table->string('siup');
             $table->timestamps();
 
+            $table->string('status')->default('pending');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
@@ -33,6 +34,8 @@ class CreateMerchantsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('merchants');
+        Schema::table('merchants', function (Blueprint $table) {
+            $table->dropColumn('status');
+        });
     }
 }

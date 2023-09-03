@@ -23,6 +23,7 @@ class CreatePortersTable extends Migration
             $table->string('porter_id', 5)->unique();
             $table->timestamps();
 
+            $table->string('status')->default('pending');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
@@ -34,6 +35,8 @@ class CreatePortersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('porters');
+        Schema::table('porters', function (Blueprint $table) {
+            $table->dropColumn('status');
+        });
     }
 }
