@@ -7,17 +7,19 @@
     <title>
         ADMIN-Pengunjung Pasar
     </title>
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminassets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
-    <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('adminassets/fonts/fontawesome-all.min.css') }}">
 </head>
-
+    @php
+    $bgUrl = asset('adminassets/img/bg.png');
+    @endphp
 <body id="page-top">
     <div id="wrapper">
-        <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark" style="background: url(&quot;{{ asset('assets/img/Aldenaire%20&%20Partners.png') }}&quot;) bottom;">
+    <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark" style="background: url('{{ $bgUrl }}') bottom;">
             <div class="container-fluid d-flex flex-column p-0">
-                <img src="{{ asset('assets/img/Logo%20web%20Tou%20Leos%20(3).png') }}" style="width: 70px;margin-right: 0px;">
+                <img src="{{ asset('adminassets/img/Logo%20web%20Tou%20Leos%20(3).png') }}" style="width: 70px;margin-right: 0px;">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-icon rotate-n-15">
                     </div>
