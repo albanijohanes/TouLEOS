@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Merchant;
 use App\Porter;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -36,32 +37,39 @@ class AdminController extends Controller
         return redirect()->route('admin.porter');
     }
 
-    public function storeDocument(Request $request, $type, $id){
-        $disk = '';
+    public function rejectPorter($id){
+        $porter = Porter::find($id);
+        $porter->status = 'rejected';
+        $porter->save();
 
-        if ($type === 'merchant') {
-            $disk = ($request->input('document_type') === 'ktp') ? 'ktp' : 'skkb';
-        }elseif ($type === 'porter') {
-            $disk = ($request->input('document_type') === 'ktp') ? 'ktp' : 'siup';
-        }
-
-        $document = $request->file('document');
-        $document->storeAs("$type", "{$id}", $disk);
-
+        return redirect()->route('admin.porter');
     }
 
-    public function viewDocument($type, $id){
+    public function rejectMerchant($id){
+        $merchant = Merchant::find($id);
+        $merchant->status = 'rejected';
+        $merchant->save();
+
+        return redirect()->route('admin.merchant');
+    }
+
+    public function viewPdf($type, $id){
         $disk = '';
 
-        if ($type === 'merchant') {
-            $disk = (Storage::disk('ktp')->exists("$type/{$id}.pdf")) ? 'ktp' : 'siup';
-        }elseif ($type === 'porter') {
-            $disk = (Storage::disk('ktp')->exists("$type/{$id}.pdf")) ? 'ktp' : 'skkb';
+        if ($type === 'ktp') {
+            $disk = 'ktp';
+        }elseif ($type === 'skkb') {
+            $disk = 'skkb';
+        }elseif ($type === 'siup') {
+            $disk = 'siup';
         }
 
-        if (Storage::disk($disk)->exists("$type/{$id}.pdf")) {
-            $pdfPath = Storage::disk($disk)->path("$type/{$id}.pdf");
-            return response()->file($pdfPath);
+        if(Storage::disk($disk)->exists("{$id}.pdf")){
+            $pdfPath = "/storage/app/{$disk}/{$id}.pdf";
+            $pdfUrl = asset($pdfPath);
+
+            return redirect($pdfUrl);
         }
+        return abort(404);
     }
 }
