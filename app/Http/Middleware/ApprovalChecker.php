@@ -21,7 +21,7 @@ class ApprovalChecker
             $user = Auth::user();
 
             if (($user->role === 'porter' || $user->role === 'merchant') && $user->status !== 'approved' ) {
-                return redirect()->route('status.pending');
+                return redirect()->back()->with('alert', '');
             }
         }
 
