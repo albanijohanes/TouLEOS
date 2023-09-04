@@ -16,11 +16,11 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
     <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/bootstrapicons/bootstrapicons.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 </head>
 
@@ -83,7 +83,7 @@
                     <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box iconbox-blue">
                             <div class="icon">
-                                <img src="assets/img/nomor.png" class="img-fluid" alt="">
+                                <img src="{{ asset ('assets/img/nomor.png') }}" class="img-fluid" alt="">
                             </div>
                             <h4><a href="">Pemesanan Dengan ID Porter</a></h4>
                             <p>Masukkan Nomor ID Porter dan tekan PESAN</p>
@@ -95,7 +95,7 @@
                             <button type="submit" class="btn-pesan"><a href="#">PESAN</a></button>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <!-- <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box iconbox-blue">
                             <div class="icon">
                                 <img src="assets/img/scan_qr.png" class="img-fluid" alt="">
@@ -105,7 +105,7 @@
                             <br>
                             <button type="submit" class="btn-pesan"><a href="#">SCAN QR</a></button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section><!-- End Services Section -->
