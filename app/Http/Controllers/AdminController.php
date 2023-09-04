@@ -4,21 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Merchant;
 use App\Porter;
-use Illuminate\Contracts\Cache\Store;
-use Illuminate\Http\Request;
+use App\User;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
-    public function indexMerchant(){
-        $merchants = Merchant::where('status', 'pending')->get();
-
-        return view('Admin.merchant_p', compact('merchants'));
+    public function indexUser(){
+        $user = User::where('role', 'customer')->get();
+        return view('Admin/pengunjung', compact('user'));
     }
-    public function indexPorter(){
-        $porters = Porter::where('status', 'pending')->get();
 
-        return view('Admin.porter_p', compact('porters'));
+    public function AdminMerchantPermohonan(){
+        return view('Admin/merchant_p');
+    }
+
+    public function AdminPorterPermohonan(){
+        return view('Admin/porter_p');
+    }
+
+    public function indexMerchantAktif(){
+        $merchant = Merchant::with('user')->get();
+
+        return view('Admin/merchant_a', compact('merchant'));
+    }
+    public function indexPorterAktif(){
+        $porter = Porter::with('user')->get();
+
+        return view('Admin/porter_a', compact('porter'));
     }
 
     public function approveMerchant($id){

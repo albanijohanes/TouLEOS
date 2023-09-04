@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
+    public function start(){
+        return view('landingpage');
+    }
+    
     public function loginuser(){
         if(Auth::check()){
             if(Auth::user()->role == 'customer'){
@@ -60,8 +64,12 @@ class LoginController extends Controller
             ])
             ){
             $user = Auth::user();
-            if($user->status === 'approved'){
-                return $this->redirectToRoleDashboard();
+            if($user->role == 'customer'){
+                return redirect()->route('index');
+            }elseif($user->role == 'admin'){
+                return redirect()->route('berandaAdmin');
+            }elseif($user->status === 'approved'){
+                return $this->redirectToRoleDashboard($user->role);
             }elseif($user->status === 'pending'){
                 return redirect()->route('start')->withErrors(['auth' => 'Your account is pending approval.']);
             }
@@ -69,18 +77,16 @@ class LoginController extends Controller
         return redirect()->route('start')->withErrors(['auth' => 'password atau username salah']);
     }
 
-    public function redirectToRoleDashboard(){
-        if(Auth::user()->role == 'customer'){
-            return redirect()->route('index');
-        }elseif(Auth::user()->role == 'porter'){
-            return redirect()->route('porter');
-        }elseif(Auth::user()->role == 'merchant'){
-            return redirect()->route('beranda_merchant');
-        }elseif(Auth::user()->role == 'admin'){
-            return redirect()->route('berandaAdmin');
+    public function redirectToRoleDashboard($role){
+        switch ($role) {
+            case 'porter':
+                return redirect()->route('porter');
+            case 'merchant':
+                return redirect()->route('beranda_merchant');
+            default:
+                return redirect()->route('start')->withErrors(['auth' => 'Invalid user role.']);
         }
     }
-
     public function logout(Request $request){
         $request->session()->invalidate();
         $request->session()->regenerateToken();

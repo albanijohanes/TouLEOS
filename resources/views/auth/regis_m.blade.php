@@ -58,8 +58,8 @@
                         <div class="mb-3">
                             <select name="jk" class="form-select">
                                 <optgroup label="Jenis Kelamin">
-                                    <option value="12" selected="">Laki-laki</option>
-                                    <option value="13">Perempuan</option>
+                                    <option value="Laki-laki" selected="">Laki-laki</option>
+                                    <option value="Perempuan">Perempuan</option>
                                 </optgroup>
                             </select>
                             @error('jk')
