@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MerchantController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PorterController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +23,9 @@ use Mockery\Generator\StringManipulation\Pass\Pass;
 */
 
 // Routing landing page
-Route::get('/', 'PageController@start')->name('start');
+Route::group([], function (){
+    Route::get('/', [LoginController::class, 'start'])->name('start');
+});
 
 // Routing for login
 Route::group([], function () {
@@ -38,44 +44,37 @@ Route::group([], function () {
     Route::post('register', [RegisterController::class, 'registerPost'])->name('register.post');
 });
 
-//Routing User
-Route::group([], function(){
-    Route::get('index', [PageController::class, 'index'])->name('index');
-    Route::get('profiluser', [PageController::class, 'profiluser'])->name('profiluser');
-    Route::get('edituser', [PageController::class, 'edituser'])->name('edituser');
-});
-
 // Routing Authentication for every role
 Route::middleware('auth')->group(function(){
     Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
     //Sebagai Customer
     Route::middleware('role:customer')->group(function(){
-        Route::get('index', [PageController::class, 'index'])->name('index');
-        Route::get('services', [PageController::class, 'services'])->name('services');
+        Route::get('user/index', [CustomerController::class, 'index'])->name('index');
+        Route::get('user/profile', [CustomerController::class, 'profiluser'])->name('profiluser');
     });
 
     //Sebagai Porter
-    Route::middleware('role:porter')->group(function(){
-        Route::get('porter', [PageController::class, 'porter'])->name('porter');
-        Route::get('porter/profile' , [PageController::class, 'userporter'])->name('userporter');
+    Route::middleware('role:porter', 'approval')->group(function(){
+        Route::get('porter/index', [PorterController::class, 'porter'])->name('porter');
+        Route::get('porter/profile' , [PorterController::class, 'userporter'])->name('userporter');
     });
 
     //Sebagai Merchant
-    Route::middleware('role:merchant')->group(function(){
-        Route::get('merchant', [PageController::class, 'berandaMerchant'])->name('beranda_merchant');
-        Route::get('merchant/dagangan', [PageController::class, 'editDagang'])->name('dagangan_merchant');
-        Route::get('merchant/profile', [PageController::class, 'ProfileMerchant'])->name('profile_merchant');
-        Route::get('merchant/tambahdagangan', [PageController::class, 'tambahDagang'])->name('tambah_dagang');
-        Route::get('merchant/editprofile', [PageController::class, 'EditprofileMerchant'])->name('editmerchant');
+    Route::middleware('role:merchant', 'approval')->group(function(){
+        Route::get('merchant/index', [MerchantController::class, 'berandaMerchant'])->name('beranda_merchant');
+        Route::get('merchant/dagangan', [MerchantController::class, 'editDagang'])->name('dagangan_merchant');
+        Route::get('merchant/profile', [MerchantController::class, 'ProfileMerchant'])->name('profile_merchant');
+        Route::get('merchant/tambahdagangan', [MerchantController::class, 'tambahDagang'])->name('tambah_dagang');
+        Route::get('merchant/editprofile', [MerchantController::class, 'EditprofileMerchant'])->name('editmerchant');
     });
 
     //Sebagai Admin
     Route::middleware('role:admin')->group(function(){
-        Route::get('admin/beranda', [PageController::class, 'AdminBeranda'])->name('berandaAdmin');
-        Route::get('admin/merchant/aktif', [PageController::class, 'AdminMerchantAktif'])->name('merchant_aktif');
-        Route::get('admin/merchant/permohonan', [PageController::class, 'AdminMerchantPermohonan'])->name('merchant_permohonan');
-        Route::get('admin/porter/aktif', [PageController::class, 'AdminPorterAktif'])->name('porter_aktif');
-        Route::get('admin/porter/permohonan', [PageController::class, 'AdminPorterPermohonan'])->name('porter_permohonan');
+        Route::get('admin/index', [AdminController::class, 'indexUser'])->name('berandaAdmin');
+        Route::get('admin/merchant/aktif', [AdminController::class, 'indexMerchantAktif'])->name('merchant_aktif');
+        Route::get('admin/merchant/permohonan', [AdminController::class, 'AdminMerchantPermohonan'])->name('merchant_permohonan');
+        Route::get('admin/porter/aktif', [AdminController::class, 'indexPorterAktif'])->name('porter_aktif');
+        Route::get('admin/porter/permohonan', [AdminController::class, 'AdminPorterPermohonan'])->name('porter_permohonan');
     });
 });
