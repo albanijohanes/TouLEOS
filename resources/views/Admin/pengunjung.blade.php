@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="{{ asset('adminassets/fonts/fontawesome-all.min.css') }}">
 </head>
-    @php
+@php
     $bgUrl = asset('adminassets/img/bg.png');
-    @endphp
+@endphp
 <body id="page-top">
     <div id="wrapper">
     <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark" style="background: url('{{ $bgUrl }}') bottom;">
@@ -34,7 +34,7 @@
                     <li class="nav-item">
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{ route('berandaAdmin') }}">
                             <i class="fas fa-user" style="font-size: 13px;">
                             </i>
                             <span style="color: rgba(233,234,238);font-size: 16px;">
@@ -50,10 +50,10 @@
                                     Porter
                                 </a>
                             <div class="dropdown-menu show" data-bs-popper="none">
-                                <a class="dropdown-item" href="porter_p.html">
+                                <a class="dropdown-item" href="{{ route('porter_permohonan') }}">
                                     Permohonan
                                 </a>
-                                <a class="dropdown-item" href="porter_a.html">
+                                <a class="dropdown-item" href="{{ route('porter_aktif') }}">
                                     Aktif
                                 </a>
                             </div>
@@ -65,14 +65,23 @@
                                     Merchant
                                 </a>
                             <div class="dropdown-menu show" data-bs-popper="none">
-                                <a class="dropdown-item" href="merchant_p.html">
+                                <a class="dropdown-item" href="{{ route('merchant_permohonan') }}">
                                     Permohonan
                                 </a>
-                                <a class="dropdown-item" href="merchant_a.html">
+                                <a class="dropdown-item" href="{{ route('merchant_aktif') }}">
                                     Aktif
                                 </a>
                             </div>
                         </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('logout') }}">
+                            <i class="fas fa-user" style="font-size: 13px;">
+                            </i>
+                            <span style="color: rgba(233,234,238);font-size: 16px;">
+                                Keluar
+                            </span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -87,9 +96,6 @@
                         <th style="padding-right: 99px;padding-left: 100px;font-family: Poppins, sans-serif;">
                             Nama
                         </th>
-                        <th style="padding-left: 100px;padding-right: 100px;font-family: Poppins, sans-serif;">
-                            Email
-                        </th>
                         <th style="padding-left: 40px;padding-right: 41px;font-family: Poppins, sans-serif;text-align: center;">
                             No Handphone
                         </th>
@@ -99,8 +105,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr></tr>
-                    <tr></tr>
+                    @if ($user->count() > 0)
+                        @foreach ($user as $row)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $row->nama }}</td>
+                                <td>{{ $row->no_hp }}</td>
+                                <td>{{ $row->jk }}</td>
+                            </tr>
+                        @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>
