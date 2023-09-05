@@ -26,7 +26,7 @@
 <body>
     <nav class="navbar navbar-expand-md bg-body navbar-dark" id="app-navbar">
         <div class="container-fluid">
-            <img src="assets/img/Logo%20web%20Tou%20Leos%20(3).png" style="width: 50px;">
+            <img src="{{ asset ('merchantassets/img/Logo%20web%20Tou%20Leos%20(3).png') }}" style="width: 50px;">
             <a class="navbar-brand" href="#">
             </a>
             <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2">
@@ -118,7 +118,7 @@
                             Jenis Kelamin
                         </label>
                         <select class="form-select" style="font-size: 16px;font-family: Poppins, sans-serif;">
-                            <optgroup label="This is a group">
+                            <optgroup label="Jenis Kelamin">
                                 <option value=Laki-laki" selected="">
                                     Laki-laki
                                 </option>
@@ -133,8 +133,8 @@
                                 Alamat
                             </strong>
                         </label>
-                        <input class="form-control" type="email" autocomplete="off"
-                            value="{{ auth()->user()->merchant->alamat }}" name="email" required>
+                        <input class="form-control" type="text" autocomplete="off"
+                            value="{{ auth()->user()->merchant->alamat }}" name="text" required>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
@@ -190,9 +190,9 @@
             </div>
         </form>
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Navbar---Apple-navbar---apple.js"></script>
-    <script src="assets/js/Profile-Edit-Form-profile.js"></script>
+    <script src="{{ asset ('merchantassets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset ('merchantassets/js/Navbar---Apple-navbar---apple.js') }}"></script>
+    <script src="{{ asset ('merchantassets/js/Profile-Edit-Form-profile.js') }}"></script>
 </body>
 
 </html>

@@ -111,8 +111,8 @@
                                             </form>
                                         </div>
                                         <div class="col-lg-6 hide-ele">
-                                            <img style="width: 100%;margin-top: 38px;" src="assets/img/20230712_124645.jpg">
-                                            <img style="width: 100%;margin-top: 50px;" src="assets/img/20230712_124645.jpg">
+                                            <img style="width: 100%;margin-top: 38px;" src="{{ asset ('merchantassets/img/20230712_124645.jpg') }}">
+                                            <img style="width: 100%;margin-top: 50px;" src="{{ asset ('merchantassets/img/20230712_124645.jpg') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -177,8 +177,8 @@
                                             </form>
                                         </div>
                                         <div class="col-lg-6 hide-ele">
-                                            <img style="width: 100%;" src="assets/img/20230712_124645.jpg">
-                                            <img style="width: 100%;" src="assets/img/20230712_124645.jpg">
+                                            <img style="width: 100%;" src="{{ asset ('merchantassets/img/20230712_124645.jpg') }}">
+                                            <img style="width: 100%;" src="{{ asset ('merchantassets/img/20230712_124645.jpg') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +189,7 @@
             </div>
             <div class="col-md-6">
                 <div class="p-xl-5 m-xl-5">
-                    <img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" src="assets/img/20230712_124645.jpg">
+                    <img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" src="{{ asset ('merchantassets/img/20230712_124645.jpg') }}">
                 </div>
             </div>
         </div>
@@ -312,18 +312,18 @@
             </div>
         </div>
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ asset ('merchantassets/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/lightpick.min.js"></script>
-    <script src="assets/js/Date-Range-Picker-datepicker.js"></script>
-    <script src="assets/js/Date-Range-Picker-style.js"></script>
+    <script src="{{ asset ('merchantassets/js/Date-Range-Picker-datepicker.js') }}"></script>
+    <script src="{{ asset ('merchantassets/js/Date-Range-Picker-style.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-    <script src="assets/js/Navbar---Apple-navbar---apple.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/smart-forms.min.js"></script>
-    <script src="assets/js/Auto-Modal-Popup-modal.js"></script>
+    <script src="{{ asset ('merchantassets/js/Navbar---Apple-navbar---apple.js') }}"></script>
+    <script src="{{ asset ('merchantassets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset ('merchantassets/js/smart-forms.min.js') }}"></script>
+    <script src="{{ asset ('merchantassets/js/Auto-Modal-Popup-modal.js') }}"></script>
 </body>
 
 </html>

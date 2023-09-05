@@ -22,7 +22,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md bg-body navbar-dark" id="app-navbar">
-        <div class="container-fluid"><img src="assets/img/Logo%20web%20Tou%20Leos%20(3).png" style="width: 50px;"><a class="navbar-brand" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container-fluid"><img src="{{ asset ('merchantassets/img/Logo%20web%20Tou%20Leos%20(3).png') }}" style="width: 50px;"><a class="navbar-brand" href="#"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -62,7 +62,7 @@
                                 <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
                                     Nama
                                 </label>
-                                <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                                <input class="form-control-plaintext" type="text" value="{{ auth()->user()->nama }}" readonly="" style="font-family: Poppins, sans-serif;">
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
@@ -70,7 +70,7 @@
                                 <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
                                     Nomor HP
                                 </label>
-                                <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                                <input class="form-control-plaintext" type="text" value="{{ auth()->user()->no_hp }}" readonly="" style="font-family: Poppins, sans-serif;">
                             </div>
                         </div>
                     </div>
@@ -78,19 +78,19 @@
                         <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
                             Email
                         </label>
-                        <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                        <input class="form-control-plaintext" type="text" value="{{ auth()->user()->merchant->email }}" readonly="" style="font-family: Poppins, sans-serif;">
                     </div>
                     <div style="font-size: 16px;font-family: Poppins, sans-serif;" class="form-group mb-3">
                         <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 16px;">
                             Jenis Kelamin
                         </label>
-                        <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                        <input class="form-control-plaintext" type="text" value="Laki-laki" readonly="" style="font-family: Poppins, sans-serif;">
                     </div>
                     <div class="form-group mb-3">
                         <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
                             Alamat
                         </label>
-                        <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                        <input class="form-control-plaintext" type="text" value="{{ auth()->user()->merchant->alamat }}" readonly="" style="font-family: Poppins, sans-serif;">
                     </div>
                     <div class="row">
                         <div class="col-sm-12 col-md-6">
@@ -119,13 +119,13 @@
                                         Username
                                     </em>)
                                 </label>
-                                <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                                <input class="form-control-plaintext" type="text" value="{{ auth()->user()->username }}" readonly="" style="font-family: Poppins, sans-serif;">
                             </div>
                             <div class="form-group mb-3">
                                 <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
                                     Kata Sandi
                                 </label>
-                                <input class="form-control-plaintext" type="text" value="Plain Text Value" readonly="" style="font-family: Poppins, sans-serif;">
+                                <input class="form-control-plaintext" type="text" value="" readonly="" style="font-family: Poppins, sans-serif;">
                             </div>
                         </div>
                     </div>
@@ -143,9 +143,9 @@
             </div>
         </form>
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Navbar---Apple-navbar---apple.js"></script>
-    <script src="assets/js/Profile-Edit-Form-profile.js"></script>
+    <script src="{{ asset ('merchantassets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset ('merchantassets/js/Navbar---Apple-navbar---apple.js') }}"></script>
+    <script src="{{ asset ('merchantassets/js/Profile-Edit-Form-profile.js') }}"></script>
 </body>
 
 </html>
