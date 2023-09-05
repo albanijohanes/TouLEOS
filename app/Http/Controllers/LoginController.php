@@ -11,7 +11,7 @@ class LoginController extends Controller
     public function start(){
         return view('landingpage');
     }
-    
+
     public function loginuser(){
         if(Auth::check()){
             if(Auth::user()->role == 'customer'){
@@ -58,23 +58,29 @@ class LoginController extends Controller
             return redirect()->route('start')->withErrors($validator)->withInput();
         }
 
-        if(Auth::attempt([
+        if (Auth::attempt([
             'username' => $request->username,
-            'password' => $request->password
-            ])
-            ){
+            'password' => $request->password,
+        ])) {
             $user = Auth::user();
-            if($user->role == 'customer'){
+
+            if ($user->role == 'customer') {
                 return redirect()->route('index');
-            }elseif($user->role == 'admin'){
+            } elseif ($user->role == 'admin') {
                 return redirect()->route('berandaAdmin');
-            }elseif($user->status === 'approved'){
+            } elseif ($user->status === 'approved') {
                 return $this->redirectToRoleDashboard($user->role);
-            }elseif($user->status === 'pending'){
-                return redirect()->route('start')->withErrors(['auth' => 'Your account is pending approval.']);
+            } elseif ($user->status === 'pending') {
+                Auth::logout();
+                return redirect()->route('start')->withErrors([
+                    'auth' => 'Daftar, silahkan tunggu proses verifikasi oleh admin...',
+                ]);
             }
         }
-        return redirect()->route('start')->withErrors(['auth' => 'password atau username salah']);
+
+        return redirect()->route('start')->withErrors([
+            'auth' => 'Password atau username salah.',
+        ]);
     }
 
     public function redirectToRoleDashboard($role){

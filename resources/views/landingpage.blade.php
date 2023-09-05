@@ -119,7 +119,13 @@
             </div>
         </div>
     </div>
-    <div class="alert alert-success" role="alert" id="save-sucess" style="background-color: #B4F7D2!important;border: 1px solid #0C6D38;padding-bottom: 35px;padding-top: 28px;margin-top: 0px;"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="alert"></button><span style="color: #0C6D38 !important;padding-left: 0px;margin-left: 15px;font-family: Poppins, sans-serif;">Berhasil daftar, silahkan tunggu proses verifikasi oleh admin, jika dalam 3 hari anda tidak dapat masuk ke akun, silahkan hubungi kami di 0895804049310</span></div>
+    @if(session('alert'))
+    <div class="alert alert-success" role="alert" id="save-sucess"
+        style="background-color: #B4F7D2!important;border: 1px solid #0C6D38;padding-bottom: 35px;padding-top: 28px;margin-top: 0px;">
+        <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="alert"></button><span
+            style="color: #0C6D38 !important;padding-left: 0px;margin-left: 15px;font-family: Poppins, sans-serif;">Berhasil
+            {{ session('alert') }}</span></div>
+    @endif
     <script src="{{ asset('landingassets/bootstrap/js/bootstrap.min.js') }}"></script>
 </body>
 

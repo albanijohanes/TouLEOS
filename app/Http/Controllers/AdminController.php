@@ -15,38 +15,36 @@ class AdminController extends Controller
     }
 
     public function AdminMerchantPermohonan(){
-        return view('Admin/merchant_p');
+        $merchant = Merchant::with('user')->get();
+        return view('Admin/merchant_p', compact('merchant'));
     }
 
     public function AdminPorterPermohonan(){
-        return view('Admin/porter_p');
+        $porter = Porter::with('user')->get();
+        return view('Admin/porter_p', compact('porter'));
     }
 
     public function indexMerchantAktif(){
         $merchant = Merchant::with('user')->get();
-
         return view('Admin/merchant_a', compact('merchant'));
     }
     public function indexPorterAktif(){
         $porter = Porter::with('user')->get();
-
         return view('Admin/porter_a', compact('porter'));
     }
 
     public function approveMerchant($id){
         $merchant = Merchant::find($id);
-        $merchant->status = 'approved';
-        $merchant->save();
+        $merchant->update(['status' => 'approved']);
 
-        return redirect()->route('admin.merchant');
+        return redirect()->back();
     }
 
     public function approvePorter($id){
         $porter = Porter::find($id);
-        $porter->status = 'approved';
-        $porter->save();
+        $porter->updated(['status' => 'approved']);
 
-        return redirect()->route('admin.porter');
+        return redirect()->back();
     }
 
     public function rejectPorter($id){
@@ -54,7 +52,7 @@ class AdminController extends Controller
         $porter->status = 'rejected';
         $porter->save();
 
-        return redirect()->route('admin.porter');
+        return redirect()->back();
     }
 
     public function rejectMerchant($id){
@@ -62,7 +60,7 @@ class AdminController extends Controller
         $merchant->status = 'rejected';
         $merchant->save();
 
-        return redirect()->route('admin.merchant');
+        return redirect()->back();
     }
 
     public function viewPdf($type, $id){

@@ -130,8 +130,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr></tr>
-                    <tr></tr>
+                    @if ($merchant->count() > 0)
+                        @foreach ($merchant as $row)
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $row->user->nama }}</td>
+                                <td>{{ $row->email }}</td>
+                                <td>{{ $row->user->no_hp }}</td>
+                                <td>{{ $row->user->jk }}</td>
+                                <td>{{ $row->alamat }}</td>
+                                <td>{{ $row->ktp }}</td>
+                                <td>{{ $row->siup }}</td>
+                                <td>
+                                    @if ($row->status === 'pending')
+                                        <form action="{{ route('appMerchant', $row->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-success">
+                                                Setujui
+                                            </button>
+                                        </form>
+                                        <form action="{{ route('rejMerchant', $row->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">
+                                                Tolak
+                                            </button>
+                                        </form>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>

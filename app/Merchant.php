@@ -11,7 +11,8 @@ class Merchant extends Model
         'alamat',
         'email',
         'ktp',
-        'siup'
+        'siup',
+        'status',
     ];
 
     public function User(){
