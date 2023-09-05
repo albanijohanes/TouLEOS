@@ -17,6 +17,7 @@ class ApprovalChecker
      */
     public function handle(Request $request, Closure $next)
     {
+        //done
         if (Auth::check()) {
             $user = Auth::user();
 
