@@ -64,18 +64,7 @@ class LoginController extends Controller
         ])) {
             $user = Auth::user();
 
-            if ($user->role == 'customer') {
-                return redirect()->route('index');
-            } elseif ($user->role == 'admin') {
-                return redirect()->route('berandaAdmin');
-            } elseif ($user->status === 'approved') {
-                return $this->redirectToRoleDashboard($user->role);
-            } elseif ($user->status === 'pending') {
-                Auth::logout();
-                return redirect()->route('start')->withErrors([
-                    'auth' => 'Daftar, silahkan tunggu proses verifikasi oleh admin...',
-                ]);
-            }
+            return $this->redirectToRoleDashboard($user->role);
         }
 
         return redirect()->route('start')->withErrors([
@@ -85,6 +74,10 @@ class LoginController extends Controller
 
     public function redirectToRoleDashboard($role){
         switch ($role) {
+            case 'customer':
+                return redirect()->route('index');
+            case 'admin':
+                return redirect()->route('berandaAdmin');
             case 'porter':
                 return redirect()->route('porter');
             case 'merchant':

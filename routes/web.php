@@ -79,5 +79,7 @@ Route::middleware('auth')->group(function(){
         Route::post('admin/merchant/permohonan/reject/{id}', [AdminController::class, 'rejectMerchant'])->name('rejMerchant');
         Route::get('admin/porter/aktif', [AdminController::class, 'indexPorterAktif'])->name('porter_aktif');
         Route::get('admin/porter/permohonan', [AdminController::class, 'AdminPorterPermohonan'])->name('porter_permohonan');
+        Route::post('admin/porter/permohonan/approve/{id}', [AdminController::class, 'approvePorter'])->name('appPorter');
+        Route::post('admin/porter/permohonan/reject/{id}', [AdminController::class, 'rejectPorter'])->name('rejPorter');
     });
 });

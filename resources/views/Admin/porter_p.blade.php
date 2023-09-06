@@ -137,8 +137,35 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr></tr>
-                    <tr></tr>
+                    @foreach ($porter as $row)
+                        @if ($row->status === 'pending')
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $row->user->nama }}</td>
+                                <td>{{ $row->email }}</td>
+                                <td>{{ $row->user->no_hp }}</td>
+                                <td>{{ $row->user->jk }}</td>
+                                <td>{{ $row->alamat }}</td>
+                                <td>{{ $row->porter_id }}</td>
+                                <td>{{ $row->ktp }}</td>
+                                <td>{{ $row->skkb }}</td>
+                                <td>
+                                    <form action="{{ route('appPorter', $row->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-success">
+                                            Setujui
+                                        </button>
+                                    </form>
+                                    <form action="{{ route('rejPorter', $row->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">
+                                            Tolak
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endif
+                    @endforeach
                 </tbody>
             </table>
         </div>

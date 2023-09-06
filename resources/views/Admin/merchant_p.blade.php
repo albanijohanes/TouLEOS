@@ -132,8 +132,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if ($merchant->count() > 0)
-                        @foreach ($merchant as $row)
+                    @foreach ($merchant as $row)
+                        @if ($row->status === 'pending')
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $row->user->nama }}</td>
@@ -144,24 +144,22 @@
                                 <td>{{ $row->ktp }}</td>
                                 <td>{{ $row->siup }}</td>
                                 <td>
-                                    @if ($row->status === 'pending')
-                                        <form action="{{ route('appMerchant', $row->id) }}" method="POST">
-                                            @csrf
-                                            <button type="submit" class="btn btn-success">
-                                                Setujui
-                                            </button>
-                                        </form>
-                                        <form action="{{ route('rejMerchant', $row->id) }}" method="POST">
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger">
-                                                Tolak
-                                            </button>
-                                        </form>
-                                    @endif
+                                    <form action="{{ route('appMerchant', $row->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-success">
+                                            Setujui
+                                        </button>
+                                    </form>
+                                    <form action="{{ route('rejMerchant', $row->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger">
+                                            Tolak
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
-                        @endforeach
-                    @endif
+                        @endif
+                    @endforeach
                 </tbody>
             </table>
         </div>
