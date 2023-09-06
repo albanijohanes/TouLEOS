@@ -1,10 +1,8 @@
     <style>
-        /* CSS untuk tombol sidebar */
         .toggle-sidebar-btn {
             cursor: pointer;
         }
 
-        /* CSS untuk menampilkan sidebar */
         #sidebar {
             position: fixed;
             top: 0;
@@ -18,7 +16,6 @@
             left: 0;
         }
     </style>
-    <!-- Tambahkan tombol sidebar -->
     <i class="bi bi-list toggle-sidebar-btn d-lg-none"></i>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -122,7 +119,7 @@
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="{{ asset('porterassets/img/userprofile-img.jpeg') }}"
+                        <img src="{{ asset('porterassets/img/foto.png') }}"
                             alt="Profile" class="rounded-circle">
                         <span id="Judulmu" class="d-none d-md-block dropdown-toggle ps-2"
                             style="color:black;">{{ auth()->user()->nama }}</span>
