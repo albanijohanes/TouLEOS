@@ -35,7 +35,6 @@
 <body>
 
     @extends('layouts.nbporter')
-
     <main id="main" class="main">
 
         <div class="pagetitle">

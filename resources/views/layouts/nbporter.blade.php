@@ -1,3 +1,35 @@
+    <style>
+        /* CSS untuk tombol sidebar */
+        .toggle-sidebar-btn {
+            cursor: pointer;
+        }
+
+        /* CSS untuk menampilkan sidebar */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            width: 250px;
+            transition: all 0.3s;
+        }
+
+        #sidebar.active {
+            left: 0;
+        }
+    </style>
+    <!-- Tambahkan tombol sidebar -->
+    <i class="bi bi-list toggle-sidebar-btn d-lg-none"></i>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".toggle-sidebar-btn").click(function () {
+                $("#sidebar").toggleClass("active");
+            });
+        });
+    </script>
+
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -92,7 +124,8 @@
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                         <img src="{{ asset('porterassets/img/userprofile-img.jpeg') }}"
                             alt="Profile" class="rounded-circle">
-                        <span id="Judulmu" class="d-none d-md-block dropdown-toggle ps-2" style="color:black;">{{ auth()->user()->nama }}</span>
+                        <span id="Judulmu" class="d-none d-md-block dropdown-toggle ps-2"
+                            style="color:black;">{{ auth()->user()->nama }}</span>
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -139,7 +172,8 @@
     <aside id="sidebar" class="sidebar">
 
         <ul class="sidebar-nav" id="sidebar-nav">
-
+            <br>
+            <br>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('porter') }}">
                     <i class="bi bi-grid"></i>

@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             'role'      => 'porter',
             'jk'        => 'Laki-laki',
             'no_hp'     => '08123456789',
-            'password'  => Hash::make('APDOj1923180'),
+            'password'  => Hash::make('erick'),
         ]);
 
         $userMerchant = User::create([
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'no_hp'     => '08123456789',
             'jk'        => 'Laki-laki',
             'role'      => 'merchant',
-            'password'  => Hash::make('IoijadsaoAopJAD13129381'),
+            'password'  => Hash::make('roma'),
         ]);
 
         User::create([
