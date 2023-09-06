@@ -40,12 +40,6 @@
 
         <div class="pagetitle">
             <h1>Dashboard</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('porter') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
-            </nav>
         </div>
 
         <section class="section dashboard">
@@ -290,7 +284,7 @@
     </main>
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" style="color: #FFFFFF;">
         <div class="copyright">
             &copy; Copyright <strong><span>TouLEOS</span></strong>. All Rights Reserved
         </div>

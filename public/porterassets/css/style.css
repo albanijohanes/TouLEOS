@@ -411,12 +411,12 @@ h6 {
   color: rgba(109, 205, 61, 0.9);
 }
 
-.header .search-bar {
+/* .header .search-bar {
   min-width: 360px;
   padding: 0 20px;
-}
+} */
 
-@media (max-width: 1199px) {
+/* @media (max-width: 1199px) {
   .header .search-bar {
     position: fixed;
     top: 50px;
@@ -429,14 +429,14 @@ h6 {
     transition: 0.3s;
     visibility: hidden;
     opacity: 0;
-  }
+  } */
 
-  .header .search-bar-show {
+  /* .header .search-bar-show {
     top: 60px;
     visibility: visible;
     opacity: 1;
   }
-}
+} */
 
 .header .search-form {
   width: 100%;

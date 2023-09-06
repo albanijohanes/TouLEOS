@@ -180,7 +180,7 @@
                                 <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#histori">Riwayat</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#about">Promosi</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Profil</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="{{ route('profiluser') }}">Profil</a></li>
                             </ul>
                         </div>
 

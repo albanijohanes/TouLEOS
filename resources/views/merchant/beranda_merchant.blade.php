@@ -68,7 +68,7 @@
                                     </h4>
                                     <button class="close" type="button" aria-label="Close" data-dismiss="modal" style="color: rgb(0,0,0);">
                                         <span aria-hidden="true">
-                                            ×
+                                        &times;
                                         </span>
                                     </button>
                                 </div>
@@ -126,7 +126,7 @@
                         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;text-align: center;padding-right: 0px;">Edit Detail Dagangan</h4><button class="close" type="button" aria-label="Close" data-dismiss="modal" style="color: rgb(0,0,0);"><span aria-hidden="true">×</span></button>
+                                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;text-align: center;padding-right: 0px;">Edit Detail Dagangan</h4><button class="close" type="button" aria-label="Close" data-dismiss="modal" style="color: rgb(0,0,0);"><span aria-hidden="true">&times;</span></button>
                                 </div>
                                 <div class="modal-body">
                                     <div class="row">

@@ -97,7 +97,7 @@
                             <div class="form-group mb-3">
                                 <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
                                     KTP (Kartu Tanda Penduduk):&nbsp;
-                                    <a href="#">
+                                    <a href="view_pdf.php?id=1">
                                         LIHAT
                                     </a>
                                 </label>
@@ -105,7 +105,7 @@
                             <div class="form-group mb-3">
                                 <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
                                     SIUP (Surat Ijin Usaha Perdagangan):&nbsp;
-                                    <a href="#">
+                                    <a href="view_pdf.php?id=1">
                                         LIHAT
                                     </a>
                                 </label>

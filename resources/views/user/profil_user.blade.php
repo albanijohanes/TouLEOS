@@ -7,7 +7,7 @@
     <title>Profil User</title>
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
     <link href="{{ asset('assets/img/logo.png') }}" rel="apple-touch-icon">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset ('assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
 </head>
 
@@ -21,12 +21,12 @@
                         <div class="col-sm-8 col-md-8 col-lg-9 col-xl-10 col-xxl-10 align-self-center">
                             <div class="row">
                                 <div class="col-md-12 text-start">
-                                    <div class="mb-3"><label class="form-label" for="name"><strong>Nama Lengkap</strong></label><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly=""></div>
+                                    <div class="mb-3"><label class="form-label" for="name"><strong>Nama Lengkap</strong></label><input class="form-control-plaintext" type="text" value="{{ auth()->user()->nama }}" readonly=""></div>
                                 </div>
                                 <div class="col-md-12 text-start">
-                                    <div class="mb-3"><label class="form-label" for="username"><strong>Nomor HP</strong></label><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly=""></div>
-                                    <div class="mb-3"><label class="form-label" for="city"><strong>Jenis Kelamin</strong></label><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly=""></div>
-                                    <div class="mb-3"><label class="form-label" for="username"><strong>Nama Pengguna (<em>Username</em>)</strong></label><input class="form-control-plaintext" type="text" value="Plain Text Value" readonly=""></div>
+                                    <div class="mb-3"><label class="form-label" for="username"><strong>Nomor HP</strong></label><input class="form-control-plaintext" type="text" value="{{ auth()->user()->no_hp }}" readonly=""></div>
+                                    <div class="mb-3"><label class="form-label" for="city"><strong>Jenis Kelamin</strong></label><input class="form-control-plaintext" type="text" value="{{ auth()->user()->jk }}" readonly=""></div>
+                                    <div class="mb-3"><label class="form-label" for="username"><strong>Nama Pengguna (<em>Username</em>)</strong></label><input class="form-control-plaintext" type="text" value="{{ auth()->user()->username }}" readonly=""></div>
                                 </div>
                             </div>
                         </div>

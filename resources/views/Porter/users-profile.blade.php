@@ -45,14 +45,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Profile</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a id="Judulmu" href="{{ route('porter') }}">Home</a></li>
-                    <li id="Judulmu" class="breadcrumb-item">Users</li>
-                    <li id="Judulmu" class="breadcrumb-item active">Profile</li>
-                </ol>
-            </nav>
+            <h1>Profil</h1>
         </div><!-- End Page Title -->
 
         <section class="section profile">
@@ -75,32 +68,24 @@
 
                     <div class="card">
                         <div class="card-body pt-3">
-                            <ul class="nav nav-tabs nav-tabs-bordered">
-
-                                <li class="nav-item">
-                                    <button id="Judulmu" class="nav-link active" data-bs-toggle="tab"
-                                        data-bs-target="#profile-overview">Overview</button>
-                                </li>
-
-                                <li class="nav-item">
-                                    <button id="Judulmu" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#profile-edit">Edit Profil</button>
-                                </li>
-
-                                <li class="nav-item">
-                                    <button id="Judulmu" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#profile-change-password">Change Password</button>
-                                </li>
-
-                            </ul>
                             <div class="tab-content pt-2">
 
                                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                                    <h5 class="card-title">Detail Profil</h5>
+                                    <h5 class="card-title" style="font-size:40px;">Profil Anda</h5>
+
+                                    <div class="row" style="font-size: 25px;">
+                                        <div class="col-lg-3 col-md-4 label">Kode Porter:</div>
+                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->porter->porter_id }}</div>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label ">Nama Lengkap</div>
                                         <div class="col-lg-9 col-md-8">{{ auth()->user()->nama }}</div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">Username</div>
+                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->username }}</div>
                                     </div>
 
                                     <div class="row">
@@ -109,28 +94,15 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Kota</div>
-                                        <div class="col-lg-9 col-md-8">Minahasa Utara</div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">alamat</div>
-                                        <div class="col-lg-9 col-md-8">Manado</div>
+                                        <div class="col-lg-3 col-md-4 label">Jenis Kelamin</div>
+                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->jk }}</div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Nomor HP</div>
-                                        <div class="col-lg-9 col-md-8">085757151835</div>
+                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->no_hp }}</div>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Email</div>
-                                        <div class="col-lg-9 col-md-8">owenkalumata46@gmail.com</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Porter Kode</div>
-                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->porter->porter_id }}</div>
-                                    </div>
                                 </div>
 
                                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
@@ -153,7 +125,7 @@
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full
+                                            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nama Lengkap
                                                 Name</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="fullName" type="text" class="form-control" id="fullName"
@@ -166,23 +138,6 @@
                                             <div class="col-md-8 col-lg-9">
                                                 <textarea name="about" class="form-control" id="about"
                                                     style="height: 100px">SANTAY DULU GA SEE.</textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="company"
-                                                class="col-md-4 col-lg-3 col-form-label">Company</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="company" type="text" class="form-control" id="company"
-                                                    value="Universitas Sam Ratulangi">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="job" type="text" class="form-control" id="Job"
-                                                    value="Web Development">
                                             </div>
                                         </div>
 
@@ -327,7 +282,7 @@
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" style="color: #FFFFFF;">
         <div class="copyright">
             &copy; Copyright <strong><span>TouLEOS</span></strong>. All Rights Reserved
         </div>

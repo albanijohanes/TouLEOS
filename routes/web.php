@@ -52,6 +52,7 @@ Route::middleware('auth')->group(function(){
     Route::middleware('role:customer')->group(function(){
         Route::get('user/index', [CustomerController::class, 'index'])->name('index');
         Route::get('user/profile', [CustomerController::class, 'profiluser'])->name('profiluser');
+        Route::get('user/edit', [CustomerController::class, 'edituser'])->name('edituser');
     });
 
     //Sebagai Porter

@@ -7,7 +7,7 @@
     <title>Edit Profil</title>
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
     <link href="{{ asset('assets/img/logo.png') }}" rel="apple-touch-icon">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset ('assets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
 </head>
 
@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ asset ('assets/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="https://geodata.solutions/includes/countrystate.js"></script>
 </body>
 

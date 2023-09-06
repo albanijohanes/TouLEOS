@@ -2,29 +2,15 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
-                <img src="assets/img/20230705_015017.png" alt="">
+            <a href="{{ route('porter') }}" class="logo d-flex align-items-center">
+                <img src="{{ asset ('porterassets/img/20230705_015017.png') }}" alt="">
                 <span id="Judul" class="d-none d-lg-block">TouLEOS</span>
             </a>
-            <!-- <i class="bi bi-list toggle-sidebar-btn"></i> -->
+            <i class="bi bi-list toggle-sidebar-btn"></i>
         </div>
-
-        <!-- <div class="search-bar">
-            <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <input id="Judulmu" type="text" name="query" placeholder="Search" title="Enter search keyword">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-            </form>
-        </div> -->
 
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
-
-                <li class="nav-item d-block d-lg-none">
-                    <a class="nav-link nav-icon search-bar-toggle " href="#">
-                        <i class="bi bi-search"></i>
-                    </a>
-                </li>
-
                 <li class="nav-item dropdown">
 
                     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
@@ -120,20 +106,9 @@
 
                         <li>
                             <a class="dropdown-item d-flex align-items-center"
-                                href="{{ route('porter') }}">
+                                href="{{ route('userporter') }}">
                                 <i class="bi bi-person"></i>
                                 <span>Profil Anda</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center"
-                                href="{{ route('userporter') }}">
-                                <i class="bi bi-gear"></i>
-                                <span>Pengaturan Akun</span>
                             </a>
                         </li>
                         <li>
