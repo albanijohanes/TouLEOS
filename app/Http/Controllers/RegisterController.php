@@ -53,8 +53,8 @@ class RegisterController extends Controller
                     $uniqueKtpName = $uniqueKtp . '_' . Str::uuid() . '.' . $ktpExtension;
                     $uniqueSkkbName = $uniqueSkkb . '_' . Str::uuid() . '.' . $skkbExtension;
 
-                    $ktp = $request->file('ktp')->store('public/ktp');
-                    $skkb = $request->file('skkb')->store('public/skkb');
+                    $ktp = $request->file('ktp')->storeAs('public/ktp', $uniqueKtpName);
+                    $skkb = $request->file('skkb')->storeAs('public/skkb', $uniqueSkkbName);
 
                     $porter_id = $this->generatePorterCode();
 
@@ -62,8 +62,8 @@ class RegisterController extends Controller
                         'user_id' => $user->id,
                         'alamat' => $request->alamat,
                         'email' => $request->email,
-                        'skkb' => $skkb,
-                        'ktp' => $ktp,
+                        'skkb' => $uniqueSkkbName,
+                        'ktp' => $uniqueKtpName,
                         'porter_id' => $porter_id,
                         'status' => 'pending',
                     ]);
@@ -90,15 +90,15 @@ class RegisterController extends Controller
                     $uniqueKtpName = $uniqueKtp . '_' . Str::uuid() . '.' . $ktpExtension;
                     $uniqueSiupName = $uniqueSiup . '_' . Str::uuid() . '.' . $siupExtension;
 
-                    $ktp = $request->file('ktp')->store('public/ktp');
-                    $siup = $request->file('siup')->store('public/siup');
+                    $ktp = $request->file('ktp')->storeAs('public/ktp', $uniqueKtpName);
+                    $siup = $request->file('siup')->storeAs('public/siup', $uniqueSiupName);
 
                     Merchant::create([
                         'user_id' => $user->id,
                         'alamat' => $request->alamat,
                         'email' => $request->email,
-                        'siup' => $siup,
-                        'ktp' => $ktp,
+                        'siup' => $uniqueSiupName,
+                        'ktp' => $uniqueKtpName,
                         'status' => 'pending',
                     ]);
                 } else {
