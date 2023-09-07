@@ -16,24 +16,40 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
-    <link href="{{ asset('porterassets/vendor/bootstrap/css/bootstrap.min.css') }}"
-        rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/bootstrap-icons/bootstrap-icons.css') }}"
-        rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/boxicons/css/boxicons.min.css') }}"
-        rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/simple-datatables/style.css') }}"
-        rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
     <link href="{{ asset('porterassets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('alertassets/css/boostrap.min.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
-
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Permintaan Pemesanan</h4><button
+                        class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-family: Poppins, sans-serif;">Nama ingin memesan jasa anda sebagai porter</p><label
+                        class="form-label" style="font-family: Poppins, sans-serif;">Harga/Menit :&nbsp;</label><input
+                        type="number" style="font-family: Poppins, sans-serif;padding-right: 0px;margin-right: -7px;">
+                </div>
+                <div class="modal-footer"><button class="btn btn-primary" type="button"
+                        style="background: #1cda18;">Terima</button><button class="btn btn-light" type="button"
+                        data-bs-dismiss="modal"
+                        style="--bs-danger: #dc3545;--bs-danger-rgb: 220,53,69;background: #ee2626;color: rgb(255,255,255);">Tolak</button>
+                </div>
+            </div>
+        </div>
+    </div>
     @extends('layouts.nbporter')
     <main id="main" class="main">
 
@@ -126,74 +142,6 @@
                                         <li><a class="dropdown-item" href="#">Tahun ini</a></li>
                                     </ul>
                                 </div>
-
-                                <!-- <div class="card-body">
-                                    <h5 class="card-title">Laporan <span>/Hari ini</span></h5>
-
-                                    <div id="reportsChart"></div>
-
-                                    <!-- <script>
-                                        document.addEventListener("DOMContentLoaded", () => {
-                                            new ApexCharts(document.querySelector("#reportsChart"), {
-                                                series: [{
-                                                    name: 'Pesanan',
-                                                    data: [31, 40, 28, 51, 42, 82, 56],
-                                                }, {
-                                                    name: 'Pendapatan',
-                                                    data: [11, 32, 45, 32, 34, 52, 41]
-                                                }, {
-                                                    name: 'Pelanggan',
-                                                    data: [15, 11, 32, 18, 9, 24, 11]
-                                                }],
-                                                chart: {
-                                                    height: 350,
-                                                    type: 'area',
-                                                    toolbar: {
-                                                        show: false
-                                                    },
-                                                },
-                                                markers: {
-                                                    size: 4
-                                                },
-                                                colors: ['#4154f1', '#2eca6a', '#ff771d'],
-                                                fill: {
-                                                    type: "gradient",
-                                                    gradient: {
-                                                        shadeIntensity: 1,
-                                                        opacityFrom: 0.3,
-                                                        opacityTo: 0.4,
-                                                        stops: [0, 90, 100]
-                                                    }
-                                                },
-                                                dataLabels: {
-                                                    enabled: false
-                                                },
-                                                stroke: {
-                                                    curve: 'smooth',
-                                                    width: 2
-                                                },
-                                                xaxis: {
-                                                    type: 'datetime',
-                                                    categories: ["2018-09-19T00:00:00.000Z",
-                                                        "2018-09-19T01:30:00.000Z",
-                                                        "2018-09-19T02:30:00.000Z",
-                                                        "2018-09-19T03:30:00.000Z",
-                                                        "2018-09-19T04:30:00.000Z",
-                                                        "2018-09-19T05:30:00.000Z",
-                                                        "2018-09-19T06:30:00.000Z"
-                                                    ]
-                                                },
-                                                tooltip: {
-                                                    x: {
-                                                        format: 'dd/MM/yy HH:mm'
-                                                    },
-                                                }
-                                            }).render();
-                                        });
-                                    </script> 
-
-                                </div> -->
-
                             </div>
                         </div>
 
@@ -305,6 +253,7 @@
     <script src="{{ asset('porterassets/vendor/php-email-form/validate.js') }}"></script>
 
     <script src="{{ asset('porterassets/js/main.js') }}"></script>
+    <script src="{{ asset('alertassets/js/boostrap.min.js') }}"></script>
 
 </body>
 

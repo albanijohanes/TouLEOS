@@ -112,6 +112,9 @@
                         </button>
                         <div class="text-center"><a class="small" href="{{ route('loginporter') }}">Sudah punya akun? Masuk</a></div>
                         <hr>
+                        <div class="text-center mt-3">
+            <a href="{{ route('start') }}" class="small">Kembali</a>
+        </div>
                     </form>
                 </div>
             </div>

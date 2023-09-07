@@ -80,6 +80,9 @@
                                 Sudah punya akun? Masuk
                             </a>
                         </div>
+                        <div class="text-center mt-3">
+            <a href="{{ route('start') }}" class="small">Kembali</a>
+        </div>
                         <hr>
                     </form>
                 </div>

@@ -20,26 +20,42 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{ asset('porterassets/vendor/bootstrap/css/bootstrap.min.css') }}"
-        rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/bootstrap-icons/bootstrap-icons.css') }}"
-        rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/boxicons/css/boxicons.min.css') }}"
-        rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/simple-datatables/style.css') }}"
-        rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
 
     <link href="{{ asset('porterassets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('alertassets/css/boostrap.min.css') }}" rel="stylesheet">
 
 
 </head>
 
 <body>
-
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Permintaan Pemesanan</h4><button
+                        class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-family: Poppins, sans-serif;">Nama ingin memesan jasa anda sebagai porter</p><label
+                        class="form-label" style="font-family: Poppins, sans-serif;">Harga/Menit :&nbsp;</label><input
+                        type="number" style="font-family: Poppins, sans-serif;padding-right: 0px;margin-right: -7px;">
+                </div>
+                <div class="modal-footer"><button class="btn btn-primary" type="button"
+                        style="background: #1cda18;">Terima</button><button class="btn btn-light" type="button"
+                        data-bs-dismiss="modal"
+                        style="--bs-danger: #dc3545;--bs-danger-rgb: 220,53,69;background: #ee2626;color: rgb(255,255,255);">Tolak</button>
+                </div>
+            </div>
+        </div>
+    </div>
     @extends('layouts.nbporter')
 
     <main id="main" class="main">
@@ -55,8 +71,7 @@
                     <div class="card">
                         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                            <img src="{{ asset ('porterassets/img/foto.png') }}"
-                                alt="Profile" class="rounded-circle">
+                            <img src="{{ asset ('porterassets/img/foto.png') }}" alt="Profile" class="rounded-circle">
                             <h2>{{ auth()->user()->nama }}</h2>
                             <h3>{{ auth()->user()->role }}</h3>
                         </div>
@@ -124,7 +139,7 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
-            
+
 
     <script src="{{ asset('porterassets/vendor/apexcharts/apexcharts.min.js') }}"></script>
     <script src="{{ asset('porterassets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -135,6 +150,7 @@
     <script src="{{ asset('porterassets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('porterassets/vendor/php-email-form/validate.js') }}"></script>
     <script src="{{ asset('porterassets/js/main.js') }}"></script>
+    <script src="{{ asset('alertassets/js/boostrap.min.js') }}"></script>
 
 
 </body>

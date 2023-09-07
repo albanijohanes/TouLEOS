@@ -24,17 +24,23 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 </head>
 
+<style>
+    @media (max-width: 768px) {
+        .table-responsive {
+            overflow-x: auto;
+        }
+    }
+
+</style>
+
 <body>
 
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo"><a href="#">
+            <h1 class="logo"><a href="#hero">
                     <img src="{{ asset('assets/img/logo.png') }}">
                 </a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
@@ -77,7 +83,7 @@
 
                 <div class="section-title">
                     <h2>Layanan</h2>
-                    <p>Pemesanan Layanan dapat dengan Memasukkan ID Porter atau Scan QR dari Porter</p>
+                    <p>Pemesanan Layanan dapat dengan Memasukkan Kode Porter</p>
                 </div>
                 <div class="row gy-4">
                     <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -85,7 +91,7 @@
                             <div class="icon">
                                 <img src="{{ asset ('assets/img/nomor.png') }}" class="img-fluid" alt="">
                             </div>
-                            <h4><a href="">Pemesanan Dengan ID Porter</a></h4>
+                            <h4><a href="">Pemesanan Dengan Kode Porter</a></h4>
                             <p>Masukkan Nomor ID Porter dan tekan PESAN</p>
                             <form action="/process_token" method="POST">
                                 <input type="text" id="token" name="token" required>
@@ -95,17 +101,6 @@
                             <button type="submit" class="btn-pesan"><a href="#">PESAN</a></button>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box iconbox-blue">
-                            <div class="icon">
-                                <img src="assets/img/scan_qr.png" class="img-fluid" alt="">
-                            </div>
-                            <h4><a href="">Pemesanan Dengan Scan QR</a></h4>
-                            <p>Pemesanan porter dapat dilakukan dengan mengklik tombol Scan QR</p>
-                            <br>
-                            <button type="submit" class="btn-pesan"><a href="#">SCAN QR</a></button>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </section><!-- End Services Section -->
@@ -113,20 +108,22 @@
         <!-- History Section -->
         <section id="histori" class="histori">
             <div class="container mt-5">
-                <table class="table mt-3">
-                    <thead>
-                        <tr>
-                            <th class="text-dark text">No.</th>
-                            <th class="text-dark text">Tanggal</th>
-                            <th class="text-dark text">Waktu Mulai</th>
-                            <th class="text-dark text">Waktu Selesai</th>
-                            <th class="text-dark text">Harga/Menit</th>
-                            <th class="text-dark text">Total</th>
-                            <th class="text-dark text">Status</th>
-                            <th class="text-dark text">Pembatalan</th>
-                        </tr>
-                    </thead>
-                </table>
+                <div class="table-responsive mt-3">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-dark">No.</th>
+                                <th class="text-dark">Tanggal</th>
+                                <th class="text-dark">Waktu Mulai</th>
+                                <th class="text-dark">Waktu Selesai</th>
+                                <th class="text-dark">Harga/Menit</th>
+                                <th class="text-dark">Total</th>
+                                <th class="text-dark">Status</th>
+                                <th class="text-dark">Pembatalan</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
         </section>
 
@@ -141,12 +138,15 @@
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
                         <h3>Porter/Asisten Berbelanja</h3>
                         <p class="fst-italic">
-                            Porter atau asisten berbelanja adalah masyarakat yang menawarkan jasa dengan tugas yang bervariasi:
+                            Porter atau asisten berbelanja adalah masyarakat yang menawarkan jasa dengan tugas yang
+                            bervariasi:
                         </p>
                         <ul>
                             <li><i class="bi bi-check-circle"></i>Mengangkat Barang Belanjaan</li>
-                            <li><i class="bi bi-check-circle"></i>Mengarahkan Pengunjung Pasar atau sebagai Tour Guide</li>
-                            <li><i class="bi bi-check-circle"></i>Menawarkan produk dagangan dari Merchant atau Pedagang Lapak</li>
+                            <li><i class="bi bi-check-circle"></i>Mengarahkan Pengunjung Pasar atau sebagai Tour Guide
+                            </li>
+                            <li><i class="bi bi-check-circle"></i>Menawarkan produk dagangan dari Merchant atau Pedagang
+                                Lapak</li>
                         </ul>
                     </div>
                 </div>
@@ -180,7 +180,8 @@
                                 <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#histori">Riwayat</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#about">Promosi</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="{{ route('profiluser') }}">Profil</a></li>
+                                <li><i class="bx bx-chevron-right"></i> <a href="{{ route('profiluser') }}">Profil</a>
+                                </li>
                             </ul>
                         </div>
 

@@ -6,15 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>ADMIN-Permohonan Merchant</title>
     <link rel="stylesheet" href="{{ asset('adminassets/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="{{ asset('alertassets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="{{ asset('adminassets/fonts/fontawesome-all.min.css') }}">
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
     <link href="{{ asset('assets/img/logo.png') }}" rel="apple-touch-icon">
+    
 </head>
 @php
     $bgUrl = asset('adminassets/img/bg.png');
 @endphp
+
 <body id="page-top">
     <div id="wrapper">
         <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark"
@@ -129,8 +133,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($merchant as $row)
-                        @if ($row->status === 'pending')
+                    @foreach($merchant as $row)
+                        @if($row->status === 'pending')
                             <tr>
                                 <td>{{ $row->user->nama }}</td>
                                 <td>{{ $row->email }}</td>
@@ -138,33 +142,73 @@
                                 <td>{{ $row->user->jk }}</td>
                                 <td>{{ $row->alamat }}</td>
                                 <td>
-                                    <a href="{{ route('viewImg', ['type' => 'ktp', 'filename' => $row->ktp]) }}" target="_blank">
+                                    <a href="{{ route('viewImg', ['type' => 'ktp', 'filename' => $row->ktp]) }}"
+                                        target="_blank">
                                         <button class="btn btn-success">
                                             VIEW
                                         </button>
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="{{ route('viewImg', ['type' => 'siup', 'filename' => $row->siup]) }}" target="_blank">
+                                    <a href="{{ route('viewImg', ['type' => 'siup', 'filename' => $row->siup]) }}"
+                                        target="_blank">
                                         <button class="btn btn-success">
                                             VIEW
                                         </button>
                                     </a>
                                 </td>
                                 <td>
-                                    <form action="{{ route('appMerchant', $row->id) }}" method="POST">
+                                    <form action="{{ route('appMerchant', $row->id) }}"
+                                        method="POST">
                                         @csrf
                                         <button type="submit" class="btn btn-success">
                                             Setujui
                                         </button>
                                     </form>
+                                    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title"></h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p style="font-family: Poppins, sans-serif;font-size: 12px;">Apakah
+                                                        anda yakin menyetujui nama sebagai merchant?</p>
+                                                </div>
+                                                <div class="modal-footer"><button class="btn btn-primary" type="button"
+                                                        style="background: #1cda18;width: 63px;padding-right: 11px;padding-left: 12px;font-family: Poppins, sans-serif;font-size: 10px;">Ya</button><button
+                                                        class="btn btn-light" type="button" data-bs-dismiss="modal"
+                                                        style="background: #ee2626;width: 63px;color: rgb(255,255,255);font-family: Poppins, sans-serif;font-size: 10px;padding-left: 0px;padding-right: 0px;">Periksa
+                                                        lagi</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <br>
-                                    <form action="{{ route('rejMerchant', $row->id) }}" method="POST">
+                                    <form action="{{ route('rejMerchant', $row->id) }}"
+                                        method="POST">
                                         @csrf
                                         <button type="submit" class="btn btn-danger">
                                             Tolak
                                         </button>
                                     </form>
+                                    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title"></h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p style="font-family: Poppins, sans-serif;font-size: 12px;">Apakah
+                                                        anda yakin menolak nama sebagai merchant?</p>
+                                                </div>
+                                                <div class="modal-footer"><button class="btn btn-primary" type="button"
+                                                        style="background: #1cda18;width: 63px;padding-right: 11px;padding-left: 12px;font-family: Poppins, sans-serif;font-size: 10px;">Ya</button><button
+                                                        class="btn btn-light" type="button" data-bs-dismiss="modal"
+                                                        style="background: #ee2626;width: 63px;color: rgb(255,255,255);font-family: Poppins, sans-serif;font-size: 10px;padding-left: 0px;padding-right: 0px;">Periksa
+                                                        lagi</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         @endif
@@ -174,6 +218,7 @@
         </div>
     </div>
     <script src="{{ asset('adminassets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('alertassets/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('adminassets/js/merchant_ad.js') }}"></script>
 </body>
 
