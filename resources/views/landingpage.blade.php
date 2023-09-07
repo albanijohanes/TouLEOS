@@ -17,7 +17,7 @@
 </head>
 
 <body
-    style="padding-top: 0px;background: linear-gradient(rgba(105,72,45,0.9), rgba(109,205,61,0.9)), url(&quot;landingassets/img/20230712_124645.jpg&quot;) center / cover repeat, rgb(164,125,125);">
+    style="padding-top: 0px;background: linear-gradient(rgba(105,72,45,0.9), rgba(109,205,61,0.9)), url(&quot;landingassets/img/20230712_124645.jpg&quot;) center / cover no-repeat, rgb(164,125,125);">
     <img src="{{ asset('landingassets/img/Logo%20web%20Tou%20Leos%20(3).png') }}"
         style="width: 150px;padding-bottom: 0px;padding-top: 26px;margin-top: -24px;padding-left: 0px;margin-left: 24px;"><img
         src="{{ asset('landingassets/img/Logo%20web%20Tou%20Leos%20(4).png') }}"

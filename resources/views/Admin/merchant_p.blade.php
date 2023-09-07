@@ -94,9 +94,6 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th style="font-family: Poppins, sans-serif;font-size: 14px;">
-                            No
-                        </th>
                         <th
                             style="font-family: Poppins, sans-serif;padding-left: 60px;padding-right: 65px;font-size: 14px;">
                             Nama
@@ -135,14 +132,25 @@
                     @foreach ($merchant as $row)
                         @if ($row->status === 'pending')
                             <tr>
-                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $row->user->nama }}</td>
                                 <td>{{ $row->email }}</td>
                                 <td>{{ $row->user->no_hp }}</td>
                                 <td>{{ $row->user->jk }}</td>
                                 <td>{{ $row->alamat }}</td>
-                                <td><a href="{{ route('viewImg', ['type' => 'ktp', 'filename' => $row->ktp]) }}" target="_blank">view Image KTP</a></td>
-                                <td>{{ $row->siup }}</td>
+                                <td>
+                                    <a href="{{ route('viewImg', ['type' => 'ktp', 'filename' => $row->ktp]) }}" target="_blank">
+                                        <button class="btn btn-success">
+                                            VIEW
+                                        </button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ route('viewImg', ['type' => 'siup', 'filename' => $row->siup]) }}" target="_blank">
+                                        <button class="btn btn-success">
+                                            VIEW
+                                        </button>
+                                    </a>
+                                </td>
                                 <td>
                                     <form action="{{ route('appMerchant', $row->id) }}" method="POST">
                                         @csrf
@@ -150,6 +158,7 @@
                                             Setujui
                                         </button>
                                     </form>
+                                    <br>
                                     <form action="{{ route('rejMerchant', $row->id) }}" method="POST">
                                         @csrf
                                         <button type="submit" class="btn btn-danger">

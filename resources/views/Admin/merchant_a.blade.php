@@ -144,8 +144,14 @@
                                 <td>{{ $row->user->no_hp }}</td>
                                 <td>{{ $row->user->jk }}</td>
                                 <td>{{ $row->alamat }}</td>
-                                <td><a href="{{ route('viewImg', ['type' => 'ktp', 'filename' => $row->ktp]) }}" target="_blank">view Image KTP</a></td>
-                                <td>{{ $row->siup }}</td>
+                                <td><a href="{{ route('viewImg', ['type' => 'ktp', 'filename' => $row->ktp]) }}" target="_blank">
+                                    <button class="btn btn-success">VIEW</button>
+                                    </a>
+                                </td>
+                                <td><a href="{{ route('viewImg', ['type' => 'siup', 'filename' => $row->siup]) }}" target="_blank">
+                                    <button class="btn btn-success">VIEW</button>
+                                    </a>
+                                </td>
                                 <td>{{ $row->status }}</td>
                             </tr>
                         @endforeach

@@ -147,8 +147,23 @@
                                 <td>{{ $row->user->jk }}</td>
                                 <td>{{ $row->alamat }}</td>
                                 <td>{{ $row->porter_id }}</td>
-                                <td>{{ $row->ktp }}</td>
-                                <td>{{ $row->skkb }}</td>
+                                <td>
+                                    <a href="{{ route('viewImg',
+                                    ['type' => 'ktp', 'filename' => $row->ktp]) }}" target="_blank">
+                                        <button class="btn btn-success">
+                                            VIEW
+                                        </button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a
+                                    href="{{ route('viewImg',
+                                    ['type' => 'skkb', 'filename' => $row->skkb]) }}" target="_blank">
+                                        <button class="btn btn-success">
+                                            VIEW
+                                        </button>
+                                    </a>
+                                </td>
                                 <td>{{ $row->status }}</td>
                             </tr>
                         @endforeach
