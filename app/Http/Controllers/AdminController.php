@@ -69,18 +69,16 @@ class AdminController extends Controller
         $disk = '';
 
         if ($type === 'ktp') {
-            $disk = 'ktp';
+            $disk = 'public/ktp';
         }elseif ($type === 'skkb') {
-            $disk = 'skkb';
+            $disk = 'public/skkb';
         }elseif ($type === 'siup') {
-            $disk = 'siup';
+            $disk = 'public/siup';
         }
         $img = storage_path("app/{$disk}/{$filename}");
         if(File::exists($img)){
             return response()->file($img);
-        }else{
-            Log::error("file not found: {$img}");
-            return abort(404);
         }
+        return abort(404);
     }
 }
