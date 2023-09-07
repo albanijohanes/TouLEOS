@@ -88,10 +88,10 @@
                                 @enderror
                             </div>
                         </div>
-                    
+
                         <div class="mb-3">
                             <label class="form-label">KTP (Kartu Tanda Penduduk)</label>
-                            <input id="ktp" name="ktp" class="form-control @error('ktp') is-invalid @enderror" type="file" accept=".pdf" required>
+                            <input id="ktp" name="ktp" class="form-control @error('ktp') is-invalid @enderror" type="file" required>
                             @error('ktp')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -100,7 +100,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">SKKB (Surat Keterangan Kelakuan Baik) atau sejenis</label>
-                            <input id="skkb" name="skkb" class="form-control @error('skkb') is-invalid @enderror" type="file" accept=".pdf" required>
+                            <input id="skkb" name="skkb" class="form-control @error('skkb') is-invalid @enderror" type="file" required>
                             @error('skkb')
                                 <div class="invalid-feedback">
                                     {{ $message }}

@@ -92,7 +92,7 @@
                             <label class="form-label">
                                 KTP (Kartu Tanda Penduduk)
                             </label>
-                            <input name="ktp" class="form-control" type="file" accept=".pdf" required>
+                            <input name="ktp" class="form-control" type="file" required>
                             @error('pdf1')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -103,7 +103,7 @@
                             <label class="form-label">
                                 SIUP (Surat Ijin Usaha Perdagangan) atau sejenis
                             </label>
-                            <input name="siup" class="form-control" type="file" accept=".pdf" required>
+                            <input name="siup" class="form-control" type="file" required>
                             @error('siup')
                                 <div class="invalid-feedback">
                                     {{ $message }}

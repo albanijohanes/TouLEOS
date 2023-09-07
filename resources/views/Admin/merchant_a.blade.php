@@ -144,7 +144,7 @@
                                 <td>{{ $row->user->no_hp }}</td>
                                 <td>{{ $row->user->jk }}</td>
                                 <td>{{ $row->alamat }}</td>
-                                <td>{{ $row->ktp }}</td>
+                                <td><a href="{{ route('viewImg', ['type' => 'ktp', 'filename' => $row->ktp]) }}" target="_blank">view Image KTP</a></td>
                                 <td>{{ $row->siup }}</td>
                                 <td>{{ $row->status }}</td>
                             </tr>

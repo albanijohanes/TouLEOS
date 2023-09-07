@@ -53,8 +53,8 @@ class RegisterController extends Controller
                     $uniqueKtpName = $uniqueKtp . '_' . Str::uuid() . '.' . $ktpExtension;
                     $uniqueSkkbName = $uniqueSkkb . '_' . Str::uuid() . '.' . $skkbExtension;
 
-                    $ktp = $request->file('ktp')->storeAs('ktp', $uniqueKtpName);
-                    $skkb = $request->file('skkb')->storeAs('skkb', $uniqueSkkbName);
+                    $ktp = $request->file('ktp')->store('public/ktp');
+                    $skkb = $request->file('skkb')->store('public/skkb');
 
                     $porter_id = $this->generatePorterCode();
 
@@ -90,8 +90,8 @@ class RegisterController extends Controller
                     $uniqueKtpName = $uniqueKtp . '_' . Str::uuid() . '.' . $ktpExtension;
                     $uniqueSiupName = $uniqueSiup . '_' . Str::uuid() . '.' . $siupExtension;
 
-                    $ktp = $request->file('ktp')->storeAs('ktp', $uniqueKtpName);
-                    $siup = $request->file('siup')->storeAs('siup', $uniqueSiupName);
+                    $ktp = $request->file('ktp')->store('public/ktp');
+                    $siup = $request->file('siup')->store('public/siup');
 
                     Merchant::create([
                         'user_id' => $user->id,

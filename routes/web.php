@@ -81,5 +81,6 @@ Route::middleware('auth')->group(function(){
         Route::get('admin/porter/permohonan', [AdminController::class, 'AdminPorterPermohonan'])->name('porter_permohonan');
         Route::post('admin/porter/permohonan/approve/{id}', [AdminController::class, 'approvePorter'])->name('appPorter');
         Route::post('admin/porter/permohonan/reject/{id}', [AdminController::class, 'rejectPorter'])->name('rejPorter');
+        Route::get('admin/view/{type}/{filename}', [AdminController::class, 'viewImg'])->name('viewImg');
     });
 });

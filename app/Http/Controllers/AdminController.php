@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Merchant;
 use App\Porter;
 use App\User;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -42,7 +44,7 @@ class AdminController extends Controller
 
     public function approvePorter($id){
         $porter = Porter::find($id);
-        $porter->updated(['status' => 'approved']);
+        $porter->update(['status' => 'approved']);
 
         return redirect()->back();
     }
@@ -63,7 +65,7 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    public function viewPdf($type, $id){
+    public function viewImg($type, $filename){
         $disk = '';
 
         if ($type === 'ktp') {
@@ -73,13 +75,12 @@ class AdminController extends Controller
         }elseif ($type === 'siup') {
             $disk = 'siup';
         }
-
-        if(Storage::disk($disk)->exists("{$id}.pdf")){
-            $pdfPath = "/storage/app/{$disk}/{$id}.pdf";
-            $pdfUrl = asset($pdfPath);
-
-            return redirect($pdfUrl);
+        $img = storage_path("app/{$disk}/{$filename}");
+        if(File::exists($img)){
+            return response()->file($img);
+        }else{
+            Log::error("file not found: {$img}");
+            return abort(404);
         }
-        return abort(404);
     }
 }
