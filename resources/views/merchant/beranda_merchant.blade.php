@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="{{ asset ('merchantassets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;display=swap">
-    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Black-Navbar.css') }}>
-    <link rel=" stylesheet" href="{{ asset ('merchantassets/css/Form-Select---Full-Date---Month-Day-Year.css') }}">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Black-Navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Form-Select---Full-Date---Month-Day-Year.css') }}">
     <link rel="stylesheet" href="{{ asset ('merchantassets/css/gradient-navbar-styles.css') }}">
     <link rel="stylesheet" href="{{ asset ('merchantassets/css/gradient-navbar.css') }}">
     <link rel="stylesheet" href="{{ asset ('merchantassets/css/Hero-Clean-Reverse-images.css') }}">
@@ -74,11 +74,9 @@
                                     <h4 class="modal-title" style="font-family: Poppins, sans-serif;">
                                         Tambah Promosi Dagangan
                                     </h4>
-                                    <button class="close" type="button" aria-label="Close" data-dismiss="modal"
+                                    <button class="close" type="button" aria-label="Close" id="closeModal"
                                         style="color: rgb(0,0,0);">
-                                        <span aria-hidden="true">
-                                            &times;
-                                        </span>
+                                        <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">
@@ -149,9 +147,13 @@
                                 <div class="modal-header">
                                     <h4 class="modal-title"
                                         style="font-family: Poppins, sans-serif;text-align: center;padding-right: 0px;">
-                                        Edit Detail Dagangan</h4><button class="close" type="button" aria-label="Close"
-                                        data-dismiss="modal" style="color: rgb(0,0,0);"><span
-                                            aria-hidden="true">&times;</span></button>
+                                        Edit Detail Dagangan
+                                    </h4>
+                                    <button class="close" type="button" aria-label="Close" id="closeRiwayatModal"
+                                        style="color: rgb(0,0,0);">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+
                                 </div>
                                 <div class="modal-body">
                                     <div class="row">
@@ -163,7 +165,7 @@
                                                         style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 12px;">Status
                                                         Promosi</label><select class="form-control"
                                                         style="font-size: 12px;font-family: Poppins, sans-serif;">
-                                                        <optgroup label="This is a group">
+                                                        <optgroup label="Status">
                                                             <option value="12" selected="">
                                                                 Tidak Aktif
                                                             </option>
@@ -372,8 +374,24 @@
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="{{ asset ('merchantassets/js/Navbar---Apple-navbar---apple.js') }}"></script>
     <script src="{{ asset ('merchantassets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset ('merchantassets/js/smart-forms.min.js') }}"></script>
     <script src="{{ asset ('merchantassets/js/Auto-Modal-Popup-modal.js') }}"></script>
+
+    <script>
+        function closeModalAndReload(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = 'none';
+            location.reload();
+        }
+        var closeModalButton = document.getElementById('closeModal');
+        closeModalButton.addEventListener('click', function () {
+            closeModalAndReload('addPromosi');
+        });
+        var closeRiwayatModalButton = document.getElementById('closeRiwayatModal');
+        closeRiwayatModalButton.addEventListener('click', function () {
+            closeModalAndReload('riwayat');
+        });
+    </script>
+
 </body>
 
 </html>
