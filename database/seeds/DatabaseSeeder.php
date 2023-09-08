@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
             'role'      => 'customer',
             'jk'        => 'Laki-laki',
             'no_hp'     => '08123456789',
-            'password'  => Hash::make('APDOj1923180'),
+            'password'  => Hash::make('mner'),
         ]);
 
         Porter::create([
