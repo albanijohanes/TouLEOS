@@ -23,6 +23,8 @@
     <link href="{{ asset('porterassets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Profile-Edit-Form-styles.css') }}">
+    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Profile-Edit-Form.css') }}">
 
     <link href="{{ asset('porterassets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('alertassets/css/boostrap.min.css') }}" rel="stylesheet">
@@ -59,7 +61,64 @@
 
         <section class="section dashboard">
             <div class="row">
+                <div class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+                    id="riwayat">
+                    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title"
+                                    style="font-family: Poppins, sans-serif;text-align: center;padding-right: 0px;">
+                                    Edit Detail Dagangan</h4><button class="close" type="button" aria-label="Close"
+                                    data-dismiss="modal" style="color: rgb(0,0,0);"><span
+                                        aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <form data-bss-recipient="67b465af92ed4ffdcc0537eaadc6dd61"
+                                            style="font-family: Poppins, sans-serif;">
+                                            <div class="form-control-plaintext" type="text"
+                                                style="font-size: 12px;font-family: Poppins, sans-serif;">
+                                                <label
+                                                    style="font-family: Poppins, sans-serif;font-weight: bold;font-size: 12px;">
+                                                    Nama Bahan/Barang
+                                                </label>
+                                                <input class="form-control" type="text"
+                                                    style="font-family: Poppins, sans-serif;font-size: 12px;">
+                                            </div>
+                                            <div class="form-control-plaintext" type="text"
+                                                style="font-size: 12px;font-family: Poppins, sans-serif;">
+                                                <label style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                                    Satuan
+                                                </label>
+                                                <input class="form-control" type="text"
+                                                    style="font-family: Poppins, sans-serif;font-size: 12px;">
+                                            </div>
+                                            <div class="form-control-plaintext" type="text"
+                                                style="font-size: 12px;font-family: Poppins, sans-serif;">
+                                                <label style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                                    Harga
+                                                </label>
+                                                <input class="form-control" type="number"
+                                                    style="font-family: Poppins, sans-serif;font-size: 12px;">
+                                            </div>
+                                            <div class="form-control-plaintext" type="text"
+                                                style="font-size: 12px;font-family: Poppins, sans-serif;">
+                                                <label style="font-family: Poppins, sans-serif;font-weight: bold;">
+                                                    Deskripsi
+                                                </label>
+                                                <textarea class="form-control"
+                                                    style="font-family: Poppins, sans-serif;font-size: 12px;">
+                                                    </textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="col-xxl-4 col-xl-12">
@@ -70,9 +129,21 @@
                                     <h5 class="card-title">Daftar Promosi</h5>
 
                                     <div class="d-flex align-items-center">
-                                        <div class="ps-3">
-                                            <h6>1244</h6>
-                                        </div>
+                                        <a class="list-group-item list-group-item-action flex-column align-items-start"
+                                            href="#" style="font-family: Poppins, sans-serif;">
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1" style="font-size: 15px;">
+                                                    Nama Pemilik</h5>
+                                            </div>
+                                            <div class="d-flex w-100 justify-content-between">
+                                                <h5 class="mb-1" style="font-size: 15px;">
+                                                    Nama Bahan
+                                                    :</h5>
+                                            </div>
+                                            <p class="mb-1" style="font-size: 13px;">
+                                                Harga bahan
+                                            </p>
+                                        </a>
                                     </div>
 
                                 </div>
@@ -81,7 +152,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     </main>
 
@@ -106,7 +176,7 @@
     </script>
     <script src="{{ asset('porterassets/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('porterassets/vendor/php-email-form/validate.js') }}"></script>
-
+    <script src="{{ asset('merchantassets/js/Profile-Edit-Form-profile.js') }}"></script>
     <script src="{{ asset('porterassets/js/main.js') }}"></script>
     <script src="{{ asset('alertassets/js/boostrap.min.js') }}"></script>
 
