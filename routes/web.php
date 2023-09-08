@@ -59,6 +59,7 @@ Route::middleware('auth')->group(function(){
     Route::middleware('role:porter', 'approval')->group(function(){
         Route::get('porter/index', [PorterController::class, 'porter'])->name('porter');
         Route::get('porter/profile' , [PorterController::class, 'userporter'])->name('userporter');
+        Route::get('porter/promotion' , [PorterController::class, 'userpromot'])->name('userpromot');
     });
 
     //Sebagai Merchant

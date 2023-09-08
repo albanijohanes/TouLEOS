@@ -185,6 +185,13 @@
                 </a>
             </li><!-- End Profile Page Nav -->
 
+            <li class="nav-item">
+                <a class="nav-link " href="{{ route('userpromot') }}">
+                    <i class="bi bi-basket2"></i>
+                    <span id="Judulmu">Promosi</span>
+                </a>
+            </li><!-- End Profile Page Promotion -->
+
         </ul>
 
     </aside><!-- End Sidebar-->

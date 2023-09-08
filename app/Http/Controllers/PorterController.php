@@ -13,6 +13,9 @@ class PorterController extends Controller
     public function userporter(){
         return view('porter/users-profile');
     }
+    public function userpromot(){
+        return view('porter/promotion');
+    }
     public function requestService(Request $request){
         $request->validate([
             'porter_id' => 'required|exists:porters,id',
