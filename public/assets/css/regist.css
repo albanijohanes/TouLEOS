@@ -120,7 +120,7 @@
     font-size: 20px;
     font-weight: 500;
     cursor: pointer;
-    background: #47A992;
+    background: rgba(109, 205, 61, 0.9);
     transition: all 0.3s ease;
   }
   form .field input[type="submit"]:active{
@@ -133,7 +133,7 @@
   }
   form .pass-link a,
   form .signup-link a{
-    color: #47A992;
+    color: rgba(109, 205, 61, 0.9);
     text-decoration: none;
   }
   form .pass-link a:hover,

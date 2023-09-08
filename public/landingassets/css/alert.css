@@ -1,0 +1,92 @@
+input, button, select, optgroup, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button {
+  border-radius: 0;
+}
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+input, button, select, optgroup, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button;
+}
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.125rem;
+}
+
+.alert-success {
+  color: #496330;
+  background-color: #e8f2df;
+  border-color: #dfedd2;
+}
+
+.close {
+  float: right;
+  font-size: 1.3125rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  opacity: .75;
+}
+
+.close:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+
+.mr-1, .mx-1 {
+  margin-right: 0.3125rem !important;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  background-size: auto;
+}
+

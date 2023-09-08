@@ -8,15 +8,44 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
-    public function login(){
+    public function start(){
+        return view('landingpage');
+    }
+
+    public function loginuser(){
         if(Auth::check()){
-            if(Auth::user()->role == 'Porter'){
-                return redirect()->route('porter');
-            }else{
-                return redirect()->route(('index'));
+            if(Auth::user()->role == 'customer'){
+                return redirect()->route('index');
             }
         }
-        return view('auth/login');
+        return view('auth/login_user');
+    }
+
+    public function loginporter(){
+        if(Auth::check()){
+            if(Auth::user()->role == 'porter'){
+                return redirect()->route('porter');
+            }
+        }
+        return view('auth/login_porter');
+    }
+
+    public function loginmerchant(){
+        if(Auth::check()){
+            if(Auth::user()->role == 'merchant'){
+                return redirect()->route('beranda_merchant');
+            }
+        }
+        return view('auth/login_merchant');
+    }
+
+    public function loginadmin(){
+        if(Auth::check()){
+            if(Auth::user()->role == 'admin'){
+                return redirect()->route('berandaAdmin');
+            }
+        }
+        return view('landingpage');
     }
 
     public function loginPost(Request $request){
@@ -24,18 +53,42 @@ class LoginController extends Controller
             'username'  => 'required',
             'password'  => 'required'
         ]);
-        if(Auth::attempt(['username' => $request->username, 'password' => $request->password])){
-            $request->session()->regenerate();
 
-            return redirect()->route('login');
+        if($validator->fails()){
+            return redirect()->route('start')->withErrors($validator)->withInput();
         }
-        return redirect()->route('login')->with('error', 'password salah!');
+
+        if (Auth::attempt([
+            'username' => $request->username,
+            'password' => $request->password,
+        ])) {
+            $user = Auth::user();
+
+            return $this->redirectToRoleDashboard($user->role);
+        }
+
+        return redirect()->route('start')->withErrors([
+            'auth' => 'Password atau username salah.',
+        ]);
+    }
+
+    public function redirectToRoleDashboard($role){
+        switch ($role) {
+            case 'customer':
+                return redirect()->route('index');
+            case 'admin':
+                return redirect()->route('berandaAdmin');
+            case 'porter':
+                return redirect()->route('porter');
+            case 'merchant':
+                return redirect()->route('beranda_merchant');
+            default:
+                return redirect()->route('start')->withErrors(['auth' => 'Invalid user role.']);
+        }
     }
     public function logout(Request $request){
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
-
-        return redirect()->route('login');
+        return redirect()->route('start');
     }
 }

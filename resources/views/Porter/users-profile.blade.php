@@ -20,40 +20,49 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{ asset('porterassets/vendor/bootstrap/css/bootstrap.min.css') }}"
-        rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/bootstrap-icons/bootstrap-icons.css') }}"
-        rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/boxicons/css/boxicons.min.css') }}"
-        rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/simple-datatables/style.css') }}"
-        rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
 
 
     <link href="{{ asset('porterassets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('alertassets/css/boostrap.min.css') }}" rel="stylesheet">
 
 
 </head>
 
 <body>
-
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Permintaan Pemesanan</h4><button
+                        class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-family: Poppins, sans-serif;">Nama ingin memesan jasa anda sebagai porter</p><label
+                        class="form-label" style="font-family: Poppins, sans-serif;">Harga/Menit :&nbsp;</label><input
+                        type="number" style="font-family: Poppins, sans-serif;padding-right: 0px;margin-right: -7px;">
+                </div>
+                <div class="modal-footer"><button class="btn btn-primary" type="button"
+                        style="background: #1cda18;">Terima</button><button class="btn btn-light" type="button"
+                        data-bs-dismiss="modal"
+                        style="--bs-danger: #dc3545;--bs-danger-rgb: 220,53,69;background: #ee2626;color: rgb(255,255,255);">Tolak</button>
+                </div>
+            </div>
+        </div>
+    </div>
     @extends('layouts.nbporter')
 
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Profile</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a id="Judulmu" href="{{ route('porter') }}">Home</a></li>
-                    <li id="Judulmu" class="breadcrumb-item">Users</li>
-                    <li id="Judulmu" class="breadcrumb-item active">Profile</li>
-                </ol>
-            </nav>
-        </div><!-- End Page Title -->
+            <h1>Profil</h1>
+        </div>
 
         <section class="section profile">
             <div class="row">
@@ -62,16 +71,9 @@
                     <div class="card">
                         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                            <img src="{{ asset ('porterassets/img/userprofile-img.jpeg') }}"
-                                alt="Profile" class="rounded-circle">
+                            <img src="{{ asset ('porterassets/img/foto.png') }}" alt="Profile" class="rounded-circle">
                             <h2>{{ auth()->user()->nama }}</h2>
                             <h3>{{ auth()->user()->role }}</h3>
-                            <div class="social-links mt-2">
-                                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                            </div>
                         </div>
                     </div>
 
@@ -81,37 +83,24 @@
 
                     <div class="card">
                         <div class="card-body pt-3">
-                            <!-- Bordered Tabs -->
-                            <ul class="nav nav-tabs nav-tabs-bordered">
-
-                                <li class="nav-item">
-                                    <button id="Judulmu" class="nav-link active" data-bs-toggle="tab"
-                                        data-bs-target="#profile-overview">Overview</button>
-                                </li>
-
-                                <li class="nav-item">
-                                    <button id="Judulmu" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#profile-edit">Edit Profile</button>
-                                </li>
-
-                                <li class="nav-item">
-                                    <button id="Judulmu" class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#profile-change-password">Change Password</button>
-                                </li>
-
-                            </ul>
                             <div class="tab-content pt-2">
 
                                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                                    <h5 class="card-title">About</h5>
-                                    <p class="small fst-italic">Saya adalah seorang pekerja kerja, jujur, dan
-                                        berintegritas. Salah satu softskill saya adalah menggunakan bahasa inggris</p>
+                                    <h5 class="card-title" style="font-size:40px;">Profil Anda</h5>
 
-                                    <h5 class="card-title">Detail Profil</h5>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Kode Porter:</div>
+                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->porter->porter_id }}</div>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label ">Nama Lengkap</div>
                                         <div class="col-lg-9 col-md-8">{{ auth()->user()->nama }}</div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">Username</div>
+                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->username }}</div>
                                     </div>
 
                                     <div class="row">
@@ -120,245 +109,16 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Kota</div>
-                                        <div class="col-lg-9 col-md-8">Minahasa Utara</div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">alamat</div>
-                                        <div class="col-lg-9 col-md-8">Manado</div>
+                                        <div class="col-lg-3 col-md-4 label">Jenis Kelamin</div>
+                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->jk }}</div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Nomor HP</div>
-                                        <div class="col-lg-9 col-md-8">085757151835</div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-3 col-md-4 label">Email</div>
-                                        <div class="col-lg-9 col-md-8">owenkalumata46@gmail.com</div>
+                                        <div class="col-lg-9 col-md-8">{{ auth()->user()->no_hp }}</div>
                                     </div>
 
                                 </div>
-
-                                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
-
-                                    <!-- Profile Edit Form -->
-                                    <form>
-                                        <div class="row mb-3">
-                                            <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile
-                                                Image</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <img src="assets/img/userprofile-img.jpeg" alt="Profile">
-                                                <div class="pt-2">
-                                                    <a href="#" class="btn btn-primary btn-sm"
-                                                        title="Upload new profile image"><i
-                                                            class="bi bi-upload"></i></a>
-                                                    <a href="#" class="btn btn-danger btn-sm"
-                                                        title="Remove my profile image"><i class="bi bi-trash"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full
-                                                Name</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="fullName" type="text" class="form-control" id="fullName"
-                                                    value="Erick Owen Indri Kalumata">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <textarea name="about" class="form-control" id="about"
-                                                    style="height: 100px">SANTAY DULU GA SEE.</textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="company"
-                                                class="col-md-4 col-lg-3 col-form-label">Company</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="company" type="text" class="form-control" id="company"
-                                                    value="Universitas Sam Ratulangi">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="job" type="text" class="form-control" id="Job"
-                                                    value="Web Development">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Country"
-                                                class="col-md-4 col-lg-3 col-form-label">Country</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="country" type="text" class="form-control" id="Country"
-                                                    value="North Minahasa">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Address"
-                                                class="col-md-4 col-lg-3 col-form-label">Address</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="address" type="text" class="form-control" id="Address"
-                                                    value="Manado">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="phone" type="text" class="form-control" id="Phone"
-                                                    value="085757151835">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="email" type="email" class="form-control" id="Email"
-                                                    value="owenkalumata46@gmail.com">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter
-                                                Profile</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="twitter" type="text" class="form-control" id="Twitter"
-                                                    value="https://twitter.com/#">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook
-                                                Profile</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="facebook" type="text" class="form-control" id="Facebook"
-                                                    value="https://www.facebook.com/owen.kalumata?mibextid=ZbWKwL/#">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram
-                                                Profile</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="instagram" type="text" class="form-control" id="Instagram"
-                                                    value="https://instagram.com/_owenklmt?igshid=MzNlNGNkZWQ4Mg==/#">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin
-                                                Profile</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="linkedin" type="text" class="form-control" id="Linkedin"
-                                                    value="https://www.linkedin.com/in/erick-owen-indri-kalumata-66a452279/#">
-                                            </div>
-                                        </div>
-
-                                        <div class="text-center">
-                                            <button type="submit"
-                                                style="background-color: #964B00; color: #FFFFFF;">Save Changes</button>
-                                        </div>
-                                    </form><!-- End Profile Edit Form -->
-
-                                </div>
-
-                                <div class="tab-pane fade pt-3" id="profile-settings">
-
-                                    <!-- Settings Form -->
-                                    <form>
-
-                                        <div class="row mb-3">
-                                            <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email
-                                                Notifications</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="changesMade"
-                                                        checked>
-                                                    <label class="form-check-label" for="changesMade">
-                                                        Changes made to your account
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="newProducts"
-                                                        checked>
-                                                    <label class="form-check-label" for="newProducts">
-                                                        Information on new products and services
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="proOffers">
-                                                    <label class="form-check-label" for="proOffers">
-                                                        Marketing and promo offers
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="securityNotify"
-                                                        checked disabled>
-                                                    <label class="form-check-label" for="securityNotify">
-                                                        Security alerts
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-center">
-                                            <button type="submit"
-                                                style="background-color: #964B00; color: #FFFFFF;">Save Changes</button>
-                                        </div>
-                                    </form><!-- End settings Form -->
-
-                                </div>
-
-                                <div class="tab-pane fade pt-3" id="profile-change-password">
-                                    <!-- Change Password Form -->
-                                    <form>
-
-                                        <div class="row mb-3">
-                                            <label for="currentPassword"
-                                                class="col-md-4 col-lg-3 col-form-label">Current Password</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="password" type="password" class="form-control"
-                                                    id="currentPassword">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New
-                                                Password</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="newpassword" type="password" class="form-control"
-                                                    id="newPassword">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter
-                                                New Password</label>
-                                            <div class="col-md-8 col-lg-9">
-                                                <input name="renewpassword" type="password" class="form-control"
-                                                    id="renewPassword">
-                                            </div>
-                                        </div>
-
-                                        <div class="text-center">
-                                            <button type="submit"
-                                                style="background-color: #964B00; color: #FFFFFF;">Change
-                                                Password</button>
-                                        </div>
-                                    </form><!-- End Change Password Form -->
-
-                                </div>
-
                             </div><!-- End Bordered Tabs -->
 
                         </div>
@@ -371,34 +131,27 @@
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" style="color: #FFFFFF;">
         <div class="copyright">
             &copy; Copyright <strong><span>TouLEOS</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-            <!-- All the links in the footer should remain intact. -->
-            <!-- You can delete the links only if you purchased the pro version. -->
-            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
     </footer><!-- End Footer -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="{{ asset('porter/vendor/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('porter/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('porter/vendor/chart.js/chart.umd.js') }}"></script>
-    <script src="{{ asset('porter/vendor/echarts/echarts.min.js') }}"></script>
-    <script src="{{ asset('porter/vendor/quill/quill.min.js') }}"></script>
-    <script src="{{ asset('porter/vendor/simple-datatables/simple-datatables.js') }}"></script>
-    <script src="{{ asset('porter/vendor/tinymce/tinymce.min.js') }}"></script>
-    <script src="{{ asset('porter/vendor/php-email-form/validate.js') }}"></script>
 
-    <!-- Template Main JS File -->
-    <script src="{{ asset('porter/js/main.js') }}"></script>
+    <script src="{{ asset('porterassets/vendor/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('porterassets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('porterassets/vendor/chart.js/chart.umd.js') }}"></script>
+    <script src="{{ asset('porterassets/vendor/echarts/echarts.min.js') }}"></script>
+    <script src="{{ asset('porterassets/vendor/quill/quill.min.js') }}"></script>
+    <script src="{{ asset('porterassets/vendor/simple-datatables/simple-datatables.js') }}"></script>
+    <script src="{{ asset('porterassets/vendor/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('porterassets/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('porterassets/js/main.js') }}"></script>
+    <script src="{{ asset('alertassets/js/boostrap.min.js') }}"></script>
+
 
 </body>
 
