@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -55,7 +56,7 @@ class LoginController extends Controller
         ]);
 
         if($validator->fails()){
-            return redirect()->route('start')->withErrors($validator)->withInput();
+            return redirect()->back()->withErrors(['Tolong di isi untuk Username atau Password']);
         }
 
         if (Auth::attempt([
@@ -66,10 +67,17 @@ class LoginController extends Controller
 
             return $this->redirectToRoleDashboard($user->role);
         }
+        $user = User::where('username', $request->username)->first();
+        if ($user) {
+            return redirect()->back()->withErrors([
+                'auth' => 'Password yang anda masukkan salah'
+            ]);
+        } else {
+            return redirect()->back()->withErrors([
+                'auth' => 'Username tidak ditemukan, Lakukan Registerasi'
+            ]);
+        }
 
-        return redirect()->route('start')->withErrors([
-            'auth' => 'Password atau username salah.',
-        ]);
     }
 
     public function redirectToRoleDashboard($role){

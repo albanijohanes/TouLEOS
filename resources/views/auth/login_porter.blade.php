@@ -74,12 +74,17 @@
             Masuk sebagai Porter
         </div>
         <br>
-        <div class="alert alert-success" role="alert" style="background: #dc3545;"><span
-                style="color: rgb(255,255,255);font-family: Poppins, sans-serif;"><strong>Username yang anda masukkan
-                    salah</strong></span></div>
-        <div class="alert alert-success" role="alert" style="background: #dc3545;"><span
-                style="color: rgb(255,255,255);font-family: Poppins, sans-serif;margin-left: 0px;padding-right: 0px;margin-right: 0px;"><strong>Kata
-                    sandi yang anda masukkan salah</strong></span></div>
+        @if ($errors->any())
+        <div class="alert alert-success" role="alert" style="background: #dc3545;">
+            <span style="color: rgb(255,255,255);font-family: Poppins, sans-serif;">
+                <strong>
+                    @foreach ($errors->all() as $error)
+                    {{ $error }}
+                    @endforeach
+                </strong>
+            </span>
+        </div>
+        @endif
         <form class="p-3 mt-3" action="{{ route('login.post') }}" method="POST">
             @csrf
             <div class="form-field d-flex align-items-center">

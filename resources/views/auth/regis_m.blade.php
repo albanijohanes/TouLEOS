@@ -22,9 +22,9 @@
                     </div>
                     <form class="user" method="POST" action="{{ route('register.post') }}" enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="role" value="merchant">
+                        <input type="hidden" name="role" value="porter">
                         <div class="mb-3">
-                            <input name="nama" class="form-control form-control-user" type="text" placeholder="Nama Lengkap" required>
+                            <input id="nama" name="nama" class="form-control form-control-user @error('nama') is-invalid @enderror" type="text" placeholder="Nama Lengkap" required>
                             @error('nama')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -32,7 +32,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <input name="no_hp" class="form-control form-control-user" type="text" placeholder="Nomor HP" required>
+                            <input id="no_hp" name="no_hp" class="form-control form-control-user @error('no_hp') is-invalid @enderror" type="text" placeholder="Nomor HP" required>
                             @error('no_hp')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -40,7 +40,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <input name="email" class="form-control form-control-user" type="text" placeholder="Email" required>
+                            <input id="email" name="email" class="form-control form-control-user @error('email') is-invalid @enderror" type="text" placeholder="Email" required>
                             @error('email')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -48,7 +48,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <input name="alamat" class="form-control form-control-user" type="text" placeholder="Alamat" required>
+                            <input id="alamat" name="alamat" class="form-control form-control-user @error('alamat') is-invalid @enderror" type="text" placeholder="Alamat" required>
                             @error('alamat')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -56,7 +56,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <select name="jk" class="form-select">
+                            <select class="form-select @error('jk') is-invalid @enderror" name="jk">
                                 <optgroup label="Jenis Kelamin">
                                     <option value="Laki-laki" selected="">Laki-laki</option>
                                     <option value="Perempuan">Perempuan</option>
@@ -72,7 +72,7 @@
                         <div class="mb-3"></div>
                         <div class="row mb-3">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input name="username" class="form-control form-control-user" type="text" placeholder="Nama Pengguna (Username)" required="">
+                                <input id="username" name="username" class="form-control form-control-user @error('username') is-invalid @enderror" type="text" placeholder="Nama Pengguna (Username)" required>
                                 @error('username')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -80,7 +80,7 @@
                                 @enderror
                             </div>
                             <div class="col-sm-6">
-                                <input name="password" class="form-control form-control-user" type="password" id="password" placeholder="Kata Sandi" required="">
+                                <input name="password" class="form-control form-control-user @error('password') is-invalid @enderror" type="password" id="password" placeholder="Kata Sandi" required>
                                 @error('password')
                                     <div id="passwordErrorMsg" class="text-danger" style="display:none;">
                                         {{ $message }}
@@ -88,22 +88,19 @@
                                 @enderror
                             </div>
                         </div>
+
                         <div class="mb-3">
-                            <label class="form-label">
-                                KTP (Kartu Tanda Penduduk)
-                            </label>
-                            <input name="ktp" class="form-control" type="file" required>
-                            @error('pdf1')
+                            <label class="form-label">KTP (Kartu Tanda Penduduk)</label>
+                            <input id="ktp" name="ktp" class="form-control @error('ktp') is-invalid @enderror" type="file" required>
+                            @error('ktp')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">
-                                SIUP (Surat Ijin Usaha Perdagangan) atau sejenis
-                            </label>
-                            <input name="siup" class="form-control" type="file" required>
+                            <label class="form-label">SIUP (Surat Izin Usaha Perdagangan) atau sejenis</label>
+                            <input id="skkb" name="skkb" class="form-control @error('siup') is-invalid @enderror" type="file" required>
                             @error('siup')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -113,15 +110,11 @@
                         <button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit" style="background: rgba(109,205,61,0.9);margin-bottom: 16px;">
                             DAFTAR
                         </button>
-                        <div class="text-center">
-                            <a class="small" href="{{ route('loginmerchant') }}">
-                                Sudah punya akun? Masuk
-                            </a>
-                        </div>
+                        <div class="text-center"><a class="small" href="{{ route('loginmerchant') }}">Sudah punya akun? Masuk</a></div>
                         <hr>
                         <div class="text-center mt-3">
-            <a href="{{ route('start') }}" class="small">Kembali</a>
-        </div>
+                            <a href="{{ route('start') }}" class="small">Kembali</a>
+                        </div>
                     </form>
                 </div>
             </div>

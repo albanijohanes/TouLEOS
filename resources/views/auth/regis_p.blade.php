@@ -32,14 +32,13 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <input id="no_hp" name="no_hp" class="form-control form-control-user @error('no_hp') is-invalid @enderror" type="text" placeholder="Nomor HP" required=
+                            <input id="no_hp" name="no_hp" class="form-control form-control-user @error('no_hp') is-invalid @enderror" type="text" placeholder="Nomor HP" required>
                             @error('no_hp')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
-                        <br>
                         <div class="mb-3">
                             <input id="email" name="email" class="form-control form-control-user @error('email') is-invalid @enderror" type="text" placeholder="Email" required>
                             @error('email')
@@ -56,7 +55,8 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="mb-3"><select class="form-select @error('jk') is-invalid @enderror" name="jk">
+                        <div class="mb-3">
+                            <select class="form-select @error('jk') is-invalid @enderror" name="jk">
                                 <optgroup label="Jenis Kelamin">
                                     <option value="Laki-laki" selected="">Laki-laki</option>
                                     <option value="Perempuan">Perempuan</option>
@@ -113,8 +113,8 @@
                         <div class="text-center"><a class="small" href="{{ route('loginporter') }}">Sudah punya akun? Masuk</a></div>
                         <hr>
                         <div class="text-center mt-3">
-            <a href="{{ route('start') }}" class="small">Kembali</a>
-        </div>
+                            <a href="{{ route('start') }}" class="small">Kembali</a>
+                        </div>
                     </form>
                 </div>
             </div>

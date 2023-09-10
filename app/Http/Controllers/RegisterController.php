@@ -32,34 +32,34 @@ class RegisterController extends Controller
     public function registerPost(Request $request){
         $rules = [
             'nama' => 'required|string|max:255',
-            'username' => 'required|string|unique:users',
+            'username' => 'required|string|min:4|unique:users',
             'password' => 'required|string|min:8',
-            'no_hp' => 'required|string|max:15',
+            'no_hp' => 'required|string|min:11|max:15',
             'jk' => 'required|string',
-            'role' => 'required|string|in:user,porter,merchant',
+            'role' => 'required|string|in:customer,porter,merchant',
         ];
         if ($request->input('role') === 'porter' || $request->input('role') === 'merchant') {
             $rules = array_merge($rules, [
                 'alamat' => 'required|string',
-                'email' => 'required|email|unique:users',
+                'email' => 'required|email',
                 'ktp' => [
                     'required',
                     'file',
-                    Rule::in(['jpeg','png','jpg','pdf']),
+                    'mimes:jpeg,pdf,png,jpg',
                 ],
             ]);
             if ($request->input('role') === 'porter') {
                 $rules['skkb'] = [
                     'required',
                     'file',
-                    Rule::in(['jpeg','png','jpg','pdf']),
+                    'mimes:jpeg,pdf,png,jpg',
                 ];
             }
             if ($request->input('role') === 'merchant') {
                 $rules['siup'] = [
                     'required',
                     'file',
-                    Rule::in(['jpeg','png','jpg','pdf']),
+                    'mimes:jpeg,pdf,png,jpg',
                 ];
             }
         }

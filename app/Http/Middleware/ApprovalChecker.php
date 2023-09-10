@@ -34,7 +34,7 @@ class ApprovalChecker
                 return $next($request);
             }
             Auth::logout();
-            return redirect()->route('start')->with('alert', 'Daftar, silahkan tunggu proses verifikasi oleh admin. Jika dalam 3 hari Anda tidak dapat masuk ke akun, silahkan hubungi kami di 0895804049310');
+            return redirect()->route('start')->with('alert', 'Silahkan tunggu proses verifikasi oleh admin. Jika dalam 3 hari Anda tidak dapat masuk ke akun, silahkan hubungi kami di 0895804049310');
         }
 
         return redirect()->route('start');

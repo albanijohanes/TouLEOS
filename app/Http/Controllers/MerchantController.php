@@ -14,8 +14,11 @@ class MerchantController extends Controller
     public function berandaMerchant(){
         return view('merchant/beranda_merchant');
     }
-    public function editMerchant(Request $request){
-        Validator::make($request->all(), [
+    public function editMerchant(){
+        return view('merchant/edit_dagang');
+    }
+    public function tambahDagang(Request $request){
+        $validator = Validator::make($request->all(), [
             'tanggal' => 'required|date',
             'title' => 'required',
             'satuan' => 'required',
@@ -23,17 +26,20 @@ class MerchantController extends Controller
             'harga' => 'required|numeric',
         ]);
 
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $dagang = Product::create([
-            'tanggal' => $request->tanggal,
-            'title' => $request->title,
-            'satuan' => $request->satuan,
-            'deskripsi' => $request->deskripsi,
-            'harga' => $request->harga,
+            'tanggal' => $request->input('tanggal'),
+            'title' => $request->input('title'),
+            'satuan' => $request->input('satuan'),
+            'deskripsi' => $request->input('deskripsi'),
+            'harga' => $request->input('harga'),
         ]);
 
         return view('merchant/edit_dagang');
-    }
-    public function tambahDagang(){
+
         return view('merchant/tambah_dagang');
     }
     public function EditprofileMerchant(){

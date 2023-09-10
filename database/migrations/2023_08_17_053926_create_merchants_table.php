@@ -34,8 +34,6 @@ class CreateMerchantsTable extends Migration
      */
     public function down()
     {
-        Schema::table('merchants', function (Blueprint $table) {
-            $table->dropColumn('status');
-        });
+        Schema::dropIfExists('merchants');
     }
 }

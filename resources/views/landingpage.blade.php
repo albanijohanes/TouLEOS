@@ -18,6 +18,13 @@
 
 <body
     style="padding-top: 0px;background: linear-gradient(rgba(105,72,45,0.9), rgba(109,205,61,0.9)), url(&quot;landingassets/img/20230712_124645.jpg&quot;) center / cover no-repeat, rgb(164,125,125);">
+    @if(session('alert'))
+    <div class="alert alert-success" role="alert" id="save-sucess"
+        style="background-color: #B4F7D2!important;border: 1px solid #0C6D38;padding-bottom: 35px;padding-top: 28px;margin-top: 0px;">
+        <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="alert"></button><span
+            style="color: #0C6D38 !important;padding-left: 0px;margin-left: 15px;font-family: Poppins, sans-serif;">
+            {{ session('alert') }}</span></div>
+    @endif
     <img src="{{ asset('landingassets/img/Logo%20web%20Tou%20Leos%20(3).png') }}"
         style="width: 150px;padding-bottom: 0px;padding-top: 26px;margin-top: -24px;padding-left: 0px;margin-left: 24px;"><img
         src="{{ asset('landingassets/img/Logo%20web%20Tou%20Leos%20(4).png') }}"
@@ -119,13 +126,6 @@
             </div>
         </div>
     </div>
-    @if(session('alert'))
-    <div class="alert alert-success" role="alert" id="save-sucess"
-        style="background-color: #B4F7D2!important;border: 1px solid #0C6D38;padding-bottom: 35px;padding-top: 28px;margin-top: 0px;">
-        <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="alert"></button><span
-            style="color: #0C6D38 !important;padding-left: 0px;margin-left: 15px;font-family: Poppins, sans-serif;">Berhasil
-            {{ session('alert') }}</span></div>
-    @endif
     <script src="{{ asset('landingassets/bootstrap/js/bootstrap.min.js') }}"></script>
 </body>
 

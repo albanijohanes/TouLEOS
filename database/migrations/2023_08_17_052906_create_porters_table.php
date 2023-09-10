@@ -35,8 +35,6 @@ class CreatePortersTable extends Migration
      */
     public function down()
     {
-        Schema::table('porters', function (Blueprint $table) {
-            $table->dropColumn('status');
-        });
+        Schema::dropIfExists('porters');
     }
 }
