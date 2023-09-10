@@ -16,12 +16,13 @@ class CreateServicerequestsTable extends Migration
         Schema::create('servicerequests', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('porter_id');
-            $table->unsignedBigInteger('customer_id')->nullable();
-            $table->string('order_code')->unique();
-            $table->date('order_date');
-            $table->time('start_time')->nullable();
-            $table ->decimal('price', 10, 2)->nullable();
-            $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
+            $table->unsignedBigInteger('customer_id');
+            $table->date('tanggal');
+            $table->time('waktu_mulai')->nullable();
+            $table->time('waktu_selesai')->nullable();
+            $table ->decimal('harga', 10, 2)->nullable();
+            $table->decimal('total', 10, 2)->nullable();
+            $table->enum('status', ['pending', 'accepted', 'completed', 'cancelled'])->default('pending');
             $table->timestamps();
 
             $table->foreign('porter_id')->references('id')->on('porters');

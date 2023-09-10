@@ -34,26 +34,6 @@
 </head>
 
 <body>
-    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Permintaan Pemesanan</h4><button
-                        class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p style="font-family: Poppins, sans-serif;">Nama ingin memesan jasa anda sebagai porter</p><label
-                        class="form-label" style="font-family: Poppins, sans-serif;">Harga/Menit :&nbsp;</label><input
-                        type="number" style="font-family: Poppins, sans-serif;padding-right: 0px;margin-right: -7px;">
-                </div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button"
-                        style="background: #1cda18;">Terima</button><button class="btn btn-light" type="button"
-                        data-bs-dismiss="modal"
-                        style="--bs-danger: #dc3545;--bs-danger-rgb: 220,53,69;background: #ee2626;color: rgb(255,255,255);">Tolak</button>
-                </div>
-            </div>
-        </div>
-    </div>
     @extends('layouts.nbporter')
     <main id="main" class="main">
 

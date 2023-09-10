@@ -45,7 +45,6 @@ class User extends Authenticatable
     public function Porter(){
         return $this->hasOne(Porter::class);
     }
-
     public function Merchant(){
         return $this->hasOne(Merchant::class);
     }

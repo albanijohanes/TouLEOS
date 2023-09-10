@@ -9,9 +9,10 @@ class Servicerequest extends Model
     protected $fillable = [
         'porter_id',
         'customer_id',
-        'order_code',
-        'order_date',
-        'start_time',
+        'tanggal',
+        'waktu_mulai',
+        'waktu_selesai',
+        'total',
         'price',
         'status'
     ];

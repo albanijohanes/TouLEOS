@@ -42,14 +42,16 @@
             <ul class="d-flex align-items-center">
                 <li class="nav-item dropdown">
 
+                    <!-- Notification Icon -->
                     <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                         <i class="bi bi-bell"></i>
-                        <span class="badge badge-number" style="background-color: #964B00;">4</span>
-                    </a><!-- End Notification Icon -->
-
+                        <span class="badge badge-number"
+                            style="background-color: #964B00;">{{ $unreadNotificationsCount }}</span>
+                    </a>
+                    <!-- Notification Dropdown -->
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
                         <li class="dropdown-header">
-                            You have 4 new notifications
+                            You have {{ $unreadNotificationsCount }} new notifications
                             <a href="#"><span class="badge rounded-pill p-2 ms-2"
                                     style="background-color: #964B00;">View all</span></a>
                         </li>
@@ -57,70 +59,66 @@
                             <hr class="dropdown-divider">
                         </li>
 
-                        <li class="notification-item">
-                            <i class="bi bi-exclamation-circle text-warning"></i>
-                            <div>
-                                <h4>Lorem Ipsum</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>30 min. ago</p>
+                        @foreach($notifications as $notification)
+                            <li class="notification-item">
+                                <i class="bi bi-exclamation-circle text-warning"></i>
+                                <div>
+                                    <h4>{{ $notification->data['title'] }}</h4>
+                                    <p>{{ $notification->data['message'] }}</p>
+                                    <p>{{ $notification->created_at->diffForHumans() }}</p>
+                                    <!-- Button to trigger the modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#acceptModal{{ $notification->id }}">
+                                        Accept Service
+                                    </button>
+                                </div>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                            <!-- Accept Modal -->
+                            <div class="modal fade" id="acceptModal{{ $notification->id }}" tabindex="-1"
+                                aria-labelledby="acceptModalLabel{{ $notification->id }}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="acceptModalLabel{{ $notification->id }}">
+                                                Accept Service Request</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Form for accepting and setting the price -->
+                                            <form
+                                                action="{{ route('accRequest', ['id' => $notification->data['service_requests_id']]) }}"
+                                                method="POST">
+                                                @csrf
+                                                <div class="mb-3">
+                                                    <label for="price" class="form-label">Price (Rp)</label>
+                                                    <input type="number" class="form-control" id="price" name="harga"
+                                                        required>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary">Accept</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </li>
+                        @endforeach
 
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="notification-item">
-                            <i class="bi bi-x-circle text-danger"></i>
-                            <div>
-                                <h4>Atque rerum nesciunt</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>1 hr. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="notification-item">
-                            <i class="bi bi-check-circle text-success"></i>
-                            <div>
-                                <h4>Sit rerum fuga</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>2 hrs. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li class="notification-item">
-                            <i class="bi bi-info-circle text-primary"></i>
-                            <div>
-                                <h4>Dicta reprehenderit</h4>
-                                <p>Quae dolorem earum veritatis oditseno</p>
-                                <p>4 hrs. ago</p>
-                            </div>
-                        </li>
-
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
                         <li class="dropdown-footer">
                             <a href="#">Show all notifications</a>
                         </li>
-
-                    </ul><!-- End Notification Dropdown Items -->
+                    </ul>
 
                 </li><!-- End Notification Nav -->
 
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="{{ asset('porterassets/img/foto.png') }}"
-                            alt="Profile" class="rounded-circle">
+                        <img src="{{ asset('porterassets/img/foto.png') }}" alt="Profile"
+                            class="rounded-circle">
                         <span id="Judulmu" class="d-none d-md-block dropdown-toggle ps-2"
                             style="color:black;">{{ auth()->user()->nama }}</span>
                     </a>

@@ -93,12 +93,17 @@
                             </div>
                             <h4><a href="">Pemesanan Dengan Kode Porter</a></h4>
                             <p>Masukkan Nomor ID Porter dan tekan PESAN</p>
-                            <form action="/process_token" method="POST">
-                                <input type="text" id="token" name="token" required>
-                                <br>
+                            <form action="{{ route('sendRequest') }}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="porter_id">Nomor ID Porter</label>
+                                    <br>
+                                    <input type="text" id="porter_id" name="porter_id" required>
+                                </div>
+                                <br><br>
+                                <button type="submit" class="btn-pesan">PESAN</button>
                             </form>
                             <br>
-                            <button type="submit" class="btn-pesan"><a href="#">PESAN</a></button>
                         </div>
                     </div>
                 </div>
@@ -122,6 +127,19 @@
                                 <th class="text-dark">Pembatalan</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            @foreach ($serviceRequests as $row)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $row->tanggal }}</td>
+                                    <td>{{ $row->waktu_mulai }}</td>
+                                    <td>{{ $row->waktu_selesai }}</td>
+                                    <td>{{ $row->harga }}</td>
+                                    <td>{{ $row->total }}</td>
+                                    <td>{{ $row->status }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>

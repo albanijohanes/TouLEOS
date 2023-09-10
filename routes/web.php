@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function(){
         Route::get('user/index', [CustomerController::class, 'index'])->name('index');
         Route::get('user/profile', [CustomerController::class, 'profiluser'])->name('profiluser');
         Route::get('user/edit', [CustomerController::class, 'edituser'])->name('edituser');
+        Route::post('user/index', [CustomerController::class, 'sendServiceRequest'])->name('sendRequest');
     });
 
     //Sebagai Porter
@@ -60,6 +61,9 @@ Route::middleware('auth')->group(function(){
         Route::get('porter/index', [PorterController::class, 'porter'])->name('porter');
         Route::get('porter/profile' , [PorterController::class, 'userporter'])->name('userporter');
         Route::get('porter/promotion' , [PorterController::class, 'userpromot'])->name('userpromot');
+        Route::post('porter/accept/{id}', [PorterController::class, 'acceptServiceRequest'])->name('accRequest');
+        Route::post('porter/complete/{id}', [PorterController::class, 'completeService'])->name('compRequest');
+        Route::post('porter/cancel/{id}', [PorterController::class, 'cancelService'])->name('cancelRequest');
     });
 
     //Sebagai Merchant
