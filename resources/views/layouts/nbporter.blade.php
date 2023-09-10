@@ -26,7 +26,7 @@
             });
         });
     </script>
-
+    
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
@@ -40,26 +40,27 @@
 
         <nav class="header-nav ms-auto">
             <ul class="d-flex align-items-center">
-                <li class="nav-item dropdown">
+                <ul class="d-flex align-items-center">
+                    <li class="nav-item dropdown">
 
-                    <!-- Notification Icon -->
-                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                        <i class="bi bi-bell"></i>
-                        <span class="badge badge-number"
-                            style="background-color: #964B00;">{{ $unreadNotificationsCount }}</span>
-                    </a>
-                    <!-- Notification Dropdown -->
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                        <li class="dropdown-header">
-                            You have {{ $unreadNotificationsCount }} new notifications
-                            <a href="#"><span class="badge rounded-pill p-2 ms-2"
-                                    style="background-color: #964B00;">View all</span></a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                        <!-- Notification Icon -->
+                        <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                            <i class="bi bi-bell"></i>
+                            <span class="badge badge-number"
+                                style="background-color: #964B00;">{{ $unreadNotificationsCount }}</span>
+                        </a>
+                        <!-- Notification Dropdown -->
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                            <li class="dropdown-header">
+                                You have {{ $unreadNotificationsCount }} new notifications
+                                <a href="#"><span class="badge rounded-pill p-2 ms-2"
+                                        style="background-color: #964B00;">View all</span></a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
 
-                        @foreach($notifications as $notification)
+                            @foreach($notifications as $notification)
                             <li class="notification-item">
                                 <i class="bi bi-exclamation-circle text-warning"></i>
                                 <div>
@@ -89,7 +90,6 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <!-- Form for accepting and setting the price -->
                                             <form
                                                 action="{{ route('accRequest', ['id' => $notification->data['service_requests_id']]) }}"
                                                 method="POST">
@@ -105,20 +105,21 @@
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
+                            @endforeach
 
-                        <li class="dropdown-footer">
-                            <a href="#">Show all notifications</a>
-                        </li>
-                    </ul>
+                            <li class="dropdown-footer">
+                                <a href="#">Show all notifications</a>
+                            </li>
+                        </ul>
 
-                </li><!-- End Notification Nav -->
+                    </li><!-- End Notification Nav -->
+                </ul>
+
 
                 <li class="nav-item dropdown pe-3">
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <img src="{{ asset('porterassets/img/foto.png') }}" alt="Profile"
-                            class="rounded-circle">
+                        <img src="{{ asset('porterassets/img/foto.png') }}" alt="Profile" class="rounded-circle">
                         <span id="Judulmu" class="d-none d-md-block dropdown-toggle ps-2"
                             style="color:black;">{{ auth()->user()->nama }}</span>
                     </a>
@@ -133,8 +134,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center"
-                                href="{{ route('userporter') }}">
+                            <a class="dropdown-item d-flex align-items-center" href="{{ route('userporter') }}">
                                 <i class="bi bi-person"></i>
                                 <span>Profil Anda</span>
                             </a>
@@ -148,8 +148,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center"
-                                href="{{ route('logout') }}">
+                            <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}">
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Keluar</span>
                             </a>

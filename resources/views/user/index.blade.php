@@ -21,6 +21,7 @@
     <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('alertassets/css/boostrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 </head>
 
@@ -34,7 +35,20 @@
 </style>
 
 <body>
-
+<div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Permintaan Pemesanan</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-family: Poppins, sans-serif;">Nama ingin memesan jasa anda sebagai porter</p><label class="form-label" style="font-family: Poppins, sans-serif;">Harga/Menit :&nbsp;</label><input type="number" style="font-family: Poppins, sans-serif;padding-right: 0px;margin-right: -7px;">
+                </div>
+                <div class="modal-footer"><button class="btn btn-primary" type="button" style="background: #1cda18;">Terima</button><button class="btn btn-light" type="button" data-bs-dismiss="modal" style="--bs-danger: #dc3545;--bs-danger-rgb: 220,53,69;background: #ee2626;color: rgb(255,255,255);">Tolak</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center justify-content-between">
@@ -236,7 +250,7 @@
         <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
         <script src="https://cdn.rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>
-
+        <script src="{{ asset('alertassets/js/boostrap.min.js') }}"></script>
 </body>
 
 </html>
