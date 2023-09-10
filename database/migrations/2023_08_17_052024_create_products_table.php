@@ -16,9 +16,15 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('merchant_id');
+            $table->date('tanggal');
             $table->string('title', 500);
-            $table->longText('description')->nullable();
+            $table->longText('deskripsi');
+            $table->decimal('harga', 10, 2);
+            $table->string('satuan');
             $table->timestamps();
+
+            $table->foreign('merchant_id')->references('id')->on('merchants');
         });
     }
 

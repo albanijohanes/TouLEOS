@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
+use Illuminate\Validation\Rule;
 
 class RegisterController extends Controller
 {
@@ -29,6 +30,46 @@ class RegisterController extends Controller
     }
 
     public function registerPost(Request $request){
+        $rules = [
+            'nama' => 'required|string|max:255',
+            'username' => 'required|string|unique:users',
+            'password' => 'required|string|min:8',
+            'no_hp' => 'required|string|max:15',
+            'jk' => 'required|string',
+            'role' => 'required|string|in:user,porter,merchant',
+        ];
+        if ($request->input('role') === 'porter' || $request->input('role') === 'merchant') {
+            $rules = array_merge($rules, [
+                'alamat' => 'required|string',
+                'email' => 'required|email|unique:users',
+                'ktp' => [
+                    'required',
+                    'file',
+                    Rule::in(['jpeg','png','jpg','pdf']),
+                ],
+            ]);
+            if ($request->input('role') === 'porter') {
+                $rules['skkb'] = [
+                    'required',
+                    'file',
+                    Rule::in(['jpeg','png','jpg','pdf']),
+                ];
+            }
+            if ($request->input('role') === 'merchant') {
+                $rules['siup'] = [
+                    'required',
+                    'file',
+                    Rule::in(['jpeg','png','jpg','pdf']),
+                ];
+            }
+        }
+
+        $validator = FacadesValidator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $user = User::create([
             'nama' => $request->nama,
             'username' => $request->username,
