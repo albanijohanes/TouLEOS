@@ -5,56 +5,47 @@ namespace App\Http\Controllers;
 use App\Servicerequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class PorterController extends Controller
 {
     public function porter(){
-        $porter = Auth::user();
-        $notifications = $porter->notifications;
-        $unreadNotificationsCount = $porter->unreadNotifications->count();
-        return view('porter/index', compact('notifications', 'unreadNotificationsCount'));
+        $porter = Servicerequest::where('porter_id', Auth::user()->id)->get();
+        $count = $porter->where('status','pending')->count();
+        return view('porter/index', compact('porter', 'count'));
     }
     public function userporter(){
-        $porter = Auth::user();
-        $notifications = $porter->notifications;
-        $unreadNotificationsCount = $porter->unreadNotifications->count();
-        return view('porter/users-profile', compact('notifications', 'unreadNotificationsCount'));
+        $porter = Servicerequest::where('porter_id', Auth::user()->id)->get();
+        return view('porter/users-profile', compact('porter'));
     }
     public function userpromot(){
-        $porter = Auth::user();
-        $notifications = $porter->notifications;
-        $unreadNotificationsCount = $porter->unreadNotifications->count();
-        return view('porter/promotion', compact('notifications', 'unreadNotificationsCount'));
+        $porter = Servicerequest::where('porter_id', Auth::user()->id)->get();
+        return view('porter/promotion', compact('porter'));
     }
-    public function acceptServiceRequest(Request $request, $id){
+    public function acceptServiceRequest($id){
         $serviceRequest = Servicerequest::find($id);
-
-        if ($serviceRequest->porter_id !== Auth::user()->id){
-            $validate = $request->validate([
-                'harga' => 'required|numeric|min:100|max:1000'
-            ]);
+        if ($serviceRequest && $serviceRequest->status === 'pending') {
             $serviceRequest->update([
                 'status' => 'accepted',
-                'waktu_mulai' => now(),
-                'harga' => $validate['harga']
+                'waktu_mulai' => now()
             ]);
-            $serviceRequest->unreadNotifications->markAsRead();
-            return redirect()->back()->with('success', 'Anda telah menerima permintaan layanan');
-        }else{
-            return redirect()->back()->with('error', 'Anda tidak punya akses untuk menerima permintaan');
+            return redirect()->back()->with('success', 'You have accepted the service request.');
+        } else {
+            return redirect()->back()->with('error', 'The service request is not available for acceptance.');
         }
     }
-    public function completeService(Request $request, $id){
+    public function completeService($id){
         $serviceRequest = Servicerequest::find($id);
-        if($serviceRequest->porter_id === Auth::user()->id && $serviceRequest->status === 'accepted'){
+        if($serviceRequest && $serviceRequest->status === 'accepted'){
             $waktuMulai = strtotime($serviceRequest->waktu_mulai);
-            $waktuSelesai = now();
+            $waktuSelesai = strtotime(now());
             $durasiMenit = round(($waktuSelesai - $waktuMulai) / 60,2);
-            $total = $durasiMenit * $serviceRequest->price;
+            $total = ceil($durasiMenit / 60) * $serviceRequest->harga;
 
             $serviceRequest->update([
                 'status' => 'completed',
-                'waktu_selesai' => $waktuSelesai,
+                'waktu_selesai' => now(),
                 'total' => $total,
             ]);
             return redirect()->back()->with('success', 'Anda telah menyelesaikan permintaan layanan');
@@ -62,9 +53,9 @@ class PorterController extends Controller
             return redirect()->back()->with('error', 'Anda tidak punya akses untuk menyelesaikan permintaan');
         }
     }
-    public function cancelService(Request $request, $id){
+    public function cancelService($id){
         $serviceRequest = Servicerequest::find($id);
-        if($serviceRequest->porter_id === Auth::user()->id && $serviceRequest->status === 'accepted'){
+        if($serviceRequest && $serviceRequest->status === 'accepted'){
             $serviceRequest->update([
                 'status' => 'canceled',
                 'waktu_selesai' => now(),

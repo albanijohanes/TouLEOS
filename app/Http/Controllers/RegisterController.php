@@ -55,7 +55,7 @@ class RegisterController extends Controller
                     'mimes:jpeg,pdf,png,jpg',
                 ];
             }
-            if ($request->input('role') === 'merchant') {
+            elseif ($request->input('role') === 'merchant') {
                 $rules['siup'] = [
                     'required',
                     'file',

@@ -25,7 +25,8 @@ class ApprovalChecker
                 if($porter && $porter->status === 'approved'){
                     return $next($request);
                 }
-            }elseif ($user->role === 'merchant') {
+            }
+            if ($user->role === 'merchant') {
                 $merchant = $user->Merchant;
                 if($merchant && $merchant->status === 'approved'){
                     return $next($request);

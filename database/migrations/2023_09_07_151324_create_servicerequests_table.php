@@ -22,7 +22,7 @@ class CreateServicerequestsTable extends Migration
             $table->time('waktu_selesai')->nullable();
             $table ->decimal('harga', 10, 2)->nullable();
             $table->decimal('total', 10, 2)->nullable();
-            $table->enum('status', ['pending', 'accepted', 'completed', 'cancelled'])->default('pending');
+            $table->string('status')->default('pending');
             $table->timestamps();
 
             $table->foreign('porter_id')->references('id')->on('porters');

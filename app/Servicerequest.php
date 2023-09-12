@@ -13,7 +13,7 @@ class Servicerequest extends Model
         'waktu_mulai',
         'waktu_selesai',
         'total',
-        'price',
+        'harga',
         'status'
     ];
 
@@ -22,7 +22,7 @@ class Servicerequest extends Model
         return $this->belongsTo(Porter::class, 'porter_id');
     }
 
-    public function customer()
+    public function user()
     {
         return $this->belongsTo(User::class, 'customer_id');
     }

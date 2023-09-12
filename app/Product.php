@@ -15,4 +15,11 @@ class Product extends Model
         'satuan'
     ];
 
+    public function merchant(){
+        return $this->belongsTo(Merchant::class, 'merchant_id');
+    }
+
+    public function serviceRequest(){
+        return $this->hasMany(Servicerequest::class, 'product_id');
+    }
 }

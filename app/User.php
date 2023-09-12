@@ -48,4 +48,10 @@ class User extends Authenticatable
     public function Merchant(){
         return $this->hasOne(Merchant::class);
     }
+    public function serviceRequest(){
+        return $this->hasMany(Servicerequest::class, 'customer_id');
+    }
+    public function products(){
+        return $this->hasMany(Product::class, 'merchant_id');
+    }
 }

@@ -16,28 +16,53 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
-    <link href="{{ asset('porterassets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/bootstrap/css/bootstrap.min.css') }}"
+        rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/bootstrap-icons/bootstrap-icons.css') }}"
+        rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/boxicons/css/boxicons.min.css') }}"
+        rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/simple-datatables/style.css') }}"
+        rel="stylesheet">
 
     <link href="{{ asset('porterassets/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('alertassets/css/boostrap.min.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
-    <div class="alert alert-success" role="alert" style="color: rgb(0,0,0);background: #198754;"><span
-            style="font-family: Poppins, sans-serif;font-size: 16px;color: rgb(249,249,249);"><strong>Pemesanan Layanan
-                Sedang Berlangsung, Silahkan Klik Tombol Selesai Untuk Menyelesaikan Pemesanan&nbsp; &nbsp;
-                &nbsp;</strong></span><button class="btn btn-primary" type="button"
-            style="border-radius: 14px;background: #dc3545;font-family: Poppins, sans-serif;">Selesai</button></div>
     @extends('layouts.nbporter')
     <main id="main" class="main">
-
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if(session('error'))
+            <div class="alert alert-success">
+                {{ session('error') }}
+            </div>
+        @endif
+        @foreach($porter as $row)
+            @if($row->status === 'accepted')
+                <div class="alert alert-success" role="alert" style="color: rgb(0,0,0);background: #198754;">
+                    <span style="font-family: Poppins, sans-serif;font-size: 16px;color: rgb(249,249,249);">
+                        <strong>Pemesanan Layanan
+                            Sedang Berlangsung, Silahkan Klik Tombol Selesai Untuk Menyelesaikan Pemesanan&nbsp; &nbsp;
+                            &nbsp;
+                        </strong>
+                    </span>
+                    <form action="{{ route('compRequest', $row->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-primary" style="border-radius: 14px;background: #dc3545;font-family: Poppins, sans-serif;">
+                            Selesai
+                        </button>
+                    </form>
+                </div>
+            @endif
+        @endforeach
         <div class="pagetitle">
             <h1>Dashboard</h1>
         </div>
@@ -234,7 +259,6 @@
     <script src="{{ asset('porterassets/vendor/php-email-form/validate.js') }}"></script>
 
     <script src="{{ asset('porterassets/js/main.js') }}"></script>
-    <script src="{{ asset('alertassets/js/boostrap.min.js') }}"></script>
 
 </body>
 

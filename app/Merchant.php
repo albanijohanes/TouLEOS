@@ -18,4 +18,8 @@ class Merchant extends Model
     public function User(){
         return $this->belongsTo(User::class);
     }
+
+    public function products(){
+        return $this->hasMany(Product::class, 'merchant_id');
+    }
 }

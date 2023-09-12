@@ -28,7 +28,8 @@ class CustomerController extends Controller
     }
     public function sendServiceRequest(Request $request){
         $validate = $request->validate([
-            'porter_id' => 'required|exists:porters,porter_id'
+            'porter_id' => 'required|exists:porters,porter_id',
+            'harga' => 'required|integer|min:100|max:1000'
         ]);
 
         $porter = Porter::where('porter_id', $validate['porter_id'])->first();
@@ -39,14 +40,10 @@ class CustomerController extends Controller
         $serviceRequest = Servicerequest::create([
             'customer_id' => Auth::user()->id,
             'porter_id' => $porter->id,
-            'tanggal' => today(),
+            'tanggal' => now(),
+            'harga' => $validate['harga'],
             'status' => 'pending'
         ]);
-        $porter->user->notify(new OrderReceived(
-            'Anda mendapatkan request baru',
-            'Anda mendapatkan request baru dari Customer ' . Auth::user()->name,
-            $serviceRequest->id
-        ));
 
         return redirect()->back()->with('success', 'Request sudah terbuat, mohon menunggu penerimaan dari porter');
     }

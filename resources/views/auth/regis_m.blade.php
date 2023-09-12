@@ -22,7 +22,7 @@
                     </div>
                     <form class="user" method="POST" action="{{ route('register.post') }}" enctype="multipart/form-data">
                         @csrf
-                        <input type="hidden" name="role" value="porter">
+                        <input type="hidden" name="role" value="merchant">
                         <div class="mb-3">
                             <input id="nama" name="nama" class="form-control form-control-user @error('nama') is-invalid @enderror" type="text" placeholder="Nama Lengkap" required>
                             @error('nama')
@@ -100,7 +100,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">SIUP (Surat Izin Usaha Perdagangan) atau sejenis</label>
-                            <input id="skkb" name="skkb" class="form-control @error('siup') is-invalid @enderror" type="file" required>
+                            <input id="siup" name="siup" class="form-control @error('siup') is-invalid @enderror" type="file" required>
                             @error('siup')
                                 <div class="invalid-feedback">
                                     {{ $message }}

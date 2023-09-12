@@ -82,40 +82,41 @@
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <form data-bss-recipient="67b465af92ed4ffdcc0537eaadc6dd61">
+                                            <form method="POST" action="{{ route('tambah_dagang') }}" data-bss-recipient="67b465af92ed4ffdcc0537eaadc6dd61" enctype="multipart/form-data">
+                                                @csrf
                                                 <div class="form-group">
                                                     <label style="font-family: Poppins, sans-serif;font-weight: bold;">
                                                         Hari/Tanggal
                                                     </label>
-                                                    <input class="form-control" type="date"
+                                                    <input class="form-control" type="date" name="tanggal"
                                                         style="font-family: Poppins, sans-serif;">
                                                 </div>
                                                 <div class="form-group">
                                                     <label style="font-family: Poppins, sans-serif;font-weight: bold;">
                                                         Nama Bahan/Barang
                                                     </label>
-                                                    <input class="form-control" type="text"
+                                                    <input class="form-control" type="text" name="title"
                                                         style="font-family: Poppins, sans-serif;">
                                                 </div>
                                                 <div class="form-group">
                                                     <label style="font-family: Poppins, sans-serif;font-weight: bold;">
                                                         Satuan
                                                     </label>
-                                                    <input class="form-control" type="text"
+                                                    <input class="form-control" type="text" name="satuan"
                                                         style="font-family: Poppins, sans-serif;">
                                                 </div>
                                                 <div class="form-group">
                                                     <label style="font-family: Poppins, sans-serif;font-weight: bold;">
                                                         Harga
                                                     </label>
-                                                    <input class="form-control" type="number"
+                                                    <input class="form-control" type="number" name="harga"
                                                         style="font-family: Poppins, sans-serif;">
                                                 </div>
                                                 <div class="form-group">
                                                     <label style="font-family: Poppins, sans-serif;font-weight: bold;">
                                                         Deskripsi
                                                     </label>
-                                                    <textarea class="form-control"
+                                                    <textarea class="form-control" name="deskripsi"
                                                         style="font-family: Poppins, sans-serif;">
                                                 </textarea>
                                                 </div>

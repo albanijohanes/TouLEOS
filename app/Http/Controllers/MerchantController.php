@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class MerchantController extends Controller
@@ -27,20 +28,17 @@ class MerchantController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
+            return redirect()->back()->withErrors(['auth' => 'Tolong di isi dengan lengkap']);
         }
-
-        $dagang = Product::create([
-            'tanggal' => $request->input('tanggal'),
-            'title' => $request->input('title'),
-            'satuan' => $request->input('satuan'),
-            'deskripsi' => $request->input('deskripsi'),
-            'harga' => $request->input('harga'),
+            Product::create([
+                'tanggal' => $request->input('tanggal'),
+                'title' => $request->input('title'),
+                'satuan' => $request->input('satuan'),
+                'deskripsi' => $request->input('deskripsi'),
+                'harga' => $request->input('harga'),
+                'status' => 'aktif'
         ]);
-
-        return view('merchant/edit_dagang');
-
-        return view('merchant/tambah_dagang');
+        return redirect()->back()->with('success', 'Anda telah berhasil menambah promosi');
     }
     public function EditprofileMerchant(){
         return view('merchant/edit_profile');

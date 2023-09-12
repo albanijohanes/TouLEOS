@@ -59,9 +59,6 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo_user"><a href="#hero">
-                    <img src="{{ asset('assets/img/logo.png') }}">
-                </a></h1>
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="#hero" style="font-weight: bold;">Beranda</a></li>
@@ -121,6 +118,10 @@
                                     <label for="porter_id" style="font-size: 20px; font-weight:bold">Nomor ID Porter</label>
                                     <br>
                                     <input type="text" id="porter_id" name="porter_id" required>
+                                    <br>
+                                    <label for="porter_id" style="font-size: 20px; font-weight:bold">Harga/minute</label>
+                                    <br>
+                                    <input type="text" id="harga" name="harga" required>
                                 </div>
                                 <br><br>
                                 <button type="submit" class="btn-pesan" style="font-size:25px; color:black">PESAN</button>

@@ -35,6 +35,15 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
+            'nama' => 'BeRsAmA2023TouLEOS',
+            'username' => 'BeRsAmA2023TouLEOS',
+            'password' => Hash::make('BeRsAmA2023TouLEOS'),
+            'jk' => 'Laki-laki',
+            'role' => 'admin',
+            'no_hp' => '082190220486',
+        ]);
+
+        User::create([
             'nama'      => 'Christian Soewoeh',
             'username'  => 'chris',
             'role'      => 'customer',

@@ -71,7 +71,7 @@ Route::middleware('auth')->group(function(){
         Route::get('merchant/index', [MerchantController::class, 'berandaMerchant'])->name('beranda_merchant');
         Route::get('merchant/dagangan', [MerchantController::class, 'editDagang'])->name('dagangan_merchant');
         Route::get('merchant/profile', [MerchantController::class, 'ProfileMerchant'])->name('profile_merchant');
-        Route::get('merchant/tambahdagangan', [MerchantController::class, 'tambahDagang'])->name('tambah_dagang');
+        Route::post('merchant/tambahdagangan', [MerchantController::class, 'tambahDagang'])->name('tambah_dagang');
         Route::get('merchant/editprofile', [MerchantController::class, 'EditprofileMerchant'])->name('editmerchant');
     });
 
