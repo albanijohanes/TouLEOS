@@ -60,7 +60,7 @@
                                             <i class="bi bi-cart"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>145</h6>
+                                            <h6 style="color: #000000;">145</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                             <i class="bi bi-currency-dollar"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>Rp.49.260</h6>
+                                            <h6 style="color: #000000;">Rp.49.260</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -93,7 +93,7 @@
                             <div class="card info-card customers-card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Pelanggan</h5>
+                                    <h5 class="card-title" style="color: #000000;">Pelanggan</h5>
 
                                     <div class="d-flex align-items-center">
                                         <div
@@ -101,7 +101,7 @@
                                             <i class="bi bi-people"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6>1244</h6>
+                                            <h6 style="color: #000000;">1244</h6>
                                         </div>
                                     </div>
 

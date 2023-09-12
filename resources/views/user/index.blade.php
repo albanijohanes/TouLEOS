@@ -35,16 +35,23 @@
 </style>
 
 <body>
-<div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Permintaan Pemesanan</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Permintaan Pemesanan</h4><button
+                        class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p style="font-family: Poppins, sans-serif;">Nama ingin memesan jasa anda sebagai porter</p><label class="form-label" style="font-family: Poppins, sans-serif;">Harga/Menit :&nbsp;</label><input type="number" style="font-family: Poppins, sans-serif;padding-right: 0px;margin-right: -7px;">
+                    <p style="font-family: Poppins, sans-serif;">Nama ingin memesan jasa anda sebagai porter</p><label
+                        class="form-label" style="font-family: Poppins, sans-serif;">Harga/Menit :&nbsp;</label><input
+                        type="number" style="font-family: Poppins, sans-serif;padding-right: 0px;margin-right: -7px;">
                 </div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button" style="background: #1cda18;">Terima</button><button class="btn btn-light" type="button" data-bs-dismiss="modal" style="--bs-danger: #dc3545;--bs-danger-rgb: 220,53,69;background: #ee2626;color: rgb(255,255,255);">Tolak</button></div>
+                <div class="modal-footer"><button class="btn btn-primary" type="button"
+                        style="background: #1cda18;">Terima</button><button class="btn btn-light" type="button"
+                        data-bs-dismiss="modal"
+                        style="--bs-danger: #dc3545;--bs-danger-rgb: 220,53,69;background: #ee2626;color: rgb(255,255,255);">Tolak</button>
+                </div>
             </div>
         </div>
     </div>
@@ -52,7 +59,7 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo"><a href="#hero">
+            <h1 class="logo_user"><a href="#hero">
                     <img src="{{ asset('assets/img/logo.png') }}">
                 </a></h1>
             <nav id="navbar" class="navbar">
@@ -78,7 +85,7 @@
                 <div
                     class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
                     <h1>Selalu Siap Melayani Anda</h1>
-                    <h2>Silahkan Melakukan Pemesanan Dengan Menekan Tombol Layanan</h2>
+                    <h2>Silahkan Melakukan Pemesanan Layanan Jasa Porter (Asisten Berbelanja) Dengan Menekan Tombol Layanan</h2>
                     <div><a href="#services" class="btn-get-started scrollto">Layanan</a></div>
                 </div>
                 <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
@@ -143,15 +150,15 @@
                         </thead>
                         <tbody>
                             @foreach ($serviceRequests as $row)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $row->tanggal }}</td>
-                                    <td>{{ $row->waktu_mulai }}</td>
-                                    <td>{{ $row->waktu_selesai }}</td>
-                                    <td>{{ $row->harga }}</td>
-                                    <td>{{ $row->total }}</td>
-                                    <td>{{ $row->status }}</td>
-                                </tr>
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $row->tanggal }}</td>
+                                <td>{{ $row->waktu_mulai }}</td>
+                                <td>{{ $row->waktu_selesai }}</td>
+                                <td>{{ $row->harga }}</td>
+                                <td>{{ $row->total }}</td>
+                                <td>{{ $row->status }}</td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>

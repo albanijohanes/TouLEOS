@@ -126,12 +126,28 @@ h6 {
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+#header .logo_user {
+  font-size: 32px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
 
 #header .logo a {
   color: #fff;
 }
 
 #header .logo img {
+  max-height: 40px;
+}
+#header .logo_user a {
+  color: #fff;
+}
+
+#header .logo_user img {
   max-height: 40px;
 }
 
@@ -1647,6 +1663,11 @@ section {
 }
 
 .logo {
+  width: 80px;
+  margin: auto;
+}
+
+.logo_user {
   width: 80px;
   margin: auto;
 }

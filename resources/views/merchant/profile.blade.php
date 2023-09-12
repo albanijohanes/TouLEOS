@@ -121,15 +121,15 @@
                                 </label>
                                 <input class="form-control-plaintext" type="text" value="{{ auth()->user()->username }}" readonly="" style="font-family: Poppins, sans-serif;">
                             </div>
-                            <div class="form-group mb-3">
+                            <!-- <div class="form-group mb-3">
                                 <label class="form-label" style="font-family: Poppins, sans-serif;font-weight: bold;">
                                     Kata Sandi
                                 </label>
                                 <input class="form-control-plaintext" type="text" value="" readonly="" style="font-family: Poppins, sans-serif;">
-                            </div>
+                            </div> -->
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-12 content-right">
 
                             <button class="btn btn-danger form-btn" type="reset" style="font-family: Poppins, sans-serif;background: rgba(105,72,45,0.9);">
@@ -138,7 +138,7 @@
                                 </a>
                             </button>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </form>
