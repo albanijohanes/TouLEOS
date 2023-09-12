@@ -70,7 +70,7 @@
             <img src="{{ asset('assets/img/logo.png') }}" alt="">
         </div>
         <br>
-        <div class="merchant-text" style="text-align: center;">
+        <div class="merchant-text" style="text-align: center;font-size:30px">
             Masuk sebagai Merchant
         </div>
         <br>

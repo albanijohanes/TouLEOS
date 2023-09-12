@@ -48,7 +48,7 @@
                                 <path d="M6 12l2 -3l4 -1l3 3l3 1"></path>
                             </svg></a></div>
                     <div class="service-content" style="padding-top: 16px;font-family: Poppins, sans-serif;">
-                        <h3 style="margin-top: 20px;margin-right: -53px;margin-left: -49px;padding-left: 20px;padding-right: 24px;"
+                        <h3 style="margin-top: 20px;margin-right: -53px;margin-left: -49px;padding-left: 20px;padding-right: 24px; font-weight:bold"
                             class="pengunjung">pengunjung pasar</h3>
                         <hr>
                     </div><a class="text-decoration-none"
@@ -73,8 +73,8 @@
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                                 <path d="M21 21v-2a4 4 0 0 0 -3 -3.85"></path>
                             </svg></a></div>
-                    <div class="service-content" style="padding-top: 16px;">
-                        <h3 style="margin-top: 20px;font-family: Poppins, sans-serif;" class="porter">porter</h3>
+                    <div class="service-content" style="padding-top: 16px">
+                        <h3 style="margin-top: 20px;font-family: Poppins, sans-serif;font-weight:bold" class="porter">porter</h3>
                         <hr>
                     </div>
                     <a class="text-decoration-none"
@@ -106,7 +106,7 @@
                                 <path d="M16 15c-2.21 1.333-5.792 1.333-8 0"></path>
                             </svg></a></div>
                     <div class="service-content" style="padding-top: 16px;font-family: Poppins, sans-serif;">
-                        <h3 style="margin-top: 20px;" class="merchant">merchant</h3>
+                        <h3 style="margin-top: 20px;font-weight:bold" class="merchant">merchant</h3>
                         <hr>
                     </div><a class="text-decoration-none"
                         href="{{ route('loginmerchant', ['role' => 'merchant']) }}"><button

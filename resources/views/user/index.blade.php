@@ -64,12 +64,12 @@
                 </a></h1>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
-                    <li><a class="nav-link scrollto" href="#histori">Riwayat</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Promosi</a></li>
-                    <li><a class="nav-link scrollto" href="{{ route('profiluser') }}">Profil</a></li>
-                    <li><a class="nav-link scrollto" href="{{ route('logout') }}">KELUAR</a></li>
+                    <li><a class="nav-link scrollto active" href="#hero" style="font-weight: bold;">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="#services" style="font-weight: bold;">Layanan</a></li>
+                    <li><a class="nav-link scrollto" href="#histori" style="font-weight: bold;">Riwayat</a></li>
+                    <li><a class="nav-link scrollto" href="#about" style="font-weight: bold;">Promosi</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('profiluser') }}" style="font-weight: bold;">Profil</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('logout') }}" style="font-weight: bold;">KELUAR</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -85,8 +85,8 @@
                 <div
                     class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
                     <h1>Selalu Siap Melayani Anda</h1>
-                    <h2>Silahkan Melakukan Pemesanan Layanan Jasa Porter (Asisten Berbelanja) Dengan Menekan Tombol Layanan</h2>
-                    <div><a href="#services" class="btn-get-started scrollto">Layanan</a></div>
+                    <h2 style="font-weight: bold;">Silahkan Melakukan Pemesanan Layanan Jasa Porter (Asisten Berbelanja) Dengan Menekan Tombol Layanan</h2>
+                    <div><a href="#services" class="btn-get-started scrollto" style="font-weight: bold; font-size:20px">Layanan</a></div>
                 </div>
                 <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
                     <img src="{{ asset('assets/img/logo.png') }}" class="img-fluid animated" alt="">
@@ -103,8 +103,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Layanan</h2>
-                    <p>Pemesanan Layanan dapat dengan Memasukkan Kode Porter</p>
+                    <h2 style="font-weight: bold; font-size:50px; color:#ee2626">Layanan</h2>
+                    <p style="font-weight: bold; font-size:30px">Pemesanan Layanan dapat dengan Memasukkan Kode Porter</p>
                 </div>
                 <div class="row gy-4">
                     <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -112,17 +112,18 @@
                             <div class="icon">
                                 <img src="{{ asset ('assets/img/nomor.png') }}" class="img-fluid" alt="">
                             </div>
-                            <h4><a href="">Pemesanan Dengan Kode Porter</a></h4>
-                            <p>Masukkan Nomor ID Porter dan tekan PESAN</p>
+                            <h4><a style="color:#dc3545;font-size:25px">Pemesanan Dengan Kode Porter</a></h4>
+                            <p style="font-weight: bold; font-size:20px;">Masukkan Nomor ID Porter dan tekan PESAN</p>
                             <form action="{{ route('sendRequest') }}" method="POST">
                                 @csrf
+                                <br>
                                 <div class="form-group">
-                                    <label for="porter_id">Nomor ID Porter</label>
+                                    <label for="porter_id" style="font-size: 20px; font-weight:bold">Nomor ID Porter</label>
                                     <br>
                                     <input type="text" id="porter_id" name="porter_id" required>
                                 </div>
                                 <br><br>
-                                <button type="submit" class="btn-pesan">PESAN</button>
+                                <button type="submit" class="btn-pesan" style="font-size:25px; color:black">PESAN</button>
                             </form>
                             <br>
                         </div>
@@ -170,12 +171,12 @@
         <section id="about" class="about">
             <div class="container">
 
-                <div class="row">
+                <div class="row" style="font-weight:bold">
                     <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
                         <img src="assets/img/about.jpg" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
-                        <h3>Porter/Asisten Berbelanja</h3>
+                        <h3 style="color: #dc3545;">Porter/Asisten Berbelanja</h3>
                         <p class="fst-italic">
                             Porter atau asisten berbelanja adalah masyarakat yang menawarkan jasa dengan tugas yang
                             bervariasi:
@@ -202,7 +203,7 @@
                     <div class="row">
 
                         <div class="col-lg-3 footer-contact">
-                            <h3>TouLEOS</h3>
+                            <h3 style="font-size: 30px; color:white;font-weight:bold">TouLEOS</h3>
                             <p>
                                 Universitas Sam Ratulangi<br>
                                 Bahu, Malalayang, Kota Manado, Sulawesi Utara<br>
@@ -214,7 +215,7 @@
 
                         <div class="col-lg-2 col-md-7 footer-links">
                             <h4>Pintasan</h4>
-                            <ul>
+                            <ul style="font-weight: bold;">
                                 <li><i class="bx bx-chevron-right"></i> <a href="#hero">Beranda</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#services">Layanan</a></li>
                                 <li><i class="bx bx-chevron-right"></i> <a href="#histori">Riwayat</a></li>

@@ -60,7 +60,7 @@
                                             <i class="bi bi-cart"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6 style="color: #000000;">145</h6>
+                                            <h6 style="color: #000000;">5</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +101,7 @@
                                             <i class="bi bi-people"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6 style="color: #000000;">1244</h6>
+                                            <h6 style="color: #000000;">10</h6>
                                         </div>
                                     </div>
 
