@@ -59,11 +59,11 @@
                         Selamat datang
                     </h2>
                     <p class="my-3" style="font-family: Poppins, sans-serif;">
-                        Layanang Merchant/Pedagang memungkinkan pedagang melakukan promosi dagangan ke Porter
+                        Layanan Merchant/Pedagang memungkinkan pedagang melakukan promosi dagangan ke Porter
                     </p>
                     <a class="btn btn-primary btn-lg me-2" type="button" data-bs-toggle="modal"
                         data-bs-target="#addPromosi"
-                        style="background: rgba(109,205,61,0.9);font-family: Poppins, sans-serif;font-size: 15px;border-radius: 15px;">
+                        style="background: rgba(109,205,61,0.9);font-family: Poppins, sans-serif;font-size: 15px;border-radius: 15px;color: #000000">
                         Tambah Promosi
                     </a>
                     <div class="modal fade" role="dialog" tabindex="-1" id="addPromosi" aria-hidden="true"
@@ -137,7 +137,7 @@
                     </div>
                     <a class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#riwayat"
                         role="button" href="#"
-                        style="background: rgba(109,205,61,0.9);color: rgb(255,255,255);font-size: 15px;font-family: Poppins, sans-serif;border-radius: 15px;">
+                        style="background: rgba(109,205,61,0.9);color: #000000;font-size: 15px;font-family: Poppins, sans-serif;border-radius: 15px;">
                         Riwayat
                     </a>
                     <div class="modal fade" role="dialog" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
@@ -390,6 +390,7 @@
         closeRiwayatModalButton.addEventListener('click', function () {
             closeModalAndReload('riwayat');
         });
+
     </script>
 
 </body>

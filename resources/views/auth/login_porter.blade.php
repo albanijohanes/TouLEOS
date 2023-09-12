@@ -95,7 +95,7 @@
                 <span class="fas fa-key"></span>
                 <input type="password" name="password" id="password" placeholder="Kata Sandi">
             </div>
-            <input type="submit" name="submit" class="btn mt-3" value="Masuk">
+            <input style="color: #000000" type="submit" name="submit" class="btn mt-3" value="Masuk">
         </form>
         <br>
         <div class="text-center fs-6">

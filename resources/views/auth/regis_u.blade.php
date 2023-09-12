@@ -72,7 +72,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit" style="background: rgba(109,205,61,0.9);margin-bottom: 16px;">
+                        <button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit" style="background: rgba(109,205,61,0.9);margin-bottom: 16px; color: #000000">
                             DAFTAR
                         </button>
                         <div class="text-center">
