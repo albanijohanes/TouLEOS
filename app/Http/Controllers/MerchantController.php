@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Merchant;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
 class MerchantController extends Controller
@@ -18,7 +20,7 @@ class MerchantController extends Controller
         return view('merchant/beranda_merchant', compact('merchant'));
     }
     public function editMerchant(){
-        return view('merchant/edit_dagang');
+        return view('merchant/edit_dagang', compact('merchant'));
     }
     public function tambahDagang(Request $request){
         $validator = Validator::make($request->all(), [
@@ -56,6 +58,23 @@ class MerchantController extends Controller
         return view('merchant/edit_profile');
     }
     public function ProfileMerchant(){
-        return view('merchant/profile');
+        $merchant = Merchant::where('user_id', Auth::id())->first();
+        return view('merchant/profile', compact('merchant'));
+    }
+    public function viewImg($type, $filename){
+        $disk = '';
+
+        if ($type === 'ktp') {
+            $disk = 'public/ktp';
+        }elseif ($type === 'skkb') {
+            $disk = 'public/skkb';
+        }elseif ($type === 'siup') {
+            $disk = 'public/siup';
+        }
+        $img = storage_path("app/{$disk}/{$filename}");
+        if(File::exists($img)){
+            return response()->file($img);
+        }
+        return abort(404);
     }
 }

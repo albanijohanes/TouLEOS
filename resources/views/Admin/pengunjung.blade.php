@@ -8,7 +8,8 @@
         ADMIN-Pengunjung Pasar
     </title>
     <link rel="stylesheet" href="{{ asset('adminassets/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="{{ asset('adminassets/fonts/fontawesome-all.min.css') }}">
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
@@ -17,11 +18,14 @@
 @php
     $bgUrl = asset('adminassets/img/bg.png');
 @endphp
+
 <body id="page-top">
     <div id="wrapper">
-    <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark" style="background: url('{{ $bgUrl }}') bottom;">
+        <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark"
+            style="background: url('{{ $bgUrl }}') bottom;">
             <div class="container-fluid d-flex flex-column p-0">
-                <img src="{{ asset('adminassets/img/Logo%20web%20Tou%20Leos%20(3).png') }}" style="width: 70px;margin-right: 0px;">
+                <img src="{{ asset('adminassets/img/Logo%20web%20Tou%20Leos%20(3).png') }}"
+                    style="width: 70px;margin-right: 0px;">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-icon rotate-n-15">
                     </div>
@@ -46,14 +50,20 @@
                     </li>
                     <li class="nav-item">
                         <div class="nav-item dropdown show">
-                            <a class="dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" href="#" style="color: rgb(233,234,238);margin-left: 10px;">
+                            <a class="dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" href="#"
+                                style="color: rgb(233,234,238);margin-left: 10px;">
                                 <i class="far fa-user-circle">
-                                    </i>
-                                    Porter
-                                </a>
+                                </i>
+                                Porter
+                            </a>
                             <div class="dropdown-menu show" data-bs-popper="none">
                                 <a class="dropdown-item" href="{{ route('porter_permohonan') }}">
                                     Permohonan
+                                    @if($countP > 0)
+                                        <span class="badge badge-number" style="background-color: #964B00;">
+                                            {{ $countP }}
+                                        </span>
+                                    @endif
                                 </a>
                                 <a class="dropdown-item" href="{{ route('porter_aktif') }}">
                                     Aktif
@@ -61,14 +71,20 @@
                             </div>
                         </div>
                         <div class="nav-item dropdown show">
-                            <a class="dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" href="#" style="color: rgb(233,234,238);margin-left: 15px;">
+                            <a class="dropdown-toggle" aria-expanded="true" data-bs-toggle="dropdown" href="#"
+                                style="color: rgb(233,234,238);margin-left: 15px;">
                                 <i class="far fa-star">
-                                    </i>
-                                    Merchant
-                                </a>
+                                </i>
+                                Merchant
+                            </a>
                             <div class="dropdown-menu show" data-bs-popper="none">
                                 <a class="dropdown-item" href="{{ route('merchant_permohonan') }}">
                                     Permohonan
+                                    @if($countM > 0)
+                                        <span class="badge badge-number" style="background-color: #964B00;">
+                                            {{ $countM }}
+                                        </span>
+                                    @endif
                                 </a>
                                 <a class="dropdown-item" href="{{ route('merchant_aktif') }}">
                                     Aktif
@@ -88,7 +104,8 @@
                 </ul>
             </div>
         </nav>
-        <div class="table-responsive" style="padding-top: 18px;padding-left: 0px;margin-top: 40px;margin-left: 100px;text-align: center;">
+        <div class="table-responsive"
+            style="padding-top: 18px;padding-left: 0px;margin-top: 40px;margin-left: 100px;text-align: center;">
             <table class="table">
                 <thead>
                     <tr>
@@ -98,7 +115,8 @@
                         <th style="padding-right: 99px;padding-left: 100px;font-family: Poppins, sans-serif;">
                             Nama
                         </th>
-                        <th style="padding-left: 40px;padding-right: 41px;font-family: Poppins, sans-serif;text-align: center;">
+                        <th
+                            style="padding-left: 40px;padding-right: 41px;font-family: Poppins, sans-serif;text-align: center;">
                             No Handphone
                         </th>
                         <th style="padding-right: 64px;padding-left: 64px;font-family: Poppins, sans-serif;">
@@ -107,8 +125,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if ($user->count() > 0)
-                        @foreach ($user as $row)
+                    @if($user->count() > 0)
+                        @foreach($user as $row)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $row->nama }}</td>

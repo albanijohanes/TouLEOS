@@ -58,6 +58,11 @@
                             <div class="dropdown-menu show" data-bs-popper="none">
                                 <a class="dropdown-item" href="{{ route('porter_permohonan') }}">
                                     Permohonan
+                                    @if($countP > 0)
+                                        <span class="badge badge-number" style="background-color: #964B00;">
+                                            {{ $countP }}
+                                        </span>
+                                    @endif
                                 </a>
                                 <a class="dropdown-item" href="{{ route('porter_aktif') }}">
                                     Aktif
@@ -74,6 +79,11 @@
                             <div class="dropdown-menu show" data-bs-popper="none">
                                 <a class="dropdown-item" href="{{ route('merchant_permohonan') }}">
                                     Permohonan
+                                    @if($countM > 0)
+                                        <span class="badge badge-number" style="background-color: #964B00;">
+                                            {{ $countM }}
+                                        </span>
+                                    @endif
                                 </a>
                                 <a class="dropdown-item" href="{{ route('merchant_aktif') }}">
                                     Aktif

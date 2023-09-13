@@ -73,6 +73,7 @@ Route::middleware('auth')->group(function(){
         Route::get('merchant/profile', [MerchantController::class, 'ProfileMerchant'])->name('profile_merchant');
         Route::post('merchant/tambahdagangan', [MerchantController::class, 'tambahDagang'])->name('tambah_dagang');
         Route::get('merchant/editprofile', [MerchantController::class, 'EditprofileMerchant'])->name('editmerchant');
+        Route::get('merchant/view/{type}/{filename}', [MerchantController::class, 'viewImg'])->name('viewImgM');
     });
 
     //Sebagai Admin

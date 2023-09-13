@@ -50,7 +50,7 @@
                                     <!-- <button class="btn btn-primary btn-sm"
                                 id="submitBtn-1" type="submit"
                                 style="font-size: 12px;background: rgba(109,205,61,0.9);"><a
-                                    href="{{ route('edituser') }}">EDIT</button> -->
+                                    href="{{ route('edituser') }}">EDIT</button>
                     </div>
                 </form>
             </div>

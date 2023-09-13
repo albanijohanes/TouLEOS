@@ -10,7 +10,8 @@
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
     <link href="{{ asset('assets/img/logo.png') }}" rel="apple-touch-icon">
     <link rel="stylesheet" href="{{ asset('adminassets/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="{{ asset('adminassets/fonts/fontawesome-all.min.css') }}">
 </head>
@@ -58,6 +59,11 @@
                             <div class="dropdown-menu show" data-bs-popper="none">
                                 <a class="dropdown-item" href="{{ route('porter_permohonan') }}">
                                     Permohonan
+                                    @if($countP > 0)
+                                        <span class="badge badge-number" style="background-color: #964B00;">
+                                            {{ $countP }}
+                                        </span>
+                                    @endif
                                 </a>
                                 <a class="dropdown-item" href="{{ route('porter_aktif') }}">
                                     Aktif
@@ -74,6 +80,11 @@
                             <div class="dropdown-menu show" data-bs-popper="none">
                                 <a class="dropdown-item" href="{{ route('merchant_permohonan') }}">
                                     Permohonan
+                                    @if($countM > 0)
+                                        <span class="badge badge-number" style="background-color: #964B00;">
+                                            {{ $countM }}
+                                        </span>
+                                    @endif
                                 </a>
                                 <a class="dropdown-item" href="{{ route('merchant_aktif') }}">
                                     Aktif
@@ -135,8 +146,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if ($merchant->count() > 0)
-                        @foreach ($merchant as $row)
+                    @if($merchant->count() > 0)
+                        @foreach($merchant as $row)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $row->user->nama }}</td>
@@ -144,17 +155,24 @@
                                 <td>{{ $row->user->no_hp }}</td>
                                 <td>{{ $row->user->jk }}</td>
                                 <td>{{ $row->alamat }}</td>
-                                <td><a href="{{ route('viewImg', ['type' => 'ktp', 'filename' => $row->ktp]) }}" target="_blank">
-                                    <button class="btn btn-success">VIEW</button>
+                                <td><a href="{{ route('viewImg', ['type' => 'ktp', 'filename' => $row->ktp]) }}"
+                                        target="_blank">
+                                        <button class="btn btn-success">VIEW</button>
                                     </a>
                                 </td>
-                                <td><a href="{{ route('viewImg', ['type' => 'siup', 'filename' => $row->siup]) }}" target="_blank">
-                                    <button class="btn btn-success">VIEW</button>
-                                    </a>
-                                </td>
-                                <td>{{ $row->status }}</td>
-                            </tr>
-                        @endforeach
+                                <td><a href="{{ route('viewImg', ['type' => 'siup', 'filename' => $row->siup]) }}"
+                                        target="_blank">
+                                        <button class="btn btn-success
+@if($countM > 0)
+                                        <span class=" badge badge-number" style="background-color: #964B00;">
+                                            {{ $countM }}
+                                            </span>
+                        @endif">VIEW</button>
+                        </a>
+                        </td>
+                        <td>{{ $row->status }}</td>
+                        </tr>
+                    @endforeach
                     @endif
                 </tbody>
             </table>

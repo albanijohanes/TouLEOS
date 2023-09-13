@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>ADMIN-Porter Aktif</title>
     <link rel="stylesheet" href="{{ asset('adminassets/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="{{ asset('adminassets/fonts/fontawesome-all.min.css') }}">
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
@@ -56,6 +57,11 @@
                             <div class="dropdown-menu show" data-bs-popper="none">
                                 <a class="dropdown-item" href="{{ route('porter_permohonan') }}">
                                     Permohonan
+                                    @if($countP > 0)
+                                        <span class="badge badge-number" style="background-color: #964B00;">
+                                            {{ $countP }}
+                                        </span>
+                                    @endif
                                 </a>
                                 <a class="dropdown-item" href="{{ route('porter_aktif') }}">
                                     Aktif
@@ -72,6 +78,11 @@
                             <div class="dropdown-menu show" data-bs-popper="none">
                                 <a class="dropdown-item" href="{{ route('merchant_permohonan') }}">
                                     Permohonan
+                                    @if($countM > 0)
+                                        <span class="badge badge-number" style="background-color: #964B00;">
+                                            {{ $countM }}
+                                        </span>
+                                    @endif
                                 </a>
                                 <a class="dropdown-item" href="{{ route('merchant_aktif') }}">
                                     Aktif
@@ -137,8 +148,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if ($porter->count() > 0)
-                        @foreach ($porter as $row)
+                    @if($porter->count() > 0)
+                        @foreach($porter as $row)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $row->user->nama }}</td>
@@ -156,8 +167,7 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <a
-                                    href="{{ route('viewImg',
+                                    <a href="{{ route('viewImg',
                                     ['type' => 'skkb', 'filename' => $row->skkb]) }}" target="_blank">
                                         <button class="btn btn-success">
                                             VIEW

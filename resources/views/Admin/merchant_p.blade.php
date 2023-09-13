@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('adminassets/fonts/fontawesome-all.min.css') }}">
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
     <link href="{{ asset('assets/img/logo.png') }}" rel="apple-touch-icon">
-    
+
 </head>
 @php
     $bgUrl = asset('adminassets/img/bg.png');
@@ -59,6 +59,11 @@
                             <div class="dropdown-menu show" data-bs-popper="none">
                                 <a class="dropdown-item" href="{{ route('porter_permohonan') }}">
                                     Permohonan
+                                    @if($countP > 0)
+                                        <span class="badge badge-number" style="background-color: #964B00;">
+                                            {{ $countP }}
+                                        </span>
+                                    @endif
                                 </a>
                                 <a class="dropdown-item" href="{{ route('porter_aktif') }}">
                                     Aktif
@@ -75,6 +80,12 @@
                             <div class="dropdown-menu show" data-bs-popper="none">
                                 <a class="dropdown-item" href="{{ route('merchant_permohonan') }}">
                                     Permohonan
+                                    <i class="bi bi-bell"></i>
+                                    @if($countM > 0)
+                                        <span class="badge badge-number" style="background-color: #964B00;">
+                                            {{ $countM }}
+                                        </span>
+                                    @endif
                                 </a>
                                 <a class="dropdown-item" href="{{ route('merchant_aktif') }}">
                                     Aktif

@@ -12,27 +12,43 @@ use Illuminate\Support\Facades\Storage;
 class AdminController extends Controller
 {
     public function indexUser(){
+        $merchant = Merchant::with('user')->get();
+        $porter = Porter::with('user')->get();
+        $countM = $merchant->where('status','pending')->count();
+        $countP = $porter->where('status','pending')->count();
         $user = User::where('role', 'customer')->get();
-        return view('Admin/pengunjung', compact('user'));
+        return view('Admin/pengunjung', compact('user', 'countM', 'countP'));
     }
 
     public function AdminMerchantPermohonan(){
         $merchant = Merchant::with('user')->get();
-        return view('Admin/merchant_p', compact('merchant'));
+        $porter = Porter::with('user')->get();
+        $countM = $merchant->where('status','pending')->count();
+        $countP = $porter->where('status','pending')->count();
+        return view('Admin/merchant_p', compact('merchant', 'countM', 'countP'));
     }
 
     public function AdminPorterPermohonan(){
         $porter = Porter::with('user')->get();
-        return view('Admin/porter_p', compact('porter'));
+        $merchant = Merchant::with('user')->get();
+        $countM = $merchant->where('status','pending')->count();
+        $countP = $porter->where('status','pending')->count();
+        return view('Admin/porter_p', compact('porter', 'countM', 'countP'));
     }
 
     public function indexMerchantAktif(){
         $merchant = Merchant::with('user')->get();
-        return view('Admin/merchant_a', compact('merchant'));
+        $porter = Porter::with('user')->get();
+        $countM = $merchant->where('status','pending')->count();
+        $countP = $porter->where('status','pending')->count();
+        return view('Admin/merchant_a', compact('merchant', 'countM', 'countP'));
     }
     public function indexPorterAktif(){
         $porter = Porter::with('user')->get();
-        return view('Admin/porter_a', compact('porter'));
+        $merchant = Merchant::with('user')->get();
+        $countM = $merchant->where('status','pending')->count();
+        $countP = $porter->where('status','pending')->count();
+        return view('Admin/porter_a', compact('porter', 'countM', 'countP'));
     }
 
     public function approveMerchant($id){
