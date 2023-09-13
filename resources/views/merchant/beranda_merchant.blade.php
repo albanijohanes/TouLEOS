@@ -7,17 +7,21 @@
     <title>Beranda-Merchant</title>
     <link href="{{ asset('assets/img/logo.png') }}" rel="icon">
     <link href="{{ asset('assets/img/logo.png') }}" rel="apple-touch-icon">
-    <link rel="stylesheet" href="{{ asset ('merchantassets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset ('merchantassets/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;display=swap">
     <link rel="stylesheet" href="{{ asset ('merchantassets/css/Black-Navbar.css') }}">
-    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Form-Select---Full-Date---Month-Day-Year.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset ('merchantassets/css/Form-Select---Full-Date---Month-Day-Year.css') }}">
     <link rel="stylesheet" href="{{ asset ('merchantassets/css/gradient-navbar-styles.css') }}">
     <link rel="stylesheet" href="{{ asset ('merchantassets/css/gradient-navbar.css') }}">
-    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Hero-Clean-Reverse-images.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset ('merchantassets/css/Hero-Clean-Reverse-images.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/css/lightpick.min.css">
-    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Navbar---Apple-navbar---apple.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset ('merchantassets/css/Navbar---Apple-navbar---apple.css') }}">
     <link rel="stylesheet" href="{{ asset ('merchantassets/css/Navbar---Apple.css') }}">
     <link rel="stylesheet" href="{{ asset ('merchantassets/css/Navbar-by-Aaron.css') }}">
     <link rel="stylesheet" href="{{ asset ('merchantassets/css/styles.css') }}">
@@ -25,13 +29,15 @@
 
 <body>
     <nav class="navbar navbar-expand-md bg-body navbar-dark" id="app-navbar">
-        <div class="container-fluid"><img src="{{ asset('merchantassets/img/Logo web Tou Leos (3).png') }}"
+        <div class="container-fluid"><img
+                src="{{ asset('merchantassets/img/Logo web Tou Leos (3).png') }}"
                 style="width: 50px;"><a class="navbar-brand" href="#"></a><button data-bs-toggle="collapse"
                 class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link active" href="{{ route('beranda_merchant') }}">
+                    <li class="nav-item"><a class="nav-link active"
+                            href="{{ route('beranda_merchant') }}">
                             Beranda
                         </a>
                     </li>
@@ -41,7 +47,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('logout') }}" style="color: rgb(252,0,0);">
+                        <a class="nav-link active" href="{{ route('logout') }}"
+                            style="color: rgb(252,0,0);">
                             Keluar
                         </a>
                     </li>
@@ -82,7 +89,9 @@
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <form method="POST" action="{{ route('tambah_dagang') }}" data-bss-recipient="67b465af92ed4ffdcc0537eaadc6dd61" enctype="multipart/form-data">
+                                            <form method="POST" action="{{ route('tambah_dagang') }}"
+                                                data-bss-recipient="67b465af92ed4ffdcc0537eaadc6dd61"
+                                                enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="form-group">
                                                     <label style="font-family: Poppins, sans-serif;font-weight: bold;">
@@ -247,28 +256,33 @@
         <div class="row">
             <div class="col">
                 <div class="list-group">
-                    <a class="list-group-item list-group-item-action flex-column align-items-start" href="#"
-                        style="font-family: Poppins, sans-serif;">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1" style="font-size: 12px;">
-                                Nama Bahan
-                                :</h5>
-                        </div>
-                        <p class="mb-1" style="font-size: 13px;">
-                            Paragraph
-                        </p>
-                    </a>
-                    <a class="list-group-item list-group-item-action flex-column align-items-start" href="#"
-                        style="font-family: Poppins, sans-serif;">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1" style="font-size: 12px;">
-                                Nama Bahan:
-                            </h5>
-                        </div>
-                        <p class="mb-1" style="font-size: 12px;">
-                            Paragraph
-                        </p>
-                    </a>
+                    @forelse($merchant as $row)
+                        @if($row->status === 'aktif')
+                            <a class="list-group-item list-group-item-action flex-column align-items-start" href="#"
+                                style="font-family: Poppins, sans-serif;">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1" style="font-size: 12px;">
+                                        {{ $row->title }}
+                                    </h5>
+                                </div>
+                                <p class="mb-1" style="font-size: 13px;">
+                                    {{ $row->deskripsi }}
+                                </p>
+                            </a>
+                        @endif
+                    @empty
+                        <a class="list-group-item list-group-item-action flex-column align-items-start" href="#"
+                            style="font-family: Poppins, sans-serif;">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1" style="font-size: 12px;">
+                                    Belum ada promosi yang di tambahkan
+                                </h5>
+                            </div>
+                            <p class="mb-1" style="font-size: 13px;">
+                                Silakan menambahkan promosi
+                            </p>
+                        </a>
+                    @endforelse
                 </div>
             </div>
         </div>
@@ -333,34 +347,37 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="list-group"><a class="list-group-item list-group-item-action flex-column align-items-start"
-                        href="#" style="font-family: Poppins, sans-serif;">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1" style="font-size: 12px;">
-                                Nama Bahan
-                            </h5>
-                            <span class="badge rounded-pill bg-primary align-self-center">
-                                Aktif
-                            </span>
-                        </div>
-                        <p class="mb-1" style="font-size: 12px;">
-                            Paragraph
-                        </p>
-                    </a>
-                    <a class="list-group-item list-group-item-action flex-column align-items-start" href="#"
-                        style="font-family: Poppins, sans-serif;">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1" style="font-size: 12px;">
-                                Nama Bahan
-                            </h5>
-                            <span class="badge rounded-pill bg-primary align-self-center">
-                                Aktif
-                            </span>
-                        </div>
-                        <p class="mb-1" style="font-size: 12px;">
-                            Paragraph
-                        </p>
-                    </a>
+                <div class="list-group">
+                    @forelse($merchant as $row)
+                        @if($row)
+                            <a class="list-group-item list-group-item-action flex-column align-items-start" href="#"
+                                style="font-family: Poppins, sans-serif;">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1" style="font-size: 12px;">
+                                        {{ $row->title }}
+                                    </h5>
+                                    <span class="badge rounded-pill bg-primary align-self-center">
+                                        {{ $row->status }}
+                                    </span>
+                                </div>
+                                <p class="mb-1" style="font-size: 12px;">
+                                    {{ $row->deskripsi }}
+                                </p>
+                            </a>
+                        @endif
+                    @empty
+                        <a class="list-group-item list-group-item-action flex-column align-items-start" href="#"
+                            style="font-family: Poppins, sans-serif;">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1" style="font-size: 12px;">
+                                    Belum ada promosi yang di tambahkan
+                                </h5>
+                            </div>
+                            <p class="mb-1" style="font-size: 13px;">
+                                Silakan menambahkan promosi
+                            </p>
+                        </a>
+                    @endforelse
                 </div>
             </div>
         </div>
@@ -391,7 +408,6 @@
         closeRiwayatModalButton.addEventListener('click', function () {
             closeModalAndReload('riwayat');
         });
-
     </script>
 
 </body>

@@ -77,6 +77,7 @@
                                                 @csrf
                                                 <button type="submit" class="btn btn-primary">Terima</button>
                                             </form>
+                                            <br>
                                             <form
                                                 action="{{ route('cancelRequest',  $row->id) }}"
                                                 method="post">

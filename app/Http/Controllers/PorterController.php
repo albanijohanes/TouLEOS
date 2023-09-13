@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use App\Servicerequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,11 +18,14 @@ class PorterController extends Controller
     }
     public function userporter(){
         $porter = Servicerequest::where('porter_id', Auth::user()->id)->get();
-        return view('porter/users-profile', compact('porter'));
+        $count = $porter->where('status','pending')->count();
+        return view('porter/users-profile', compact('porter', 'count'));
     }
     public function userpromot(){
         $porter = Servicerequest::where('porter_id', Auth::user()->id)->get();
-        return view('porter/promotion', compact('porter'));
+        $count = $porter->where('status','pending')->count();
+        $produk = Product::all();
+        return view('porter/promotion', compact('porter', 'count', 'produk'));
     }
     public function acceptServiceRequest($id){
         $serviceRequest = Servicerequest::find($id);

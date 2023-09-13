@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('merchant_id')->nullable();
+            $table->unsignedBigInteger('merchant_id');
             $table->foreign('merchant_id')->references('id')->on('merchants');
             $table->date('tanggal');
             $table->string('title', 500);
@@ -36,5 +36,9 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('products');
+        Schema::table('products', function(Blueprint $table){
+            $table->dropForeign(['merchant_id']);
+            $table->dropColumn('merchant_id');
+        });
     }
 }

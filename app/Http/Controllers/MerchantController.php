@@ -13,7 +13,9 @@ class MerchantController extends Controller
         return view('auth/login_merchant');
     }
     public function berandaMerchant(){
-        return view('merchant/beranda_merchant');
+        $merchantid = Auth::user()->merchant->id;
+        $merchant = Product::where('merchant_id', $merchantid)->get();
+        return view('merchant/beranda_merchant', compact('merchant'));
     }
     public function editMerchant(){
         return view('merchant/edit_dagang');
@@ -30,7 +32,8 @@ class MerchantController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors(['auth' => 'Tolong di isi dengan lengkap']);
         }
-            Product::create([
+            $product = Product::create([
+                'merchant_id' => Auth::user()->merchant->id,
                 'tanggal' => $request->input('tanggal'),
                 'title' => $request->input('title'),
                 'satuan' => $request->input('satuan'),
@@ -38,7 +41,16 @@ class MerchantController extends Controller
                 'harga' => $request->input('harga'),
                 'status' => 'aktif'
         ]);
+        if ($product) {
+            $hari = now()->subDays(3);
+
+            Product::where('status', 'aktif')
+                ->where('tanggal', '<=', $hari)
+                ->update(['status' => 'tidak aktif']);
         return redirect()->back()->with('success', 'Anda telah berhasil menambah promosi');
+        }else {
+            return redirect()->back()->with('error', 'Gagal menambah promosi, bila ada kendala silakan hubungi admin');
+        }
     }
     public function EditprofileMerchant(){
         return view('merchant/edit_profile');

@@ -20,6 +20,6 @@ class Merchant extends Model
     }
 
     public function products(){
-        return $this->hasMany(Product::class, 'merchant_id');
+        return $this->hasMany(Product::class);
     }
 }

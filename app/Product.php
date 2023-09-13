@@ -16,10 +16,9 @@ class Product extends Model
     ];
 
     public function merchant(){
-        return $this->belongsTo(Merchant::class, 'merchant_id');
+        return $this->belongsTo(Merchant::class);
     }
-
-    public function serviceRequest(){
-        return $this->hasMany(Servicerequest::class, 'product_id');
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

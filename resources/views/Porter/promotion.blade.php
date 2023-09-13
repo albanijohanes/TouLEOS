@@ -16,14 +16,19 @@
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
 
-    <link href="{{ asset('porterassets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/bootstrap/css/bootstrap.min.css') }}"
+        rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/bootstrap-icons/bootstrap-icons.css') }}"
+        rel="stylesheet">
+    <link href="{{ asset('porterassets/vendor/boxicons/css/boxicons.min.css') }}"
+        rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
     <link href="{{ asset('porterassets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('porterassets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset ('merchantassets/css/Profile-Edit-Form-styles.css') }}">
+    <link href="{{ asset('porterassets/vendor/simple-datatables/style.css') }}"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="{{ asset ('merchantassets/css/Profile-Edit-Form-styles.css') }}">
     <link rel="stylesheet" href="{{ asset ('merchantassets/css/Profile-Edit-Form.css') }}">
 
     <link href="{{ asset('porterassets/css/style.css') }}" rel="stylesheet">
@@ -32,26 +37,6 @@
 </head>
 
 <body>
-    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" style="font-family: Poppins, sans-serif;">Permintaan Pemesanan</h4><button
-                        class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p style="font-family: Poppins, sans-serif;">Nama ingin memesan jasa anda sebagai porter</p><label
-                        class="form-label" style="font-family: Poppins, sans-serif;">Harga/Menit :&nbsp;</label><input
-                        type="number" style="font-family: Poppins, sans-serif;padding-right: 0px;margin-right: -7px;">
-                </div>
-                <div class="modal-footer"><button class="btn btn-primary" type="button"
-                        style="background: #1cda18;">Terima</button><button class="btn btn-light" type="button"
-                        data-bs-dismiss="modal"
-                        style="--bs-danger: #dc3545;--bs-danger-rgb: 220,53,69;background: #ee2626;color: rgb(255,255,255);">Tolak</button>
-                </div>
-            </div>
-        </div>
-    </div>
     @extends('layouts.nbporter')
     <main id="main" class="main">
 
@@ -122,33 +107,57 @@
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="col-xxl-4 col-xl-12">
+                            @forelse($produk as $row)
+                                @if($row->status === 'aktif')
+                                    <div class="card info-card customers-card">
 
-                            <div class="card info-card customers-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Daftar Promosi</h5>
 
-                                <div class="card-body">
-                                    <h5 class="card-title">Daftar Promosi</h5>
-
-                                    <div class="d-flex align-items-center">
-                                        <a class="list-group-item list-group-item-action flex-column align-items-start"
-                                            href="#" style="font-family: Poppins, sans-serif;">
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1" style="font-size: 15px;">
-                                                    Nama Pemilik</h5>
+                                            <div class="d-flex align-items-center">
+                                                <a class="list-group-item list-group-item-action flex-column align-items-start"
+                                                    href="#" style="font-family: Poppins, sans-serif;">
+                                                    <div class="d-flex w-100 justify-content-between">
+                                                        <h5 class="mb-1" style="font-size: 15px;">
+                                                            {{ $row->merchant->nama }}</h5>
+                                                    </div>
+                                                    <div class="d-flex w-100 justify-content-between">
+                                                        <h5 class="mb-1" style="font-size: 15px;">
+                                                            Nama Bahan
+                                                            :{{ $row->title }}</h5>
+                                                    </div>
+                                                    <p class="mb-1" style="font-size: 13px;">
+                                                        Rp. {{ $row->harga }}
+                                                    </p>
+                                                </a>
                                             </div>
-                                            <div class="d-flex w-100 justify-content-between">
-                                                <h5 class="mb-1" style="font-size: 15px;">
-                                                    Nama Bahan
-                                                    :</h5>
-                                            </div>
-                                            <p class="mb-1" style="font-size: 13px;">
-                                                Harga bahan
-                                            </p>
-                                        </a>
+
+                                        </div>
                                     </div>
+                                @endif
+                            @empty
+                                <div class="card info-card customers-card">
 
+                                    <div class="card-body">
+                                        <h5 class="card-title">Belum ada promosi</h5>
+
+                                        <div class="d-flex align-items-center">
+                                            <a class="list-group-item list-group-item-action flex-column align-items-start"
+                                                href="#" style="font-family: Poppins, sans-serif;">
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h5 class="mb-1" style="font-size: 15px;">
+                                                    </h5>
+                                                </div>
+                                                <div class="d-flex w-100 justify-content-between">
+                                                    <h5 class="mb-1" style="font-size: 15px;"></h5>
+                                                </div>
+                                                <p class="mb-1" style="font-size: 13px;">
+                                                </p>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-
+                            @endforelse
                         </div>
                     </div>
                 </div>
