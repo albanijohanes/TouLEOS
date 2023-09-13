@@ -119,7 +119,7 @@
                                                     href="#" style="font-family: Poppins, sans-serif;">
                                                     <div class="d-flex w-100 justify-content-between">
                                                         <h5 class="mb-1" style="font-size: 15px;">
-                                                            {{ $row->merchant->nama }}</h5>
+                                                            {{ $row->merchant->user->nama }}</h5>
                                                     </div>
                                                     <div class="d-flex w-100 justify-content-between">
                                                         <h5 class="mb-1" style="font-size: 15px;">

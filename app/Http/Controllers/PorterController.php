@@ -24,7 +24,7 @@ class PorterController extends Controller
     public function userpromot(){
         $porter = Servicerequest::where('porter_id', Auth::user()->id)->get();
         $count = $porter->where('status','pending')->count();
-        $produk = Product::all();
+        $produk = Product::with('merchant')->get();
         return view('porter/promotion', compact('porter', 'count', 'produk'));
     }
     public function acceptServiceRequest($id){
