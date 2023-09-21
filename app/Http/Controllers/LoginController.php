@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
+    
     public function start(){
         return view('landingpage');
     }
@@ -59,6 +60,7 @@ class LoginController extends Controller
             return redirect()->back()->withErrors(['Tolong di isi untuk Username atau Password']);
         }
 
+        // perubahan auth
         if (Auth::attempt([
             'username' => $request->username,
             'password' => $request->password,
